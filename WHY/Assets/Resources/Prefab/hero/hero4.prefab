@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690bc86ed6e9f55479e40d4f2e088be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 15
 --- !u!1001 &6444495203787644261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19,6 +20,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6422033467640430190, guid: 23b75ffb2afe1894291fa1e7b317adbd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d1506859be35f1f4ca9734802737fee1, type: 2}
     - target: {fileID: -5079388132086744592, guid: 23b75ffb2afe1894291fa1e7b317adbd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -65,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d1506859be35f1f4ca9734802737fee1, type: 2}
     - target: {fileID: 100204, guid: 23b75ffb2afe1894291fa1e7b317adbd, type: 3}
       propertyPath: m_Name
-      value: WGS_Walk_Front Variant
+      value: hero4
       objectReference: {fileID: 0}
     - target: {fileID: 400204, guid: 23b75ffb2afe1894291fa1e7b317adbd, type: 3}
       propertyPath: m_LocalPosition.x
