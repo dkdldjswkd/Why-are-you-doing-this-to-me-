@@ -414,8 +414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raund: 0
   SummonsCount: 0
-  start: {fileID: 11707472}
-  end: {fileID: 1238532589}
+  start: {fileID: 11707474}
+  end: {fileID: 1238532591}
   canvasbaby: {fileID: 1928031545}
   topui: {fileID: 362820828}
 --- !u!1 &1238532589
@@ -651,7 +651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.017721519, y: 0.027}
   m_AnchorMax: {x: 0.21587342, y: 0.095000006}
-  m_AnchoredPosition: {x: -0.9996338, y: 0.99993896}
+  m_AnchoredPosition: {x: -0.99957275, y: 0.99993896}
   m_SizeDelta: {x: 2, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527373529

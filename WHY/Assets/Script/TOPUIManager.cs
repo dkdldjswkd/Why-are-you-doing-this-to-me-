@@ -27,8 +27,8 @@ public class TOPUIManager : MonoBehaviour
     public int raund;   //현제 라운드
     public int SummonsCount;    //오고있는 수
 
-    public GameObject start;    //스타트위치와 크기
-    public GameObject end;  //골인위치와 크기
+    public Image start;    //스타트위치와 크기
+    public Image end;  //골인위치와 크기
 
     public GameObject canvasbaby;   //캔버스 자식객체로 만들기용
     public GameObject topui;   //TOPUI 이미지용
@@ -40,6 +40,7 @@ public class TOPUIManager : MonoBehaviour
 
     void Start()
     {
+        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
         setA = false;
         image = topui.GetComponent<Image>();
         color = image.color;
