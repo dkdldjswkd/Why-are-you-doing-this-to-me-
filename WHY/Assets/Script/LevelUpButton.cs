@@ -8,9 +8,9 @@ public class LevelUpButton : MonoBehaviour
     int LevelUpPrice; // 레벨업 가격
     Text tmp;
 
-    GameObject g;
-    GameObject a;
-    [SerializeField]GameObject b;
+
+    [SerializeField] Text CostErrorText;
+    [SerializeField] Image ErrorPosition;
 
     private void Start()
     {
@@ -20,18 +20,22 @@ public class LevelUpButton : MonoBehaviour
 
     public void LevelUp()
     {
-        if(DefanceManager.Cost >= 10)
+        if (DefanceManager.Cost >= 10)
         {
             DefanceManager.Cost -= LevelUpPrice;
             DefanceManager.Level++;
         }
         else
         {
-
-            g = GameObject.Find("Defance_UI");
-            a = Instantiate(b, g.transform.position, Quaternion.identity) as GameObject;
-            a.transform.parent = g.transform;
+            CostError();
         }
 
+    }
+
+    public void CostError()
+    {
+        Text t = Instantiate(CostErrorText, ErrorPosition.transform.position, Quaternion.identity) as Text;
+        t.transform.parent = ErrorPosition.transform;
+        Destroy(t, 1);
     }
 }
