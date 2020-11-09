@@ -434,8 +434,9 @@ GameObject:
   - component: {fileID: 288048552}
   - component: {fileID: 288048551}
   - component: {fileID: 288048550}
+  - component: {fileID: 288048553}
   m_Layer: 5
-  m_Name: SpawnerButton_2
+  m_Name: SpawnerButton_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,7 +504,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 288048551}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 288048553}
+        m_TargetAssemblyTypeName: SpawnerButton, Assembly-CSharp
+        m_MethodName: Spawner1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &288048551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,6 +555,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288048548}
   m_CullTransparentMesh: 0
+--- !u!114 &288048553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288048548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fe894091d3ad344a7d6929a72595cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &404869915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,8 +1105,9 @@ GameObject:
   - component: {fileID: 1228795535}
   - component: {fileID: 1228795534}
   - component: {fileID: 1228795533}
+  - component: {fileID: 1228795536}
   m_Layer: 5
-  m_Name: SpawnerButton_1
+  m_Name: SpawnerButton_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1149,7 +1175,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1228795534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1228795536}
+        m_TargetAssemblyTypeName: SpawnerButton, Assembly-CSharp
+        m_MethodName: Spawner0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1228795534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1226,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228795531}
   m_CullTransparentMesh: 0
+--- !u!114 &1228795536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228795531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fe894091d3ad344a7d6929a72595cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1244910821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,8 +1876,9 @@ GameObject:
   - component: {fileID: 1771928506}
   - component: {fileID: 1771928505}
   - component: {fileID: 1771928504}
+  - component: {fileID: 1771928507}
   m_Layer: 5
-  m_Name: SpawnerButton_3
+  m_Name: SpawnerButton_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1895,7 +1946,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1771928505}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1771928507}
+        m_TargetAssemblyTypeName: SpawnerButton, Assembly-CSharp
+        m_MethodName: Spawner2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1771928505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,6 +1997,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771928502}
   m_CullTransparentMesh: 0
+--- !u!114 &1771928507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771928502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fe894091d3ad344a7d6929a72595cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1803260811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,8 +2021,9 @@ GameObject:
   - component: {fileID: 1803260815}
   - component: {fileID: 1803260814}
   - component: {fileID: 1803260813}
+  - component: {fileID: 1803260816}
   m_Layer: 5
-  m_Name: SpawnerButton_4
+  m_Name: SpawnerButton_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2015,7 +2091,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1803260814}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1803260816}
+        m_TargetAssemblyTypeName: SpawnerButton, Assembly-CSharp
+        m_MethodName: Spawner3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1803260814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2054,6 +2142,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803260811}
   m_CullTransparentMesh: 0
+--- !u!114 &1803260816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803260811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fe894091d3ad344a7d6929a72595cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1853160038
 GameObject:
   m_ObjectHideFlags: 0

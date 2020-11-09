@@ -9,8 +9,6 @@ public class DefanceManager : MonoBehaviour
     public static float Cost; // 기물 구매, 래벨업에 상용되는 재화
     public static int Level; // 플레이어 레벨
 
-    public static bool SpawnerButtonDown; // 유닛스포너 버튼을 누른경우만 true;
-
     [SerializeField] GameObject Unit1;
     [SerializeField] GameObject Unit2;
     [SerializeField] GameObject Unit3;
@@ -29,7 +27,6 @@ public class DefanceManager : MonoBehaviour
         if (Production == 0) Production = 1;
         if (MaxCost == 0) MaxCost = 10;
         Level = 1;
-        SpawnerButtonDown = false;
     }
 
     // Update is called once per frame
@@ -60,7 +57,7 @@ public class DefanceManager : MonoBehaviour
     void SummonObject()
     {
         //유닛 스포너 버튼을 누른게 참일경우
-        if (SpawnerButtonDown)
+        if (SpawnerButton.ClickedCheck())
         {
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // 메인카메라에서 스크린으로 쏘는 레이저, 마우스 포지션 좌표에
@@ -71,23 +68,36 @@ public class DefanceManager : MonoBehaviour
             {
                 //돈이 1원 이상 있다면
                 if (Cost >= 1)
-                {
-                    Cost--;
+                {                    
                     GameObject summondObject = null;
 
-                    switch (Level)
+                    //활성화된 스포너 버튼
+                    int tmp = SpawnerButton.whoClickedButton();
+                    switch (tmp)
                     {
-                        case 1:
+                        case 0:
                             summondObject = Instantiate(Unit1, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                            SpawnerButtonDown = false; // 유닛이 정상적으로 스폰됬기때문에 눌린 버튼을 다시 취소함
+                            SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                            Cost--;
+                            break;
+                        case 1:
+                            summondObject = Instantiate(Unit2, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                            SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                            Cost--;
                             break;
                         case 2:
-                            summondObject = Instantiate(Unit2, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                            SpawnerButtonDown = false; // 유닛이 정상적으로 스폰됬기때문에 눌린 버튼을 다시 취소함
+                            summondObject = Instantiate(Unit3, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                            SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                            Cost--;
                             break;
                         case 3:
-                            summondObject = Instantiate(Unit3, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                            SpawnerButtonDown = false; // 유닛이 정상적으로 스폰됬기때문에 눌린 버튼을 다시 취소함
+                            summondObject = Instantiate(Unit4, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                            SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                            Cost--;
+                            break;
+
+                        case 100:
+                            print("스포너 버튼이 아무것도 눌려있지 않음");
                             break;
                     }
 
