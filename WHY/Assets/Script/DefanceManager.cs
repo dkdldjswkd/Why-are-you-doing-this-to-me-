@@ -78,21 +78,25 @@ public class DefanceManager : MonoBehaviour
                         case 0:
                             summondObject = Instantiate(Unit1, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
                             SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                            SpawnerButton.showbuttonsState();
                             Cost--;
                             break;
                         case 1:
                             summondObject = Instantiate(Unit2, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
                             SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                            SpawnerButton.showbuttonsState();
                             Cost--;
                             break;
                         case 2:
                             summondObject = Instantiate(Unit3, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
                             SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                            SpawnerButton.showbuttonsState();
                             Cost--;
                             break;
                         case 3:
                             summondObject = Instantiate(Unit4, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
                             SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                            SpawnerButton.showbuttonsState();
                             Cost--;
                             break;
 

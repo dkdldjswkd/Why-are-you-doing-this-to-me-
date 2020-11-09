@@ -11,13 +11,40 @@ public class SpawnerButton : MonoBehaviour
 {
     public static bool[] ClickedButton = new bool[4];
     bool me = false; // 자신이 클릭되어있는지 판단하는 변수
+    int myNumber; //몇번재 버튼인지
+    string myName; //this의 이름
+    Text ButtonText;
+    float Second;
 
     private void Start()
     {
+        Second = 0;
         //모든 스폰버튼 비활성화
         for (int i = 0; i < 4; ++i)
         {
             ClickedButton[i] = false;
+        }
+
+        myName = gameObject.name;
+        myNumber = myName[myName.Length - 1] - 48;
+        print(myName);
+        print(myNumber);
+
+        ButtonText = transform.GetChild(0).GetComponent<Text>();
+    }
+
+    private void Update()
+    {
+        // 비용이 많이 드는 처리 수정해야함, 버튼의 상태를 업데이트 해주는 함수
+        if (ClickedButton[myNumber] == true)
+        {
+            ButtonText.text = "활성화";
+            print("활성화");
+        }
+        else
+        {
+            ButtonText.text = "비 활성화";
+            print("비 활성화");
         }
     }
 
@@ -32,10 +59,12 @@ public class SpawnerButton : MonoBehaviour
             }
         }
         return false;
+
+
     }
 
     //현재 버튼들의 상태를 알려주는 임시함수
-    static void showbuttonsState()
+    public static void showbuttonsState()
     {
         //for (int i = 0; i < 4; ++i)
         //    Debug.Log(ClickedButton[i]);
@@ -55,6 +84,11 @@ public class SpawnerButton : MonoBehaviour
         return 100;
     }
 
+    static public void Off(int n)
+    {
+
+    }
+
     //---------------------------------------------------실질적으로 버튼이 눌렸을시 작동되는 함수들-----------------------------------------------
     public void Spawner0()
     {
@@ -62,6 +96,7 @@ public class SpawnerButton : MonoBehaviour
         // 클릭된 버튼을 활성화 시키며 그 외 버튼은 비활성화
         if (ClickedButton[tmp] == false)
         {
+            me = true;
             ClickedButton[tmp] = true;
             for (int i = 0; i < 4; ++i)
             {
@@ -72,6 +107,7 @@ public class SpawnerButton : MonoBehaviour
         }
         else // 활성화된 버튼을 비활성화
         {
+            me = false;
             ClickedButton[tmp] = false;
         }
 
