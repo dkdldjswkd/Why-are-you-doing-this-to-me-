@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class LevelUpButton : MonoBehaviour
 {
     int LevelUpPrice; // 레벨업 가격
-    Text tmp;
+    Text ErrorText;
 
-
-    [SerializeField] Text CostErrorText;
     [SerializeField] Image ErrorPosition;
 
     private void Start()
     {
         if (LevelUpPrice == 0) LevelUpPrice = 10;
+        ErrorText = ErrorPosition.transform.GetChild(0).GetComponent<Text>();
     }
 
 
@@ -34,8 +33,13 @@ public class LevelUpButton : MonoBehaviour
 
     public void CostError()
     {
-        Text t = Instantiate(CostErrorText, ErrorPosition.transform.position, Quaternion.identity) as Text;
-        t.transform.parent = ErrorPosition.transform;
-        Destroy(t, 1);
+        ErrorText.text = "레벨업에 필요한 코스트가 부족합니다.";
+        Invoke("ErrorTextFormat", 1f);
     }
+
+    void ErrorTextFormat()
+    {
+        ErrorText.text = "";
+    }
+
 }

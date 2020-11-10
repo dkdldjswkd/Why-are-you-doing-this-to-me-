@@ -78,7 +78,7 @@ public class DefanceManager : MonoBehaviour
                     switch (tmp)
                     {
                         case 0:
-                            summondObject = Instantiate(Unit1, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                            summondObject = Instantiate(Resources.Load("Prefab/Unit/DogPBR"), new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity) as GameObject;
                             SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
                             SpawnerButton.showbuttonsState();
                             Cost--;
