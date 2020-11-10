@@ -17,6 +17,8 @@ public class DefanceManager : MonoBehaviour
     int MaxCost; // 최대 코스트 제한
     float Production; // 코스트 생성 속도
 
+    [SerializeField] Camera RayCamera;
+
 
     [SerializeField] Text LevelText; // 플레이러 레벨을 화면에 나타내는 텍스트
     [SerializeField] Text CostText; // 코스트를 화면에 나타내는 텍스트
@@ -60,7 +62,7 @@ public class DefanceManager : MonoBehaviour
         if (SpawnerButton.ClickedCheck())
         {
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // 메인카메라에서 스크린으로 쏘는 레이저, 마우스 포지션 좌표에
+            Ray ray = RayCamera.ScreenPointToRay(Input.mousePosition); // 카메라에서 스크린으로 쏘는 레이저, 마우스 포지션 좌표에
             RaycastHit hit;
 
             //좌클릭시, ray가 물체에 충돌했으며, 충돌한 물체의 tag가 ground 라면
