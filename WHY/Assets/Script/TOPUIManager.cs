@@ -37,6 +37,7 @@ public class TOPUIManager : MonoBehaviour
 
     bool setA;  //알파값 조절할지 정하기
 
+    public GameObject startplane;   //소환 첫 위치
 
     void Start()
     {
@@ -154,15 +155,15 @@ public class TOPUIManager : MonoBehaviour
         color.a = 1.0f;
         image.color = color;
     }
-
     //현제 소환된 수 줄이기 모두 사라지면 이미지 서서히 사라짐
-    public void DwonSummonsCount()
+    public void DwonSummonsCount(int herotype)
     {
         SummonsCount--;
         if(SummonsCount==0)
         {
             setA = true;
         }
+        print("반환 :" + herotype);
     }
 
     //현제 소환된 수

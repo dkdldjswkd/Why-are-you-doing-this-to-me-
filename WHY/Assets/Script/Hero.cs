@@ -10,6 +10,9 @@ public class Hero : MonoBehaviour
     [SerializeReference]
     private float size = 2.5f;
 
+    [SerializeReference]
+    private int herotype;
+
     private float percent;
 
     void Start()
@@ -38,7 +41,7 @@ public class Hero : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            TOPUIManager.Instance.DwonSummonsCount();
+            TOPUIManager.Instance.DwonSummonsCount(herotype);
         }
     }
 }
