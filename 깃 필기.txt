@@ -17,3 +17,10 @@ git pull
 //git branch 강의
 https://backlog.com/git-tutorial/kr/stepup/stepup2_2.html
 https://victorydntmd.tistory.com/91
+
+// remote, branch
+git push [remote] [branch]
+$ git push origin master
+이 커맨드에서 origin은 원격 저장소(remote)의 주소를 뜻하고, master는 현재 브랜치를 뜻합니다.
+저장소를 새로 만들면 기본으로 master 브랜치가 만들어집니다. 
+git push 뒤의 remote와 브랜치가 각각 origin과 현재 브랜치라면, 둘을 생략할 수 있습니다.
