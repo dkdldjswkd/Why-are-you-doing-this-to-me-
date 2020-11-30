@@ -56,6 +56,7 @@ public class DefanceManager : MonoBehaviour
         LevelText.text = "Level : " + (Level).ToString();
     }
 
+    //유닛소환 함수
     void SummonObject()
     {
         //유닛 스포너 버튼을 누른게 참일경우
