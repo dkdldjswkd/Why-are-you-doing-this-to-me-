@@ -55,10 +55,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\SpawnerButton.cs" />
-    <Compile Include="Assets\Script\DefanceManager.cs" />
+    <Compile Include="Assets\Script\Joon\SpawnerButton.cs" />
+    <Compile Include="Assets\Script\Joon\DefanceManager.cs" />
     <Compile Include="Assets\Script\TOPUIManager.cs" />
-    <Compile Include="Assets\Script\LevelUpButton.cs" />
+    <Compile Include="Assets\Script\Joon\LevelUpButton.cs" />
     <Compile Include="Assets\Script\HeroMove.cs" />
     <Compile Include="Assets\Script\Hero.cs" />
   </ItemGroup>
