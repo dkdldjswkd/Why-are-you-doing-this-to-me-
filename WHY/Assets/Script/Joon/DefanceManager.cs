@@ -26,6 +26,9 @@ public class DefanceManager : MonoBehaviour
 
     void Start()
     {
+        
+        SpawnerButton.ActButton = SpawnerButton.WhoOn.NotClicked;
+
         Cost = 0;
         if (Production == 0) Production = 1;
         if (MaxCost == 0) MaxCost = 10;

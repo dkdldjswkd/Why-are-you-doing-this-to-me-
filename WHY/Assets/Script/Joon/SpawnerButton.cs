@@ -14,6 +14,16 @@ public class SpawnerButton : MonoBehaviour
     public static GameObject[] MyMinion = new GameObject[4]; //4개의 버튼이 소유하고있는 미니언들을 나타냄.
     public static Sprite[] MyMinionSprite = new Sprite[4]; // 4개의 버튼의 미니언 이미지
 
+    public enum WhoOn
+    {
+        Button0,
+        Button1,
+        Button2,
+        Button3,
+        NotClicked
+    }
+    public static WhoOn ActButton;
+
     int myNumber; //this가 몇번째 버튼인지
     string myName; //this의 이름
     UnityEngine.UI.Image myImage; // 자신 이미지
@@ -23,7 +33,7 @@ public class SpawnerButton : MonoBehaviour
 
     private void Start()
     {
-        myImage = GetComponent<UnityEngine.UI.Image>();
+        myImage = GetComponent<UnityEngine.UI.Image>();        
 
         //모든 스폰버튼 비활성화
         for (int i = 0; i < 4; ++i)
@@ -35,13 +45,9 @@ public class SpawnerButton : MonoBehaviour
 
         myName = gameObject.name;
         myNumber = myName[myName.Length - 1] - 48;
-        print(myName);
-        print(myNumber);
 
         ButtonText = transform.GetChild(0).GetComponent<Text>();
-
-        //// GetComponent<UnityEngine.UI.Image>().color = Color.red;
-
+       
         roll();
     }
 
