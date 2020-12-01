@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 
@@ -12,18 +12,19 @@ public class SpawnerButton : MonoBehaviour
 {
     public static bool[] ClickedButton = new bool[4]; //4개의 버튼의 활성화/비활성화를 판단.
     public static GameObject[] MyMinion = new GameObject[4]; //4개의 버튼이 소유하고있는 미니언들을 나타냄.
-
+    public static Sprite[] MyMinionSprite = new Sprite[4]; // 4개의 버튼의 미니언 이미지
 
     int myNumber; //this가 몇번째 버튼인지
     string myName; //this의 이름
+    UnityEngine.UI.Image myImage; // 자신 이미지
     Text ButtonText; //this의 버튼 텍스트
-
-    bool me;
 
     public static int RandomX, RandomY; // 랜덤값부여 변수
 
     private void Start()
     {
+        myImage = GetComponent<UnityEngine.UI.Image>();
+
         //모든 스폰버튼 비활성화
         for (int i = 0; i < 4; ++i)
         {
@@ -38,6 +39,8 @@ public class SpawnerButton : MonoBehaviour
         print(myNumber);
 
         ButtonText = transform.GetChild(0).GetComponent<Text>();
+
+        //// GetComponent<UnityEngine.UI.Image>().color = Color.red;
 
         roll();
     }
@@ -54,23 +57,15 @@ public class SpawnerButton : MonoBehaviour
         }
         //자신버튼의 미니언으로 지정하고 활성화 시킴
         MyMinion[myNumber] = DefanceManager.Minions[RandomX, RandomY];
-        DefanceManager.MinionActCheck[RandomX, RandomY] = 1;
+        MyMinionSprite[myNumber] = DefanceManager.MinionsSprite[RandomX, RandomY];
+        myImage.sprite = DefanceManager.MinionsSprite[RandomX, RandomY];
+        DefanceManager.MinionActCheck[RandomX, RandomY] = 1;       
     }
 
     private void Update()
     {
         // 비용이 많이 드는 처리 수정해야함, 버튼의 상태를 업데이트 해주는 함수
-        //if (ClickedButton[myNumber] == true)
-        //{
-        //    ButtonText.text = "활성화";
-        //    print("활성화");
-        //}
-        //else
-        //{
-        //    ButtonText.text = "비 활성화";
-        //    print("비 활성화");
-        //}
-
+        myImage.sprite = MyMinionSprite[myNumber];
         ButtonText.text = MyMinion[myNumber].name;
     }
 
@@ -86,6 +81,7 @@ public class SpawnerButton : MonoBehaviour
         }
         return false;
 
+  
 
     }
 

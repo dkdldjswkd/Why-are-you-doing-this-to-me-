@@ -25,6 +25,7 @@ public class RerollButton : MonoBehaviour
             //자신버튼의 미니언으로 지정하고 활성화 시킴
             SpawnerButton.MyMinion[i] = DefanceManager.Minions[SpawnerButton.RandomX, SpawnerButton.RandomY];
             DefanceManager.MinionActCheck[SpawnerButton.RandomX, SpawnerButton.RandomY] = 1;
+            SpawnerButton.MyMinionSprite[i] = DefanceManager.MinionsSprite[SpawnerButton.RandomX, SpawnerButton.RandomY];
         }
 
         print("리롤");

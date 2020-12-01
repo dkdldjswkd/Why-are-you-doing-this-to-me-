@@ -22,6 +22,7 @@ public class DefanceManager : MonoBehaviour
 
     static public int[,] MinionActCheck = new int[5, 3]; // 1은 활성화, 0는 비활성화, 3은 없음
     public static GameObject[,] Minions = new GameObject[5, 3]; //실제 미니언 오브젝트
+    public static Sprite[,] MinionsSprite = new Sprite[5, 3]; //미니언 이미지
 
     void Start()
     {
@@ -60,6 +61,16 @@ public class DefanceManager : MonoBehaviour
         Minions[2, 1] = Resources.Load("prefab/Minions/Minion_meteor") as GameObject;
         Minions[3, 0] = Resources.Load("prefab/Minions/Minion_change") as GameObject;
         Minions[4, 0] = Resources.Load("prefab/Minions/Minion_dragon") as GameObject;
+
+        MinionsSprite[0, 0] = Resources.Load<Sprite>("Minion's Image/Minion_image_dog");
+        MinionsSprite[0, 1] = Resources.Load<Sprite>("Minion's Image/Minion_image_rabbit");
+        MinionsSprite[0, 2] = Resources.Load<Sprite>("Minion's Image/Minion_image_obstacle");
+        MinionsSprite[1, 0] = Resources.Load<Sprite>("Minion's Image/Minion_image_monkey");
+        MinionsSprite[1, 1] = Resources.Load<Sprite>("Minion's Image/Minion_image_heal");
+        MinionsSprite[2, 0] = Resources.Load<Sprite>("Minion's Image/Minion_image_gorilla");
+        MinionsSprite[2, 1] = Resources.Load<Sprite>("Minion's Image/Minion_image_meteor");
+        MinionsSprite[3, 0] = Resources.Load<Sprite>("Minion's Image/Minion_image_change");
+        MinionsSprite[4, 0] = Resources.Load<Sprite>("Minion's Image/Minion_image_dragon");
     }
 
     // Update is called once per frame
