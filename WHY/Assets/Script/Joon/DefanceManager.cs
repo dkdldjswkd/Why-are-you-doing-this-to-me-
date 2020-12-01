@@ -9,10 +9,7 @@ public class DefanceManager : MonoBehaviour
     public static float Cost; // 기물 구매, 래벨업에 상용되는 재화
     public static int Level; // 플레이어 레벨
 
-    [SerializeField] GameObject Unit1;
-    [SerializeField] GameObject Unit2;
-    [SerializeField] GameObject Unit3;
-    [SerializeField] GameObject Unit4;
+    public static GameObject WatingMinion;
 
     int MaxCost; // 최대 코스트 제한
     float Production; // 코스트 생성 속도
@@ -70,7 +67,7 @@ public class DefanceManager : MonoBehaviour
     {
         MakeCost();
         PrintLevel();
-        SummonObject();
+       // SummonObject();
     }
 
     // 시간에 따른 코스트 생성 함수
@@ -105,42 +102,46 @@ public class DefanceManager : MonoBehaviour
             {
                 //돈이 1원 이상 있다면
                 if (Cost >= 1)
-                {                    
+                {
                     GameObject summondObject = null;
 
-                    //활성화된 스포너 버튼
-                    int tmp = SpawnerButton.whoClickedButton();
-                    switch (tmp)
-                    {
-                        case 0:
-                            summondObject = Instantiate(Minions[0, 0], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity) as GameObject;
-                            SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
-                            SpawnerButton.showbuttonsState();
-                            Cost--;
-                            break;
-                        case 1:
-                            summondObject = Instantiate(Unit2, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                            SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
-                            SpawnerButton.showbuttonsState();
-                            Cost--;
-                            break;
-                        case 2:
-                            summondObject = Instantiate(Unit3, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                            SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
-                            SpawnerButton.showbuttonsState();
-                            Cost--;
-                            break;
-                        case 3:
-                            summondObject = Instantiate(Unit4, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                            SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
-                            SpawnerButton.showbuttonsState();
-                            Cost--;
-                            break;
+                    summondObject = Instantiate(WatingMinion, new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity) as GameObject;
+                    SpawnerButton.showbuttonsState();
+                    Cost--;
 
-                        case 100:
-                            print("스포너 버튼이 아무것도 눌려있지 않음");
-                            break;
-                    }
+                    //활성화된 스포너 버튼
+                    //int tmp = SpawnerButton.whoClickedButton();
+                    //switch (tmp)
+                    //{
+                    //    case 0:
+                    //        summondObject = Instantiate(Minions[0, 0], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity) as GameObject;
+                    //        SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                    //        SpawnerButton.showbuttonsState();
+                    //        Cost--;
+                    //        break;
+                    //    case 1:
+                    //        summondObject = Instantiate(Unit2, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                    //        SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                    //        SpawnerButton.showbuttonsState();
+                    //        Cost--;
+                    //        break;
+                    //    case 2:
+                    //        summondObject = Instantiate(Unit3, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                    //        SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                    //        SpawnerButton.showbuttonsState();
+                    //        Cost--;
+                    //        break;
+                    //    case 3:
+                    //        summondObject = Instantiate(Unit4, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                    //        SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
+                    //        SpawnerButton.showbuttonsState();
+                    //        Cost--;
+                    //        break;
+
+                    //    case 100:
+                    //        print("스포너 버튼이 아무것도 눌려있지 않음");
+                    //        break;
+                    //}
 
 
                 }
@@ -149,7 +150,7 @@ public class DefanceManager : MonoBehaviour
                 }
             }
         }
-        
+
 
     }
 

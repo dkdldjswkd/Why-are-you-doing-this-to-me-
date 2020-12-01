@@ -10,38 +10,25 @@ using UnityEngine.UIElements;
 
 public class SpawnerButton : MonoBehaviour
 {
-    public static bool[] ClickedButton = new bool[4];
-    bool me = false; // 자신이 클릭되어있는지 판단하는 변수
-    int myNumber; //몇번재 버튼인지
+    public static bool[] ClickedButton = new bool[4]; //4개의 버튼의 활성화/비활성화를 판단.
+    public static GameObject[] MyMinion = new GameObject[4]; //4개의 버튼이 소유하고있는 미니언들을 나타냄.
+    int myNumber; //this가 몇번째 버튼인지
     string myName; //this의 이름
-    Text ButtonText;
-    float Second;
-    GameObject MyMinion;
+    Text ButtonText; //this의 버튼 텍스트
+
+    bool me;
+
+    static int RandomX, RandomY; // 랜덤값부여 변수
 
     private void Start()
     {
-
-        //해당 미니언이 비활성화 되어있다면
-        int tmp1, tmp2;
-        while (true)
-        {
-            tmp1 = Random.Range(0, 5); tmp2 = Random.Range(0, 3);
-            if (DefanceManager.MinionActCheck[tmp1, tmp2] == 0)
-            {
-                break;
-            }
-        }
-        //자신버튼의 미니언으로 지정하고 활성화 시킴
-        MyMinion = DefanceManager.Minions[tmp1, tmp2];
-        DefanceManager.MinionActCheck[tmp1, tmp2] = 1;
-
-
-        Second = 0;
         //모든 스폰버튼 비활성화
         for (int i = 0; i < 4; ++i)
         {
             ClickedButton[i] = false;
         }
+
+        DefanceManager.WatingMinion = null;
 
         myName = gameObject.name;
         myNumber = myName[myName.Length - 1] - 48;
@@ -49,6 +36,23 @@ public class SpawnerButton : MonoBehaviour
         print(myNumber);
 
         ButtonText = transform.GetChild(0).GetComponent<Text>();
+
+        roll();
+    }
+
+    public void roll()
+    {
+        while (true)
+        {
+            RandomX = Random.Range(0, DefanceManager.Level); RandomY = Random.Range(0, 3);
+            if (DefanceManager.MinionActCheck[RandomX, RandomY] != 3)
+            {
+                break;
+            }
+        }
+        //자신버튼의 미니언으로 지정하고 활성화 시킴
+        MyMinion[myNumber] = DefanceManager.Minions[RandomX, RandomY];
+        DefanceManager.MinionActCheck[RandomX, RandomY] = 1;
     }
 
     private void Update()
@@ -65,7 +69,7 @@ public class SpawnerButton : MonoBehaviour
         //    print("비 활성화");
         //}
 
-        ButtonText.text = MyMinion.name;
+        ButtonText.text = MyMinion[myNumber].name;
     }
 
     //스포너 버튼이 하나라도 활성화 되어있다면 참 아니라면 거짓
@@ -88,13 +92,13 @@ public class SpawnerButton : MonoBehaviour
     {
         //for (int i = 0; i < 4; ++i)
         //    Debug.Log(ClickedButton[i]);
-        Debug.Log(ClickedButton[0] + ", "+ ClickedButton[1] + ", "+ ClickedButton[2] + ", "+ ClickedButton[3]);
+        Debug.Log(ClickedButton[0] + ", " + ClickedButton[1] + ", " + ClickedButton[2] + ", " + ClickedButton[3]);
     }
 
     // 눌려진 버튼이 몇번 버튼인지 반환함
     public static int whoClickedButton()
     {
-        for (int i=0;i<4;i++)
+        for (int i = 0; i < 4; i++)
         {
             if (ClickedButton[i] == true)
                 return i;
@@ -110,103 +114,26 @@ public class SpawnerButton : MonoBehaviour
     }
 
     //---------------------------------------------------실질적으로 버튼이 눌렸을시 작동되는 함수들-----------------------------------------------
-    public void Spawner0()
+    public void Sample()
     {
-        int tmp = 0;
         // 클릭된 버튼을 활성화 시키며 그 외 버튼은 비활성화
-        if (ClickedButton[tmp] == false)
+        if (ClickedButton[myNumber] == false)
         {
-            me = true;
-            ClickedButton[tmp] = true;
+            ClickedButton[myNumber] = true;
             for (int i = 0; i < 4; ++i)
             {
-                if (i == tmp)
+                if (i == myNumber)
                     continue;
                 ClickedButton[i] = false;
             }
         }
         else // 활성화된 버튼을 비활성화
         {
-            me = false;
-            ClickedButton[tmp] = false;
+            ClickedButton[myNumber] = false;
+            DefanceManager.WatingMinion = null;
         }
 
-        if (ClickedButton[tmp] == true) me = true;
-        ClickedCheck();
-        showbuttonsState();
-    }
-
-    public void Spawner1()
-    {
-        int tmp = 1;
-        // 클릭된 버튼을 활성화 시키며 그 외 버튼은 비활성화
-        if (ClickedButton[tmp] == false)
-        {
-            ClickedButton[tmp] = true;
-            for (int i = 0; i < 4; ++i)
-            {
-                if (i == tmp)
-                    continue;
-                ClickedButton[i] = false;
-            }
-        }
-        else // 활성화된 버튼을 비활성화
-        {
-            ClickedButton[tmp] = false;
-        }
-
-
-        ClickedCheck();
-
-        showbuttonsState();
-    }
-
-    public void Spawner2()
-    {
-        int tmp = 2;
-        // 클릭된 버튼을 활성화 시키며 그 외 버튼은 비활성화
-        if (ClickedButton[tmp] == false)
-        {
-            ClickedButton[tmp] = true;
-            for (int i = 0; i < 4; ++i)
-            {
-                if (i == tmp)
-                    continue;
-                ClickedButton[i] = false;
-            }
-        }
-        else // 활성화된 버튼을 비활성화
-        {
-            ClickedButton[tmp] = false;
-        }
-
-        ClickedCheck();
-
-        showbuttonsState();
-    }
-
-    public void Spawner3()
-    {
-        int tmp = 3;
-        // 클릭된 버튼을 활성화 시키며 그 외 버튼은 비활성화
-        if (ClickedButton[tmp] == false)
-        {
-            ClickedButton[tmp] = true;
-            for (int i = 0; i < 4; ++i)
-            {
-                if (i == tmp)
-                    continue;
-                ClickedButton[i] = false;
-            }
-        }
-        else // 활성화된 버튼을 비활성화
-        {
-            ClickedButton[tmp] = false;
-        }
-
-        ClickedCheck();
-
-        showbuttonsState();
+        DefanceManager.WatingMinion = MyMinion[myNumber];
     }
 
 
