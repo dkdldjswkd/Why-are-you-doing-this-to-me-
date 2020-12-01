@@ -12,13 +12,15 @@ public class SpawnerButton : MonoBehaviour
 {
     public static bool[] ClickedButton = new bool[4]; //4개의 버튼의 활성화/비활성화를 판단.
     public static GameObject[] MyMinion = new GameObject[4]; //4개의 버튼이 소유하고있는 미니언들을 나타냄.
+
+
     int myNumber; //this가 몇번째 버튼인지
     string myName; //this의 이름
     Text ButtonText; //this의 버튼 텍스트
 
     bool me;
 
-    static int RandomX, RandomY; // 랜덤값부여 변수
+    public static int RandomX, RandomY; // 랜덤값부여 변수
 
     private void Start()
     {

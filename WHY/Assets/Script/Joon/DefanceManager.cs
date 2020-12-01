@@ -67,7 +67,7 @@ public class DefanceManager : MonoBehaviour
     {
         MakeCost();
         PrintLevel();
-       // SummonObject();
+        SummonObject();
     }
 
     // 시간에 따른 코스트 생성 함수
@@ -105,7 +105,11 @@ public class DefanceManager : MonoBehaviour
                 {
                     GameObject summondObject = null;
 
-                    summondObject = Instantiate(WatingMinion, new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity) as GameObject;
+                    summondObject = Instantiate(WatingMinion, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity) as GameObject;
+                    for(int i = 0; i < 4; ++i)
+                    {
+                        SpawnerButton.ClickedButton[i] = false;
+                    }                    
                     SpawnerButton.showbuttonsState();
                     Cost--;
 
