@@ -71,7 +71,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d27853066484b5b469b300e6dadca7f9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2b8573efddcffb7448823b2701ef89e3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap_Sampler:
@@ -140,7 +140,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - PixelSnap: 0
-    - _1st2nd_Shades_Feather: 0.0001
+    - _1st2nd_Shades_Feather: 0.073
     - _1st_ShadeColor_Feather: 0.392
     - _1st_ShadeColor_Step: 0.428
     - _2nd_ShadeColor_Feather: 0.073
@@ -148,7 +148,7 @@ Material:
     - _Add_Antipodean_RimLight: 0
     - _Ap_RimLight_FeatherOff: 0
     - _Ap_RimLight_Power: 0.1
-    - _BaseColor_Step: 0.41
+    - _BaseColor_Step: 0.428
     - _BaseShade_Feather: 0.392
     - _BlurLevelMatcap: 0
     - _BlurLevelSGM: 0
@@ -210,7 +210,7 @@ Material:
     - _Rotate_MatCapUV: 0
     - _Rotate_NormalMapForMatCapUV: 0
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0
+    - _ShadeColor_Step: 0.09
     - _SrcBlend: 1
     - _StepOffset: 0
     - _TweakHighColorOnShadow: 0
