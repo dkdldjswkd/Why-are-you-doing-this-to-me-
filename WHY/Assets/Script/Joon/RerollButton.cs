@@ -31,9 +31,9 @@ public class RerollButton : MonoBehaviour
         SpawnerButton.ActButton = 100;
         for (int i = 0; i < 4; ++i)
         {
-            GameObject.Find("SpawnerButton_" + i).GetComponent<SpawnerButton>().roll();            
+            GameObject.Find("SpawnerButton_" + i).GetComponent<SpawnerButton>().roll();
         }
-        
+
 
         print("리롤");
     }

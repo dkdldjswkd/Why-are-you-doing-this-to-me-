@@ -108,7 +108,7 @@ public class DefanceManager : MonoBehaviour
         if (SpawnerButton.ActButton != 100)
         {
             // 카메라에서 스크린으로 쏘는 레이저, 마우스 포지션 좌표에
-            Ray ray = RayCamera.ScreenPointToRay(Input.mousePosition); 
+            Ray ray = RayCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
             //좌클릭시, ray가 물체에 충돌했으며, 충돌한 물체의 tag가 ground 라면
@@ -120,11 +120,11 @@ public class DefanceManager : MonoBehaviour
                     //실질적으로 미니언이 생성되는 구간
                     GameObject summondObject = null;
 
-                    summondObject = Instantiate(WatingMinion, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity) as GameObject;
-                    for(int i = 0; i < 4; ++i)
+                    summondObject = Instantiate(WatingMinion, new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity) as GameObject;
+                    for (int i = 0; i < 4; ++i)
                     {
                         SpawnerButton.ClickedButton[i] = false;
-                    }                    
+                    }
                     SpawnerButton.showbuttonsState();
                     Cost--;
 

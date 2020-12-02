@@ -41,7 +41,7 @@ public class SpawnerButton : MonoBehaviour
         myNumber = myName[myName.Length - 1] - 48;
 
         ButtonText = transform.GetChild(0).GetComponent<Text>();
-       
+
         roll();
     }
 
@@ -59,7 +59,7 @@ public class SpawnerButton : MonoBehaviour
         MyMinion[myNumber] = DefanceManager.Minions[RandomX, RandomY];
         MyMinionSprite[myNumber] = DefanceManager.MinionsSprite[RandomX, RandomY];
         myImage.sprite = DefanceManager.MinionsSprite[RandomX, RandomY];
-        DefanceManager.MinionActCheck[RandomX, RandomY] = 1;       
+        DefanceManager.MinionActCheck[RandomX, RandomY] = 1;
     }
 
     private void Update()
@@ -68,7 +68,7 @@ public class SpawnerButton : MonoBehaviour
         myImage.sprite = MyMinionSprite[myNumber];
         ButtonText.text = MyMinion[myNumber].name;
     }
-    
+
     //활성화 표시
     void ifAct()
     {
