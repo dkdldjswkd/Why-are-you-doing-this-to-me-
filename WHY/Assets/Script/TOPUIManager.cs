@@ -38,6 +38,8 @@ public class TOPUIManager : MonoBehaviour
     bool setA;  //알파값 조절할지 정하기
 
     public GameObject startplane;   //소환 첫 위치
+    public Transform MainTarget;    //소환된 영웅들이 가야할 최종목표지점
+    public int MapHero; //소환된 영웅 수
 
     void Start()
     {
@@ -48,6 +50,8 @@ public class TOPUIManager : MonoBehaviour
         topui.SetActive(false);
         raund = 1;  //라운드는 1로 설정 애초에 0라운드는 말이 안되고 아래 나머지 값때문에 영웅이 소환됨.
         SummonsCount = 0;
+
+        MapHero = 0;
     }
 
     void Update()
@@ -158,12 +162,25 @@ public class TOPUIManager : MonoBehaviour
     //현제 소환된 수 줄이기 모두 사라지면 이미지 서서히 사라짐
     public void DwonSummonsCount(int herotype)
     {
+        MapHero++;
         SummonsCount--;
         if(SummonsCount==0)
         {
             setA = true;
         }
         print("반환 :" + herotype);
+
+        if (herotype <= 2)
+        {
+            GameObject ManHero = Instantiate(Resources.Load("Prefab/hero/ManWarrior")) as GameObject;
+            ManHero.transform.position = startplane.transform.position;
+        }
+        else
+        {
+            GameObject WomanHero = Instantiate(Resources.Load("Prefab/hero/WomanWarrior")) as GameObject;
+            WomanHero.transform.position = startplane.transform.position;
+        }
+           
     }
 
     //현제 소환된 수

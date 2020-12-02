@@ -29,9 +29,9 @@ public class Hero : MonoBehaviour
         float avg = street * percent; //거리의 이동 평균을 구함
         percent += 0.0002f;
 
-        print("start 와 end 거리 :" + street);
-        print((percent*100)+"% 이동");
-        print("퍼센트 이동 거리:" + avg);
+        //print("start 와 end 거리 :" + street);
+        //print((percent*100)+"% 이동");
+        //print("퍼센트 이동 거리:" + avg);
 
         //end 이미지좌표까지 도착하지 않았다면 (이동)
         if (this.transform.localPosition.x <= TOPUIManager.Instance.end.transform.localPosition.x)

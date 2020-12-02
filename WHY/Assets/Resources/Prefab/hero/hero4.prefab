@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 2
-  herotype: 0
+  herotype: 4
 --- !u!1001 &6444495203787644261
 PrefabInstance:
   m_ObjectHideFlags: 0
