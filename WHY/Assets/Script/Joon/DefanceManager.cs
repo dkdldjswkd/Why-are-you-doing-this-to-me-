@@ -16,7 +16,6 @@ public class DefanceManager : MonoBehaviour
 
     [SerializeField] Camera RayCamera;
 
-
     [SerializeField] Text LevelText; // 플레이러 레벨을 화면에 나타내는 텍스트
     [SerializeField] Text CostText; // 코스트를 화면에 나타내는 텍스트
 
@@ -26,9 +25,6 @@ public class DefanceManager : MonoBehaviour
 
     void Start()
     {
-        
-        SpawnerButton.ActButton = SpawnerButton.WhoOn.NotClicked;
-
         Cost = 0;
         if (Production == 0) Production = 1;
         if (MaxCost == 0) MaxCost = 10;
@@ -82,6 +78,10 @@ public class DefanceManager : MonoBehaviour
         MakeCost();
         PrintLevel();
         SummonObject();
+
+        //다른 객체의 스크립트 가져오기
+        //SpawnerButton a = GameObject.Find("SpawnerButton_0").GetComponent<SpawnerButton>();
+        //a.Sample();        
     }
 
     // 시간에 따른 코스트 생성 함수
@@ -104,11 +104,11 @@ public class DefanceManager : MonoBehaviour
     //유닛소환 함수
     void SummonObject()
     {
-        //유닛 스포너 버튼을 누른게 참일경우
-        if (SpawnerButton.ClickedCheck())
+        //활성화된 버튼이 있다면
+        if (SpawnerButton.ActButton != 100)
         {
-
-            Ray ray = RayCamera.ScreenPointToRay(Input.mousePosition); // 카메라에서 스크린으로 쏘는 레이저, 마우스 포지션 좌표에
+            // 카메라에서 스크린으로 쏘는 레이저, 마우스 포지션 좌표에
+            Ray ray = RayCamera.ScreenPointToRay(Input.mousePosition); 
             RaycastHit hit;
 
             //좌클릭시, ray가 물체에 충돌했으며, 충돌한 물체의 tag가 ground 라면
@@ -117,6 +117,7 @@ public class DefanceManager : MonoBehaviour
                 //돈이 1원 이상 있다면
                 if (Cost >= 1)
                 {
+                    //실질적으로 미니언이 생성되는 구간
                     GameObject summondObject = null;
 
                     summondObject = Instantiate(WatingMinion, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity) as GameObject;
@@ -127,41 +128,8 @@ public class DefanceManager : MonoBehaviour
                     SpawnerButton.showbuttonsState();
                     Cost--;
 
-                    //활성화된 스포너 버튼
-                    //int tmp = SpawnerButton.whoClickedButton();
-                    //switch (tmp)
-                    //{
-                    //    case 0:
-                    //        summondObject = Instantiate(Minions[0, 0], new Vector3(hit.point.x, 0, hit.point.z), Quaternion.identity) as GameObject;
-                    //        SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
-                    //        SpawnerButton.showbuttonsState();
-                    //        Cost--;
-                    //        break;
-                    //    case 1:
-                    //        summondObject = Instantiate(Unit2, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                    //        SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
-                    //        SpawnerButton.showbuttonsState();
-                    //        Cost--;
-                    //        break;
-                    //    case 2:
-                    //        summondObject = Instantiate(Unit3, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                    //        SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
-                    //        SpawnerButton.showbuttonsState();
-                    //        Cost--;
-                    //        break;
-                    //    case 3:
-                    //        summondObject = Instantiate(Unit4, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                    //        SpawnerButton.ClickedButton[tmp] = false; // 기물을 배치했으니 눌렸던 버튼 비활성화
-                    //        SpawnerButton.showbuttonsState();
-                    //        Cost--;
-                    //        break;
-
-                    //    case 100:
-                    //        print("스포너 버튼이 아무것도 눌려있지 않음");
-                    //        break;
-                    //}
-
-
+                    GameObject.Find("SpawnerButton_" + SpawnerButton.ActButton).GetComponent<SpawnerButton>().roll();
+                    SpawnerButton.ActButton = 100;
                 }
                 else
                 {
