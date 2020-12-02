@@ -57,13 +57,15 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Joon\SpawnerButton.cs" />
     <Compile Include="Assets\Script\Joon\DefanceManager.cs" />
+    <Compile Include="Assets\Others\KY_effects\Script\Lighting.cs" />
     <Compile Include="Assets\Script\Joon\RerollButton.cs" />
+    <Compile Include="Assets\Script\TestEnd.cs" />
     <Compile Include="Assets\Script\TOPUIManager.cs" />
     <Compile Include="Assets\Script\Joon\LevelUpButton.cs" />
     <Compile Include="Assets\Script\HeroMove.cs" />
+    <Compile Include="Assets\Others\KY_effects\Script\ConGUI.cs" />
     <Compile Include="Assets\Script\HPbar.cs" />
     <Compile Include="Assets\Script\Hero.cs" />
-    <Compile Include="Assets\Script\TestEnd.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
@@ -87,6 +89,7 @@
      <None Include="Assets\Graphic\사용할 에셋\사용할  에셋.txt" />
      <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Clipping.shader" />
      <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\ToonColor_ShadingGradeMap_StencilMask.shader" />
+     <None Include="Assets\Others\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
      <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Mobile_TransClipping.shader" />
      <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Mobile_StencilOut.shader" />
      <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\ToonColor_ShadingGradeMap_AngelRing_TransClipping_StencilOut.shader" />

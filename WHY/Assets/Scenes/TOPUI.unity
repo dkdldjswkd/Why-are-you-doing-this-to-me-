@@ -232,7 +232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.53, y: 28.070002}
+  m_AnchoredPosition: {x: 59.12, y: 28.070002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &12893942
@@ -737,7 +737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218509247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -371.4, y: -257.6, z: 46.2}
+  m_LocalPosition: {x: -427, y: -257.6, z: 46.2}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 12893941}
@@ -1107,7 +1107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42.840004, y: 28.070002}
+  m_AnchoredPosition: {x: 48.28, y: 28.070002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305306682
@@ -1827,7 +1827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515798890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -516.5, y: -257.6, z: 46.2}
+  m_LocalPosition: {x: -564, y: -257.6, z: 46.2}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 305306681}
@@ -6137,7 +6137,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3977607593489321893, guid: 13add7f326a0f6e4a875d5a7f8c35c69, type: 3}
       propertyPath: m_AngularSpeed
-      value: 20
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3977607593489321893, guid: 13add7f326a0f6e4a875d5a7f8c35c69, type: 3}
       propertyPath: m_StoppingDistance
@@ -6230,7 +6230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9008823240176178033, guid: 3c5ea6e25c9b659449f7ab11712f5f66, type: 3}
       propertyPath: m_AngularSpeed
-      value: 30
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 9008823240176178034, guid: 3c5ea6e25c9b659449f7ab11712f5f66, type: 3}
       propertyPath: m_LocalPosition.x
