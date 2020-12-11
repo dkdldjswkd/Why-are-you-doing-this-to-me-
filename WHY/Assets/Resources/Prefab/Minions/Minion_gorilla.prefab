@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 1693356011975490979}
   - component: {fileID: 1693356011975490976}
   - component: {fileID: -4994337170788816387}
+  - component: {fileID: 6711478439471636998}
   m_Layer: 8
   m_Name: Minion_gorilla
   m_TagString: Monster
@@ -417,6 +418,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp: 1
   hp: 1
+--- !u!65 &6711478439471636998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693356011975490977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 3}
+  m_Center: {x: 0, y: 2, z: 0.2}
 --- !u!1 &1693356012001857032
 GameObject:
   m_ObjectHideFlags: 0

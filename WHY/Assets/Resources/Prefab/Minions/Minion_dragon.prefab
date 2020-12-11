@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8125833776270705893}
   - component: {fileID: -3072869736788079090}
+  - component: {fileID: 8914182889267217728}
   m_Layer: 8
   m_Name: Minion_dragon
   m_TagString: Monster
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxhp: 1
   hp: 1
+--- !u!65 &8914182889267217728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8125833776270705890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 3, z: 3}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &8125833775877179335
 PrefabInstance:
   m_ObjectHideFlags: 0

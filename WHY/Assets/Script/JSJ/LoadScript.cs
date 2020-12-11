@@ -23,7 +23,7 @@ public class LoadScript : MonoBehaviour
     {
         if (Target != null)
         {
-            transform.LookAt(Target);
+            transform.LookAt(new Vector3(Target.transform.position.x,gameObject.transform.position.y,Target.transform.position.z));
         }
         else
         {
