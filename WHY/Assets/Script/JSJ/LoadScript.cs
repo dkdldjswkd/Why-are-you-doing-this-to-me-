@@ -12,7 +12,10 @@ public class LoadScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if( null !=GameObject.FindWithTag("Warrior"))
         Target = GameObject.FindWithTag("Warrior").transform;
+
+        TOPUIManager.Instance.mapheroup();
     }
 
     // Update is called once per frame
@@ -24,7 +27,8 @@ public class LoadScript : MonoBehaviour
         }
         else
         {
-            Target = GameObject.FindWithTag("Warrior").transform;
+            if (null != GameObject.FindWithTag("Warrior"))
+                Target = GameObject.FindWithTag("Warrior").transform;
         }
     }
 

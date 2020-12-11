@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8125833776270705893}
-  - component: {fileID: 1342736721454585496}
+  - component: {fileID: -3072869736788079090}
   m_Layer: 8
   m_Name: Minion_dragon
   m_TagString: Monster
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1342736721454585496
+--- !u!114 &-3072869736788079090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8125833776270705890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20554fd19dc33b64db69d729bc8f06d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 648e8874673f26c4e9ab13257cb9dacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhp: 100
-  hp: 100
+  maxhp: 1
+  hp: 1
 --- !u!1001 &8125833775877179335
 PrefabInstance:
   m_ObjectHideFlags: 0
