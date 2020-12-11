@@ -66,6 +66,7 @@
     <Compile Include="Assets\Others\KY_effects\Script\ConGUI.cs" />
     <Compile Include="Assets\Script\HPbar.cs" />
     <Compile Include="Assets\Script\Hero.cs" />
+    <Compile Include="Assets\Script\Joon\Minion.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />

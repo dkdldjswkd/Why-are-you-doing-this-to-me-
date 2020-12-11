@@ -1225,9 +1225,10 @@ GameObject:
   - component: {fileID: 8422892626592999198}
   - component: {fileID: 310557154088456594}
   - component: {fileID: 1804013015663470091}
+  - component: {fileID: 8555971077670939796}
   m_Layer: 0
   m_Name: Minion_dog
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1296,6 +1297,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8555971077670939796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422892626600285392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20554fd19dc33b64db69d729bc8f06d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8422892626600285394
 GameObject:
   m_ObjectHideFlags: 0
