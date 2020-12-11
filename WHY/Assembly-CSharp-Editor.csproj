@@ -660,66 +660,6 @@
       <Project>{7DEA8FA1-9364-E382-D679-1C8D5136A8D9}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="ShaderProperty.Editor.csproj">
-      <Project>{DEA6D80A-0580-23F4-6757-CA61F195750E}</Project>
-      <Name>ShaderProperty.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniUnlit.Editor.csproj">
-      <Project>{B54FA4A2-7D7C-C47E-B176-C1B2BA86E8ED}</Project>
-      <Name>UniUnlit.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniHumanoid.csproj">
-      <Project>{4E35265D-1CD2-5ECD-3DB5-23095DB4873D}</Project>
-      <Name>UniHumanoid</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniJSON.csproj">
-      <Project>{825C010B-6A8C-DA5C-16F2-8E0726B0789D}</Project>
-      <Name>UniJSON</Name>
-    </ProjectReference>
-    <ProjectReference Include="DepthFirstScheduler.csproj">
-      <Project>{E4DDCC79-7914-0D79-64E5-0B71DBD2688E}</Project>
-      <Name>DepthFirstScheduler</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniGLTF.Editor.csproj">
-      <Project>{6800BAFE-0B68-8552-EBBF-491A397F08FB}</Project>
-      <Name>UniGLTF.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MeshUtility.Editor.csproj">
-      <Project>{B53E75EF-2D6E-85C6-F2D9-B30927E20A40}</Project>
-      <Name>MeshUtility.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MToon.Editor.csproj">
-      <Project>{7FC53B6A-C280-6B58-1DA8-EA7318CFC75A}</Project>
-      <Name>MToon.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniHumanoid.Editor.csproj">
-      <Project>{76349565-E2E8-36AB-A97B-EF5C943BF4F1}</Project>
-      <Name>UniHumanoid.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="MeshUtility.csproj">
-      <Project>{4B229799-DF5D-4854-C2A8-2CBF990EF412}</Project>
-      <Name>MeshUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="VRM.csproj">
-      <Project>{E88975CA-AADE-B383-7F63-3482774FDE30}</Project>
-      <Name>VRM</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniVRM.Editor.csproj">
-      <Project>{34D5F2A5-549B-5EF7-60A4-98127C361816}</Project>
-      <Name>UniVRM.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniUnlit.csproj">
-      <Project>{3FFC7F00-0AE3-7089-4D40-90F54E41E6DE}</Project>
-      <Name>UniUnlit</Name>
-    </ProjectReference>
-    <ProjectReference Include="MToon.csproj">
-      <Project>{0FF66F3B-E9C8-5B79-EB71-6D1E35A9D95B}</Project>
-      <Name>MToon</Name>
-    </ProjectReference>
-    <ProjectReference Include="ShaderProperty.Runtime.csproj">
-      <Project>{E6D754D3-C225-51BA-900D-1F0AAACC463E}</Project>
-      <Name>ShaderProperty.Runtime</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
