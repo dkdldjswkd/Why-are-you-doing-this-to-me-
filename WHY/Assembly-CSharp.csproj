@@ -59,13 +59,16 @@
     <Compile Include="Assets\Script\Joon\DefanceManager.cs" />
     <Compile Include="Assets\Others\KY_effects\Script\Lighting.cs" />
     <Compile Include="Assets\Script\Joon\RerollButton.cs" />
-    <Compile Include="Assets\Script\TestEnd.cs" />
-    <Compile Include="Assets\Script\TOPUIManager.cs" />
+    <Compile Include="Assets\Script\JSJ\TestEnd.cs" />
+    <Compile Include="Assets\Script\JSJ\TOPUIManager.cs" />
     <Compile Include="Assets\Script\Joon\LevelUpButton.cs" />
-    <Compile Include="Assets\Script\HeroMove.cs" />
+    <Compile Include="Assets\Script\JSJ\HeroMove.cs" />
     <Compile Include="Assets\Others\KY_effects\Script\ConGUI.cs" />
-    <Compile Include="Assets\Script\HPbar.cs" />
-    <Compile Include="Assets\Script\Hero.cs" />
+    <Compile Include="Assets\Script\JSJ\HPbar.cs" />
+    <Compile Include="Assets\Script\JSJ\Hero.cs" />
+    <Compile Include="Assets\Script\JSJ\AttackCollision.cs" />
+    <Compile Include="Assets\Script\JSJ\LoadScript.cs" />
+    <Compile Include="Assets\HeroAudio.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
