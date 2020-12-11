@@ -130,6 +130,8 @@ public class DefanceManager : MonoBehaviour
 
                     GameObject.Find("SpawnerButton_" + SpawnerButton.ActButton).GetComponent<SpawnerButton>().roll();
                     SpawnerButton.ActButton = 100;
+
+                    TOPUIManager.Instance.mapheroup();
                 }
                 else
                 {

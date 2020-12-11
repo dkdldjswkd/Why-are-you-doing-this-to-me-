@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5087339665142159345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EyeCTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5086885040828553977}
   - component: {fileID: 5171365189502684459}
   - component: {fileID: -521261104067871883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Minion_rabbit
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20554fd19dc33b64db69d729bc8f06d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 100
+  hp: 100
 --- !u!1 &5084955647926762311
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5081866674401715551}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Side_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5087045354481466945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottomEyeCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5086870061701837445}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpperEyeCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5086961931317870339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Crown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5086866806943300869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Side_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5087342625001524975}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5087369566460122567}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5087058095409848053}
   - component: {fileID: 5151909519163488771}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5087316180760423799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spine01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5082258911035299593}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EyeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
