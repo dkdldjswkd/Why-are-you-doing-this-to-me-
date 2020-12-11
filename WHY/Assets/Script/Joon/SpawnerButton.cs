@@ -66,7 +66,7 @@ public class SpawnerButton : MonoBehaviour
     {
         // 비용이 많이 드는 처리 수정해야함, 버튼의 상태를 업데이트 해주는 함수
         myImage.sprite = MyMinionSprite[myNumber];
-        ButtonText.text = MyMinion[myNumber].name;
+        //ButtonText.text = MyMinion[myNumber].name;
     }
 
     //활성화 표시

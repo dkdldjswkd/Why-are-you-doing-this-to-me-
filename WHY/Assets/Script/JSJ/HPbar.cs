@@ -58,7 +58,7 @@ public class HPbar : MonoBehaviour
             
             if (slider.value != 0)
             {
-                M_hpBarList[i].transform.position = m_cam.WorldToScreenPoint(m_objectList[i].transform.position + new Vector3(5.5f, 24f, 0));
+                M_hpBarList[i].transform.position = m_cam.WorldToScreenPoint(m_objectList[i].transform.position + new Vector3(0f, 3f, 0));
             }
             else
             {

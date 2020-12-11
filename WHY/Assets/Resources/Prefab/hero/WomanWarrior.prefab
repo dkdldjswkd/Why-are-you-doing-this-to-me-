@@ -2629,8 +2629,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6476443637688151370}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -217.49998, y: -53.87524, z: -8.099998}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6476443637808190732}
   - {fileID: 6476443637915018028}
@@ -2685,7 +2685,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 200
-  m_StoppingDistance: 15
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -2706,14 +2706,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackcollision: {fileID: 6476443637053512295}
-  speed: 4
-  Powerspeed: 15
+  speed: 1
+  Powerspeed: 3
   maxhp: 120
   hp: 120
   MainTarget: {fileID: 0}
   subtarget: {fileID: 0}
-  swordaudio1: {fileID: 8300000, guid: bbf14de8ea4da5641bd8bf686171d065, type: 3}
-  swordaudio2: {fileID: 8300000, guid: 77063966b3245da459655c1073c09ab7, type: 3}
   targetmask:
     serializedVersion: 2
     m_Bits: 256

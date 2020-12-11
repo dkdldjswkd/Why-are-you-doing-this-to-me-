@@ -43,7 +43,7 @@ public class HeroMove : MonoBehaviour
 
     void isRun()
     {
-        Collider[] attackcoll = Physics.OverlapSphere(transform.position, 15.0f, targetmask);
+        Collider[] attackcoll = Physics.OverlapSphere(transform.position, 3.0f, targetmask);
         if (attackcoll.Length != 0)
         {
             //print("어택 배열 수 :" + attackcoll.Length);
@@ -63,7 +63,7 @@ public class HeroMove : MonoBehaviour
         }
         else
         {
-            Collider[] movecoll = Physics.OverlapSphere(transform.position, 50.0f, targetmask);
+            Collider[] movecoll = Physics.OverlapSphere(transform.position, 10.0f, targetmask);
             if (movecoll.Length != 0)
             {
                 //print("런 배열 수 :" + movecoll.Length);

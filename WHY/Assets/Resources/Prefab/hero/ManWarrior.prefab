@@ -3872,8 +3872,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7604064804444333216}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -217.65999, y: -52.325745, z: 1.9000254}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 6315911032580161635}
   - {fileID: 6343057106724262541}
@@ -3966,14 +3966,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackcollision: {fileID: 8732701212532774065}
-  speed: 7
-  Powerspeed: 25
+  speed: 3
+  Powerspeed: 6
   maxhp: 80
   hp: 80
   MainTarget: {fileID: 0}
   subtarget: {fileID: 0}
-  swordaudio1: {fileID: 8300000, guid: bbf14de8ea4da5641bd8bf686171d065, type: 3}
-  swordaudio2: {fileID: 8300000, guid: 77063966b3245da459655c1073c09ab7, type: 3}
   targetmask:
     serializedVersion: 2
     m_Bits: 256
