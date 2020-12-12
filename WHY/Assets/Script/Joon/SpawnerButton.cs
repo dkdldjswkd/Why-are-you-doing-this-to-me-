@@ -19,13 +19,15 @@ public class SpawnerButton : MonoBehaviour
     int myNumber; //this가 몇번째 버튼인지
     string myName; //this의 이름
     UnityEngine.UI.Image myImage; // 자신 이미지
-    Text ButtonText; //this의 버튼 텍스트
+    //Text ButtonText; //this의 버튼 텍스트
 
     public static int RandomX, RandomY; // 랜덤값부여 변수
 
     private void Start()
     {
+
         myImage = GetComponent<UnityEngine.UI.Image>();
+
 
         ActButton = 100; //비활성화
 
@@ -40,9 +42,9 @@ public class SpawnerButton : MonoBehaviour
         myName = gameObject.name;
         myNumber = myName[myName.Length - 1] - 48;
 
-        ButtonText = transform.GetChild(0).GetComponent<Text>();
+        //  ButtonText = transform.GetChild(0).GetComponent<Text>();
 
-        roll();
+        Invoke("roll", 0.01f); // roll(); 하면 함수가 씹힘
     }
 
     public void roll()
@@ -60,14 +62,10 @@ public class SpawnerButton : MonoBehaviour
         MyMinionSprite[myNumber] = DefanceManager.MinionsSprite[RandomX, RandomY];
         myImage.sprite = DefanceManager.MinionsSprite[RandomX, RandomY];
         DefanceManager.MinionActCheck[RandomX, RandomY] = 1;
+
+        print("roll"+myNumber);
     }
 
-    private void Update()
-    {
-        // 비용이 많이 드는 처리 수정해야함, 버튼의 상태를 업데이트 해주는 함수
-        myImage.sprite = MyMinionSprite[myNumber];
-        //ButtonText.text = MyMinion[myNumber].name;
-    }
 
     //활성화 표시
     void ifAct()

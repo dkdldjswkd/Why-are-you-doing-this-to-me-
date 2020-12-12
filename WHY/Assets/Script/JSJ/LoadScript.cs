@@ -5,6 +5,7 @@ using UnityEngine;
 public class LoadScript : MonoBehaviour
 {
     Transform Target;
+    [SerializeField]GameObject AttackCollision;
 
     public float maxhp = 1;
     public float hp = 1;
@@ -12,7 +13,10 @@ public class LoadScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if( null !=GameObject.FindWithTag("Warrior"))
         Target = GameObject.FindWithTag("Warrior").transform;
+
+        TOPUIManager.Instance.mapheroup();
     }
 
     // Update is called once per frame
@@ -20,11 +24,12 @@ public class LoadScript : MonoBehaviour
     {
         if (Target != null)
         {
-            transform.LookAt(Target);
+            transform.LookAt(new Vector3(Target.transform.position.x,gameObject.transform.position.y,Target.transform.position.z));
         }
         else
         {
-            Target = GameObject.FindWithTag("Warrior").transform;
+            if (null != GameObject.FindWithTag("Warrior"))
+                Target = GameObject.FindWithTag("Warrior").transform;
         }
     }
 
@@ -37,5 +42,18 @@ public class LoadScript : MonoBehaviour
     public IEnumerator OnHittColor()
     {
         yield return new WaitForSeconds(0.1f);
+    }
+
+
+    private void OnAttackCollision()
+    {
+        AttackCollision.SetActive(true);
+        print("온 어택 콜리전");
+    }
+
+    private void OffAttackCollision()
+    {
+        AttackCollision.SetActive(false);
+        print("오프 어택 콜리전");
     }
 }

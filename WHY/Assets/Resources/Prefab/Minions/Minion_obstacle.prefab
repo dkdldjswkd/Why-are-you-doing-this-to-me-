@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4960836139305106737}
+  - component: {fileID: 8977414736467350344}
+  - component: {fileID: -4846499046897311074}
   m_Layer: 8
   m_Name: Minion_obstacle
   m_TagString: Monster
@@ -24,13 +26,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2544284281394708909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.19, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 2037601674162030289}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8977414736467350344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544284281394708909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648e8874673f26c4e9ab13257cb9dacf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackCollision: {fileID: 0}
+  maxhp: 150
+  hp: 150
+--- !u!65 &-4846499046897311074
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544284281394708909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4403528, y: 1.6342924, z: 1.3843079}
+  m_Center: {x: -0.012009701, y: 0.9328539, z: 0}
 --- !u!1001 &2037601674162166865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,7 +132,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5400000, guid: 0131770b238311041910d0a345caf914, type: 3}
+      propertyPath: m_Constraints
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 0131770b238311041910d0a345caf914, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5400000, guid: 0131770b238311041910d0a345caf914, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0131770b238311041910d0a345caf914, type: 3}
 --- !u!4 &2037601674162030289 stripped
 Transform:
