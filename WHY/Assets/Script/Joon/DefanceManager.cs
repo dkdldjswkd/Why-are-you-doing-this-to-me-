@@ -12,7 +12,8 @@ public class DefanceManager : MonoBehaviour
     public static GameObject WatingMinion;
 
     int MaxCost; // 최대 코스트 제한
-    float Production; // 코스트 생성 속도
+    [SerializeField]float Production; // 코스트 생성 속도
+    [SerializeField] static public int MaxLevel;
 
     [SerializeField] Camera RayCamera;
 

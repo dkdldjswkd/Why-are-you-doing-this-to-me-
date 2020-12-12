@@ -5,6 +5,7 @@ using UnityEngine;
 public class LoadScript : MonoBehaviour
 {
     Transform Target;
+    [SerializeField]GameObject AttackCollision;
 
     public float maxhp = 1;
     public float hp = 1;
@@ -41,5 +42,18 @@ public class LoadScript : MonoBehaviour
     public IEnumerator OnHittColor()
     {
         yield return new WaitForSeconds(0.1f);
+    }
+
+
+    private void OnAttackCollision()
+    {
+        AttackCollision.SetActive(true);
+        print("온 어택 콜리전");
+    }
+
+    private void OffAttackCollision()
+    {
+        AttackCollision.SetActive(false);
+        print("오프 어택 콜리전");
     }
 }
