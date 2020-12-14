@@ -3968,8 +3968,8 @@ MonoBehaviour:
   attackcollision: {fileID: 8732701212532774065}
   speed: 3
   Powerspeed: 6
-  maxhp: 80
-  hp: 80
+  maxhp: 150
+  hp: 150
   MainTarget: {fileID: 0}
   subtarget: {fileID: 0}
   targetmask:

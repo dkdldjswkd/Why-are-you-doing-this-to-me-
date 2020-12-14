@@ -27,7 +27,7 @@ public class Hero : MonoBehaviour
 
         float street = Math.Abs(TOPUIManager.Instance.start.transform.localPosition.x) + TOPUIManager.Instance.end.transform.localPosition.x; //start 와 end 거리를 구함
         float avg = street * percent; //거리의 이동 평균을 구함
-        percent += 0.02f;   //스피드 조절 원본 0.0002f
+        percent += 0.0002f;   //스피드 조절 원본 0.0002f
 
         //print("start 와 end 거리 :" + street);
         //print((percent*100)+"% 이동");

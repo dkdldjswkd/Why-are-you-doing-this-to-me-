@@ -76,6 +76,7 @@
     <Compile Include="Assets\Script\JSJ\MoveLord.cs" />
     <Compile Include="Assets\Script\JSJ\Hero.cs" />
     <Compile Include="Assets\Script\JSJ\AttackCollision.cs" />
+    <Compile Include="Assets\HeroSoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Others\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />

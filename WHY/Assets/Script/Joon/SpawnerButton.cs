@@ -62,8 +62,6 @@ public class SpawnerButton : MonoBehaviour
         MyMinionSprite[myNumber] = DefanceManager.MinionsSprite[RandomX, RandomY];
         myImage.sprite = DefanceManager.MinionsSprite[RandomX, RandomY];
         DefanceManager.MinionActCheck[RandomX, RandomY] = 1;
-
-        print("roll"+myNumber);
     }
 
 
