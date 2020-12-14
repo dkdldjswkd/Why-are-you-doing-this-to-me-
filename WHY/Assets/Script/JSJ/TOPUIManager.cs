@@ -24,6 +24,10 @@ public class TOPUIManager : MonoBehaviour
         }
     }
 
+    public Text RaundText;
+    public Text HeroCount;
+
+    public int stage = 1;   //스테이지
     public int raund;   //현제 라운드
     public int SummonsCount;    //오고있는 수
 
@@ -40,6 +44,7 @@ public class TOPUIManager : MonoBehaviour
     public GameObject startplane;   //소환 첫 위치
     public Transform MainTarget;    //소환된 영웅들이 가야할 최종목표지점
     public int MapHero; //소환된 영웅 수
+    int die=37;
 
     void Start()
     {
@@ -48,10 +53,72 @@ public class TOPUIManager : MonoBehaviour
         image = topui.GetComponent<Image>();
         color = image.color;
         topui.SetActive(false);
+
         raund = 1;  //라운드는 1로 설정 애초에 0라운드는 말이 안되고 아래 나머지 값때문에 영웅이 소환됨.
         SummonsCount = 0;
 
         MapHero = 0;
+
+        StartCoroutine("Onsttage");
+    }
+
+    public IEnumerator Onsttage()
+    {
+        int gohero;
+        int time;
+        print(raund + "라운드 5초후 시작");
+        yield return new WaitForSeconds(5);
+        //5초후 스테이지 시작
+
+        for (int i = 0; i < 5; i++)
+        {
+            time = Random.Range(2, 8);
+            print(time + "초후 생성");
+            yield return new WaitForSeconds(time);
+            heroProduce();
+        }
+        raund++;
+
+        print(raund + "라운드 30초후 시작");
+        yield return new WaitForSeconds(30);
+
+        for (int i = 0; i < 7; i++)
+        {
+            time = Random.Range(2, 7);
+            print(time + "초후 생성");
+            yield return new WaitForSeconds(time);
+            heroProduce();
+        }
+        raund++;
+
+        print(raund + "라운드 30초후 시작");
+        yield return new WaitForSeconds(30);
+
+        for (int i = 0; i < 10; i++)
+        {
+            time = Random.Range(2, 6);
+            print(time + "초후 생성");
+            yield return new WaitForSeconds(time);
+            heroProduce();
+        }
+        raund++;
+
+        print(raund + "라운드 30초후 시작");
+        yield return new WaitForSeconds(30);
+
+        for (int i = 0; i < 15; i++)
+        {
+            time = Random.Range(2, 6);
+            print(time + "초후 생성");
+            yield return new WaitForSeconds(time);
+            heroProduce();
+        }
+        raund++;
+    }
+
+    public int getraund()
+    {
+        return raund;
     }
 
     void Update()
@@ -70,43 +137,62 @@ public class TOPUIManager : MonoBehaviour
                 }
             }
         }
+        RaundText.text = "라운드 " + raund;
+        HeroCount.text = "물리쳐야 할 영웅 수 :" + die;      
     }
 
     public void heroProduce()   //용사 생성 10라운드 마다 영웅 캐릭 소환(버튼용)
     {
         if (topui.activeSelf == false) TOPUIOn();    //소환했을때 이미지가 없다면 띄우기
 
-        if (raund % 10 == 0)
+        switch (Random.Range(0, 4))
         {
-            switch (Random.Range(0, 2))
-            {
-                case 0:
-                    Summons(4);
-                    break;
-                case 1:
-                    Summons(5);
-                    break;
-            }
-        }
-        else
-        {
-            switch (Random.Range(0, 4))
-            {
-                case 0:
-                    Summons(0);
-                    break;
-                case 1:
-                    Summons(1);
-                    break;
-                case 2:
-                    Summons(2);
-                    break;
-                case 3:
-                    Summons(3);
-                    break;
+            case 0:
+                Summons(0);
+                break;
+            case 1:
+                Summons(1);
+                break;
+            case 2:
+                Summons(2);
+                break;
+            case 3:
+                Summons(3);
+                break;
 
-            }
         }
+
+        //if (raund % 10 == 0)
+        //{
+        //    switch (Random.Range(0, 2))
+        //    {
+        //        case 0:
+        //            Summons(4);
+        //            break;
+        //        case 1:
+        //            Summons(5);
+        //            break;
+        //    }
+        //}
+        //else
+        //{
+        //    switch (Random.Range(0, 4))
+        //    {
+        //        case 0:
+        //            Summons(0);
+        //            break;
+        //        case 1:
+        //            Summons(1);
+        //            break;
+        //        case 2:
+        //            Summons(2);
+        //            break;
+        //        case 3:
+        //            Summons(3);
+        //            break;
+
+        //    }
+        //}
     }
 
     void Summons(int value) //어떤영웅을 소환할지 판단 (0 ~ 1 남자 캐릭),  (2 ~ 3 여자 캐릭), (4 ~ 5 영웅 캐릭)
@@ -164,7 +250,7 @@ public class TOPUIManager : MonoBehaviour
     {
         MapHero++;
         SummonsCount--;
-        if(SummonsCount==0)
+        if (SummonsCount == 0)
         {
             setA = true;
         }
@@ -182,6 +268,10 @@ public class TOPUIManager : MonoBehaviour
         }
     }
 
+    public void Ondie()
+    {
+        die--;
+    }
     public void mapheroup()
     {
         MapHero++;
@@ -194,5 +284,18 @@ public class TOPUIManager : MonoBehaviour
     public int getSummonsCount()
     {
         return SummonsCount;
+    }
+    public void OnSkip()
+    {
+        StartCoroutine("Skip");
+    }
+    public IEnumerator Skip()
+    {
+        float endx = end.transform.position.x;
+        end.transform.position = new Vector3(start.transform.position.x, end.transform.position.y, end.transform.position.z);
+
+        yield return new WaitForSeconds(2f);
+
+        end.transform.position = new Vector3(endx, end.transform.position.y, end.transform.position.z);
     }
 }

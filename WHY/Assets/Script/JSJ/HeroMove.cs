@@ -32,6 +32,9 @@ public class HeroMove : MonoBehaviour
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
+        maxhp *= TOPUIManager.Instance.getraund() * 0.2f+1;
+        hp *= TOPUIManager.Instance.getraund() * 0.2f+1;
+
         subtarget = MainTarget;
     }
 
@@ -46,6 +49,8 @@ public class HeroMove : MonoBehaviour
         Collider[] attackcoll = Physics.OverlapSphere(transform.position, 3.0f, targetmask);
         if (attackcoll.Length != 0)
         {
+
+
             //print("어택 배열 수 :" + attackcoll.Length);
             //for (int i = 0; i < attackcoll.Length; i++)
             //{
@@ -53,6 +58,9 @@ public class HeroMove : MonoBehaviour
             //}
 
             subtarget = attackcoll[attackcoll.Length - 1].transform;
+
+            transform.LookAt(new Vector3(subtarget.transform.position.x, gameObject.transform.position.y, subtarget.transform.position.z));
+
 
             anim.SetBool("isRun", false);
             anim.SetBool("isWalka", false);
@@ -111,7 +119,7 @@ public class HeroMove : MonoBehaviour
 
     public void OnAttackAudio(int value)
     {
-        HeroAudio.Instance.HeroAttackSound(value);
+        HeroSoundManager.Instance.OnSound(value);
     }
 
 

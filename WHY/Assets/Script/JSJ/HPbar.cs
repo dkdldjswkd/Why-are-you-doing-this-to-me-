@@ -62,6 +62,10 @@ public class HPbar : MonoBehaviour
             }
             else
             {
+                if (m_objectList[i].tag != "Warrior")
+                {
+                    TOPUIManager.Instance.Ondie();
+                }
                 TOPUIManager.Instance.mapherodwon();
                 Destroy(m_objectList[i]);
                 Destroy(M_hpBarList[i]);
