@@ -113,7 +113,7 @@ public class DefanceManager : MonoBehaviour
             RaycastHit hit;
 
             //좌클릭시, ray가 물체에 충돌했으며, 충돌한 물체의 tag가 ground 라면
-            if (Physics.Raycast(ray, out hit) && Input.GetMouseButton(0) && hit.transform.tag == "Ground")
+            if (Physics.Raycast(ray, out hit) && Input.GetMouseButton(0) && (hit.transform.tag == "Ground" || hit.transform.tag == "Warrior"  || hit.transform.tag == "Monster"))
             {
                 //돈이 1원 이상 있다면
                 if (Cost >= 1)

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4960836139305106737}
   - component: {fileID: 8977414736467350344}
   - component: {fileID: -4846499046897311074}
+  - component: {fileID: 8004867994371313934}
   m_Layer: 8
   m_Name: Minion_obstacle
   m_TagString: Monster
@@ -56,11 +57,33 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2544284281394708909}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.4403528, y: 1.6342924, z: 1.3843079}
   m_Center: {x: -0.012009701, y: 0.9328539, z: 0}
+--- !u!195 &8004867994371313934
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544284281394708909}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 0
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &2037601674162166865
 PrefabInstance:
   m_ObjectHideFlags: 0

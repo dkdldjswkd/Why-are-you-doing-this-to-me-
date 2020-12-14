@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 7289569018137237872}
   - component: {fileID: 6739206018460198121}
   - component: {fileID: 1998847572218074674}
+  - component: {fileID: -5921428305213656686}
   m_Layer: 8
   m_Name: Minion_rabbit
   m_TagString: Monster
@@ -171,7 +172,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7240950265293875996}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -192,6 +193,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &-5921428305213656686
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240950265293875996}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 0
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7241184554713823464
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,13 +602,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19a2125e19af10c49ba1ddb877be272a, type: 3}
---- !u!1 &5379449819580181510 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9018198637930316929, guid: 19a2125e19af10c49ba1ddb877be272a, type: 3}
-  m_PrefabInstance: {fileID: 3999397656255408263}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5379449819580181511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9018198637930316928, guid: 19a2125e19af10c49ba1ddb877be272a, type: 3}
+  m_PrefabInstance: {fileID: 3999397656255408263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5379449819580181510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9018198637930316929, guid: 19a2125e19af10c49ba1ddb877be272a, type: 3}
   m_PrefabInstance: {fileID: 3999397656255408263}
   m_PrefabAsset: {fileID: 0}

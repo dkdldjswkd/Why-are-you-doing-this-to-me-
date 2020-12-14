@@ -1319,6 +1319,7 @@ GameObject:
   - component: {fileID: 2410711113552188692}
   - component: {fileID: 4337783024775471757}
   - component: {fileID: 3494671824324335883}
+  - component: {fileID: -6999989624610462699}
   m_Layer: 8
   m_Name: Minion_dog
   m_TagString: Monster
@@ -1369,7 +1370,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5899683477933985878}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4698479, z: 0.64078325}
@@ -1405,6 +1406,28 @@ MonoBehaviour:
   AttackCollision: {fileID: 2709298402016988938}
   maxhp: 50
   hp: 50
+--- !u!195 &-6999989624610462699
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5899683477933985878}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 0
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &5899683477933985880
 GameObject:
   m_ObjectHideFlags: 0

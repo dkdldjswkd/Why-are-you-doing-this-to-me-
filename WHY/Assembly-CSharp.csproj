@@ -70,18 +70,19 @@
     <Compile Include="Assets\Script\Joon\AttackCollision_Joon.cs" />
     <Compile Include="Assets\Script\JSJ\scene.cs" />
     <Compile Include="Assets\HeroSoundManager.cs" />
+    <Compile Include="Assets\Script\Joon\Meteor.cs" />
     <Compile Include="Assets\Script\JSJ\TOPUIManager.cs" />
     <Compile Include="Assets\Script\Joon\LevelUpButton.cs" />
     <Compile Include="Assets\Script\JSJ\HeroMove.cs" />
     <Compile Include="Assets\Script\JSJ\test.cs" />
     <Compile Include="Assets\Script\JSJ\HeroAudio.cs" />
     <Compile Include="Assets\Others\KY_effects\Script\ConGUI.cs" />
+    <Compile Include="Assets\Script\Joon\Heal.cs" />
     <Compile Include="Assets\Script\JSJ\HPbar.cs" />
     <Compile Include="Assets\Script\JSJ\MoveLord.cs" />
     <Compile Include="Assets\Script\JSJ\Hero.cs" />
     <Compile Include="Assets\Script\JSJ\AttackCollision.cs" />
-    <Compile Include="Assets\Script\Joon\Meteor.cs" />
-    <Compile Include="Assets\Script\Joon\Heal.cs" />
+    <Compile Include="Assets\Script\Joon\OptionButton.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Others\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
