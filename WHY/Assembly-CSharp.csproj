@@ -57,9 +57,12 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Joon\SpawnerButton.cs" />
     <Compile Include="Assets\Script\Joon\MinionAnimator.cs" />
+    <Compile Include="Assets\Script\Joon\CheckWin.cs" />
+    <Compile Include="Assets\Script\Joon\GameOverButton.cs" />
     <Compile Include="Assets\Script\Joon\Minion.cs" />
     <Compile Include="Assets\Script\Joon\DefanceManager.cs" />
     <Compile Include="Assets\Script\JSJ\TextUI.cs" />
+    <Compile Include="Assets\Script\Joon\GameOver.cs" />
     <Compile Include="Assets\Script\JSJ\LoadScript.cs" />
     <Compile Include="Assets\Others\KY_effects\Script\Lighting.cs" />
     <Compile Include="Assets\Script\JSJ\Dogmove.cs" />
@@ -77,9 +80,8 @@
     <Compile Include="Assets\Script\JSJ\MoveLord.cs" />
     <Compile Include="Assets\Script\JSJ\Hero.cs" />
     <Compile Include="Assets\Script\JSJ\AttackCollision.cs" />
-    <Compile Include="Assets\Script\Joon\GameOverButton.cs" />
-    <Compile Include="Assets\Script\Joon\GameOver.cs" />
-    <Compile Include="Assets\Script\Joon\CheckWin.cs" />
+    <Compile Include="Assets\Script\Joon\Meteor.cs" />
+    <Compile Include="Assets\Script\Joon\Heal.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Others\SD Unity-Chan Haon Custom\Shader\Unity-chan Toon Shader Ver 2.0.6\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
