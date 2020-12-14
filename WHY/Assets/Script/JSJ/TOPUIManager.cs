@@ -77,10 +77,10 @@ public class TOPUIManager : MonoBehaviour
             yield return new WaitForSeconds(time);
             heroProduce();
         }
-        raund++;
 
         print(raund + "라운드 30초후 시작");
         yield return new WaitForSeconds(30);
+        raund++;
 
         for (int i = 0; i < 7; i++)
         {
@@ -89,10 +89,10 @@ public class TOPUIManager : MonoBehaviour
             yield return new WaitForSeconds(time);
             heroProduce();
         }
-        raund++;
 
         print(raund + "라운드 30초후 시작");
         yield return new WaitForSeconds(30);
+        raund++;
 
         for (int i = 0; i < 10; i++)
         {
@@ -101,10 +101,10 @@ public class TOPUIManager : MonoBehaviour
             yield return new WaitForSeconds(time);
             heroProduce();
         }
-        raund++;
 
         print(raund + "라운드 30초후 시작");
         yield return new WaitForSeconds(30);
+        raund++;
 
         for (int i = 0; i < 15; i++)
         {
@@ -113,7 +113,6 @@ public class TOPUIManager : MonoBehaviour
             yield return new WaitForSeconds(time);
             heroProduce();
         }
-        raund++;
     }
 
     public int getraund()
@@ -139,6 +138,12 @@ public class TOPUIManager : MonoBehaviour
         }
         RaundText.text = "라운드 " + raund;
         HeroCount.text = "물리쳐야 할 영웅 수 :" + die;      
+
+        //최준영 마지막 작업
+        if(die <=0)
+        {
+            //게임이 멈추고 승리창 불러오기
+        }
     }
 
     public void heroProduce()   //용사 생성 10라운드 마다 영웅 캐릭 소환(버튼용)
@@ -270,7 +275,7 @@ public class TOPUIManager : MonoBehaviour
 
     public void Ondie()
     {
-        die--;
+        die-=1;
     }
     public void mapheroup()
     {

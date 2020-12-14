@@ -1,13 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/TOPUI 1.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/TOPUI 1.unity
-=======
-- path: Assets/Scenes/TestScene.unity
->>>>>>> 7414ccb073dca9bcff5a5a4910476cc11bad1d11
->>>>>>> a53eb37ac6219e2c10433b4a1018a8b1c3342924
+- path: Assets/Scenes/MainMenu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -62,7 +62,7 @@ public class HPbar : MonoBehaviour
             }
             else
             {
-                if (m_objectList[i].tag != "Warrior")
+                if (m_objectList[i].tag == "Warrior")
                 {
                     TOPUIManager.Instance.Ondie();
                 }
