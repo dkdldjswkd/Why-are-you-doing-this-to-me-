@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TOPUIManager : MonoBehaviour
 {
+    [SerializeField] GameObject[] OtherCanvas = new GameObject[3];
+
     private static TOPUIManager _instance;
 
     public static TOPUIManager Instance
@@ -142,7 +144,8 @@ public class TOPUIManager : MonoBehaviour
         //최준영 마지막 작업
         if(die <=0)
         {
-            //게임이 멈추고 승리창 불러오기
+            GameOver over = GameObject.Find("DefanceManager").GetComponent<GameOver>();
+            over.End(1);
         }
     }
 
