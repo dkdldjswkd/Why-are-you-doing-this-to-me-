@@ -1,0 +1,34 @@
+// 깃 협업 하는방법
+https://blog.pocu.academy/ko/2019/01/06/how-to-invite-user-to-git-repo.html
+
+//100MB이상 파일 github에 올리기
+#git lfs를 설치해줍니다.
+git lfs install
+git lfs track "*.psd" // 부분에 100MB이상 파일을 써주시면 됩니다.
+git add . // 평소처럼 add, commit, push
+git commit -m "Add design file"
+git push origin master
+
+// git pull이 에러가 날때 해결하는 방법
+git add -A
+git stash
+git pull
+
+//git branch 강의
+https://backlog.com/git-tutorial/kr/stepup/stepup2_2.html
+https://victorydntmd.tistory.com/91
+https://victorydntmd.tistory.com/78 // merge, conflict
+
+// remote, branch
+git push [remote] [branch]
+$ git push origin master
+이 커맨드에서 origin은 원격 저장소(remote)의 주소를 뜻하고, master는 현재 브랜치를 뜻합니다.
+저장소를 새로 만들면 기본으로 master 브랜치가 만들어집니다. 
+git push 뒤의 remote와 브랜치가 각각 origin과 현재 브랜치라면, 둘을 생략할 수 있습니다.
+
+remote // 원격 저장소 명, defalt는 origin
+
+// git clone / git pull 비교
+git clone은 Github의 모든 파일들을 가져오기만 함
+git pull은 local repository와 비교하여 병합을 하고, local repository에 저장( add )까지 수행
+git pull = git fetch + git merge // git fetch는 local에 연결된 remote repository의 브랜치 목록과 그 파일 내용을 최신으로 업데이트 하는 명령어입니다.
