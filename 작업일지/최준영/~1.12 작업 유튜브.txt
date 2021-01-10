@@ -1,0 +1,14 @@
+https://www.youtube.com/watch?v=7ci9GctO6_w&feature=youtu.be
+
+설명 ------------------------------------------------------------------------------
+콘솔창에 4개의 손패를 출력합니다.
+1레벨일땐 : obstacle, dog knight, rabbit 만 출력되는것을 볼 수 있고
+2레벨일땐 : heal, monkey, + 1레벨 기물(obstacle, dog kinght, rabbit)
+3레벨일땐 : golem + 1, 2 래벨 기물
+4 레벨 : change, 1~3 레벨 기물
+5 레벨 : dragon, 1~4 레벨 기물
+
+즉, 레벨이 오를수록 손패에 갖는 기물의 수가 많아지며 높은 레벨의 기물이 손에 들어올
+경우의 수가 추가됩니다.
+
++ lv.5부터는 레벨업이 제한됩니다.
