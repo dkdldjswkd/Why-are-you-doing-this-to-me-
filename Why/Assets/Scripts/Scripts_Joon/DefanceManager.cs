@@ -25,14 +25,13 @@ public class DefanceManager : MonoBehaviour
         for (int i = 0; i < PlayerLevelMax; i++)
         {
             Object[] a = Resources.LoadAll("Prefab/Minions/Level" + (i + 1).ToString());
-
             Minions.Add(new List<GameObject>());
             for (int j = 0; j < a.Length; j++)
             {
                 Minions[i].Add(a[j] as GameObject);
             }
         }
-        // Instantiate(Minions[4][0], Vector3.zero, Quaternion.identity); //테스트
+        //  Instantiate(Minions[4][0], Vector3.zero, Quaternion.identity); //테스트
 
         Reroll();
     }
@@ -64,7 +63,7 @@ public class DefanceManager : MonoBehaviour
 
     static public void Reroll()
     {
-        for(int i=0; i < 4; ++i)
+        for (int i = 0; i < 4; ++i)
         {
             int MinionLevel = Random.Range(0, PlayerLevel);
             int n = Random.Range(0, Minions[MinionLevel].Count);
