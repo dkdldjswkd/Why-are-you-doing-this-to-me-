@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Scripts_Joon\DefanceManager.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\LevelUpButton.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\RerollButton.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Joon\UnitButton.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
