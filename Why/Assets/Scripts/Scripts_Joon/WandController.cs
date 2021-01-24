@@ -12,9 +12,16 @@ public class WandController : MonoBehaviour
     {
         float PosX = MoveSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         float PosY = MoveSpeed * Time.deltaTime * Input.GetAxisRaw("Vertical");
-        Vector3 MovePosition = new Vector3(PosX ,PosY, 0);
+        float PosZ = 0;
+        if (Input.GetKey(KeyCode.Keypad8))
+            PosZ = 1;
+        else if (Input.GetKey(KeyCode.Keypad2))
+            PosZ = -1;
+        PosZ *= MoveSpeed * Time.deltaTime;
+        Vector3 MovePosition = new Vector3(PosX ,PosY, PosZ);
+
+
 
         gameObject.transform.position += MovePosition;
-
     }
 }

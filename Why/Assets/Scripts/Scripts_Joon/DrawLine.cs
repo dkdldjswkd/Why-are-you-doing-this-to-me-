@@ -2,40 +2,71 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DrawLine : MonoBehaviour
 {
     LineRenderer lr;
-    List<Vector2> points = new List<Vector2>();
+    List<Vector3> points = new List<Vector3>();
+    int curvePoint = 0;
+    GameObject go;
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)
-           || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+        //그리기 시작, 선의 첫 좌표를 정함
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject go = Instantiate(Resources.Load("Prefab/Others/Line")) as GameObject;
+            go = Instantiate(Resources.Load("Prefab/Others/Line")) as GameObject;
             lr = go.GetComponent<LineRenderer>();
 
-             go.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-            points.Add(new Vector2(transform.position.x, transform.position.y));
+            points.Add(transform.position);
             lr.positionCount = 1;
             lr.SetPosition(0, points[0]);
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)
-                || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
+        //그리는 중, 선의 중간좌표를 정함
+        else if (Input.GetKey(KeyCode.Space))
         {
-            Vector2 pos = new Vector2(transform.position.x, transform.position.y);
-            if (Vector2.Distance(points[points.Count - 1], pos) > 0.1f)
+            Vector3 pos = transform.position;
+            if (Vector3.Distance(points[points.Count - 1], pos) > 0.01f)
             {
                 points.Add(pos);
                 lr.positionCount++;
                 lr.SetPosition(lr.positionCount - 1, pos);
+
+                //좌표가 3개이상 쌓였다면
+                if (lr.positionCount >= 3)
+                {
+                    Vector3 p1 = lr.GetPosition(lr.positionCount - 3);
+                    Vector3 p2 = lr.GetPosition(lr.positionCount - 2);
+                    Vector3 p3 = lr.GetPosition(lr.positionCount - 1);
+
+                    //상
+                    if (p2.x == p3.x && p2.y > p3.y) { if (!(p1.x == p2.x && p1.y > p2.y)) { curvePoint++; print("미분 불가능"); } }
+                    //하
+                    else if (p2.x == p3.x && p2.y < p3.y) { if (!(p1.x == p2.x && p1.y < p2.y)) { curvePoint++; print("미분 불가능"); } }
+                    //좌
+                    else if (p2.x < p3.x && p2.y == p3.y) { if (!(p1.x < p2.x && p1.y == p2.y)) { curvePoint++; print("미분 불가능"); } }
+                    //우
+                    else if (p2.x > p3.x && p2.y == p3.y) { if (!(p1.x > p2.x && p1.y == p2.y)) { curvePoint++; print("미분 불가능"); } }
+                    //좌상
+                    else if (p2.x < p3.x && p2.y > p3.y) { if (!(p1.x < p2.x && p1.y > p2.y)) { curvePoint++; print("미분 불가능"); } }
+                    //우상
+                    else if (p2.x > p3.x && p2.y > p3.y) { if (!(p1.x > p2.x && p1.y > p2.y)) { curvePoint++; print("미분 불가능"); } }
+                    //좌하
+                    else if (p2.x < p3.x && p2.y < p3.y) { if (!(p1.x < p2.x && p1.y < p2.y)) { curvePoint++; print("미분 불가능"); } }
+                    //우하 
+                    else if (p2.x > p3.x && p2.y < p3.y) { if (!(p1.x > p2.x && p1.y < p2.y)) { curvePoint++; print("미분 불가능"); } }
+                }
             }
+
         }
-        else
+        //다 그림
+        else if(Input.GetKeyUp(KeyCode.Space))
         {
             points.Clear();
+            print("커브 포인트 : " + curvePoint.ToString());
+            curvePoint = 0;
+           // Destroy(go, 3f);
         }
     }
 
