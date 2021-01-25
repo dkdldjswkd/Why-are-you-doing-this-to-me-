@@ -13,6 +13,9 @@ public class CaneScript : MonoBehaviour
 
     void Update()
     {
-
+        if(Input.GetKeyUp(KeyCode.P))
+        {
+            print("판단시작");
+        }
     }
 }

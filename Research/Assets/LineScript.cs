@@ -25,7 +25,7 @@ public class LineScript : MonoBehaviour
     void Update()
     {
         Vector3 pos = linePoint.transform.position;
-        if (Vector3.Distance(points[points.Count - 1], pos) > 1.0f)
+        if (Vector3.Distance(points[points.Count - 1], pos) > 0.1f)
         {
             points.Add(pos);
             lr.positionCount++;
