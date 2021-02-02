@@ -64,11 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Scripts_Joon\DefanceManager.cs" />
-    <Compile Include="Assets\Scripts\Scripts_Joon\DrawLine.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Joon\Draw\DrawLine.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Joon\Draw\LineScript.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Joon\Draw\ObjectController_mouse.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Joon\Draw\WandController.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\LevelUpButton.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\RerollButton.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\UnitButton.cs" />
-    <Compile Include="Assets\Scripts\Scripts_Joon\WandController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
