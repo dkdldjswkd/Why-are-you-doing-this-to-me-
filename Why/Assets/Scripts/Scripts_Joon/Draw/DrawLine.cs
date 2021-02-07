@@ -31,7 +31,7 @@ public class DrawLine : MonoBehaviour
         else if (Input.GetKey(KeyCode.Space))
         {
             Vector3 pos = transform.position;
-            if (Vector3.Distance(points[points.Count - 1], pos) > 0.000001f)
+            if (Vector3.Distance(points[points.Count - 1], pos) > 0.1f)
             {
                 points.Add(pos);
                 lr.positionCount++;
@@ -44,22 +44,6 @@ public class DrawLine : MonoBehaviour
                     Vector3 p2 = lr.GetPosition(lr.positionCount - 2);
                     Vector3 p3 = lr.GetPosition(lr.positionCount - 1);
 
-                    //상
-                    if (p2.x == p3.x && p2.y > p3.y) { if (!(p1.x == p2.x && p1.y > p2.y)) { curvePoint++; /*print("미분 불가능");*/ } }
-                    //하
-                    else if (p2.x == p3.x && p2.y < p3.y) { if (!(p1.x == p2.x && p1.y < p2.y)) { curvePoint++; /*print("미분 불가능");*/ } }
-                    //좌
-                    else if (p2.x < p3.x && p2.y == p3.y) { if (!(p1.x < p2.x && p1.y == p2.y)) { curvePoint++;/* print("미분 불가능");*/ } }
-                    //우
-                    else if (p2.x > p3.x && p2.y == p3.y) { if (!(p1.x > p2.x && p1.y == p2.y)) { curvePoint++;/* print("미분 불가능");*/ } }
-                    //좌상
-                    else if (p2.x < p3.x && p2.y > p3.y) { if (!(p1.x < p2.x && p1.y > p2.y)) { curvePoint++; /*print("미분 불가능");*/ } }
-                    //우상
-                    else if (p2.x > p3.x && p2.y > p3.y) { if (!(p1.x > p2.x && p1.y > p2.y)) { curvePoint++; /*print("미분 불가능");*/ } }
-                    //좌하
-                    else if (p2.x < p3.x && p2.y < p3.y) { if (!(p1.x < p2.x && p1.y < p2.y)) { curvePoint++; /*print("미분 불가능");*/ } }
-                    //우하 
-                    else if (p2.x > p3.x && p2.y < p3.y) { if (!(p1.x > p2.x && p1.y < p2.y)) { curvePoint++; /*print("미분 불가능");*/ } }
                 }
             }
 
@@ -67,13 +51,15 @@ public class DrawLine : MonoBehaviour
         //다 그림
         else if(Input.GetKeyUp(KeyCode.Space))
         {
-            // 그려진 라인의 상, 하, 좌, 우 포지션값을 입력함
+          
+
+            // 그려진 라인의 상, 하, 좌, 우 포지션값을 입력함, 아래는 그냥 초기화
             LS.Location_Up = points[0].y;
             LS.Location_Down = points[0].y;
             LS.Location_Left = points[0].x;
             LS.Location_Right = points[0].x;
 
-            for (int i = 0; i < lr.positionCount; i++)
+            for (int i = 0; i < lr.positionCount-1; i++)
             {
                 if (LS.Location_Up < points[i].y)
                     LS.Location_Up = points[i].y;
@@ -85,17 +71,15 @@ public class DrawLine : MonoBehaviour
                 if (LS.Location_Right < points[i].x)
                     LS.Location_Right = points[i].x;
             }
+            points.Clear();
 
             //라인 오브젝트가 전부 그려졌다는것을 알림
             LS.complete = true;
-            LS.SetInfomation();
+            LS.SetInfomation();          
+            LS.Interpolation(); // 문제있음
 
-            //print(LS.Location_Up);
-            //print(LS.Location_Down);
-            //print(LS.Location_Left);
-            //print(LS.Location_Right);
 
-            points.Clear();
+            
            // print("커브 포인트 : " + curvePoint.ToString());
             curvePoint = 0;
         }
