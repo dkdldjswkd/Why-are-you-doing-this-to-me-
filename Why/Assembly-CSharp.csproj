@@ -66,7 +66,9 @@
     <Compile Include="Assets\Scripts\Scripts_Joon\DefanceManager.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\Draw\DrawLine.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\Draw\LineScript.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Joon\Draw\MagicText.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\Draw\ObjectController_mouse.cs" />
+    <Compile Include="Assets\Scripts\Scripts_Joon\Draw\Pair.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\Draw\WandController.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\LevelUpButton.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\RerollButton.cs" />

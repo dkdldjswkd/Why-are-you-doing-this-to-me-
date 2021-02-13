@@ -7,7 +7,7 @@ public class DrawLine : MonoBehaviour
 {
     LineRenderer lr;
     List<Vector3> points = new List<Vector3>();
-    int curvePoint = 0;
+    //int curvePoint = 0;
     public GameObject Line; // 라인렌더러로 그린 오브젝트
     LineScript LS;
 
@@ -49,9 +49,9 @@ public class DrawLine : MonoBehaviour
 
         }
         //다 그림
-        else if(Input.GetKeyUp(KeyCode.Space))
+        else if (Input.GetKeyUp(KeyCode.Space))
         {
-          
+
 
             // 그려진 라인의 상, 하, 좌, 우 포지션값을 입력함, 아래는 그냥 초기화
             LS.Location_Up = points[0].y;
@@ -59,7 +59,7 @@ public class DrawLine : MonoBehaviour
             LS.Location_Left = points[0].x;
             LS.Location_Right = points[0].x;
 
-            for (int i = 0; i < lr.positionCount-1; i++)
+            for (int i = 0; i < lr.positionCount - 1; i++)
             {
                 if (LS.Location_Up < points[i].y)
                     LS.Location_Up = points[i].y;
@@ -75,13 +75,13 @@ public class DrawLine : MonoBehaviour
 
             //라인 오브젝트가 전부 그려졌다는것을 알림
             LS.complete = true;
-            LS.SetInfomation();          
+            LS.SetInfomation();
             LS.Interpolation(); // 문제있음
 
 
-            
-           // print("커브 포인트 : " + curvePoint.ToString());
-            curvePoint = 0;
+
+            // print("커브 포인트 : " + curvePoint.ToString());
+            //curvePoint = 0;
         }
     }
 
