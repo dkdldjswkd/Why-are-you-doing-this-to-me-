@@ -38,6 +38,8 @@ public class VRPlayerMove : MonoBehaviour
     public GameObject PlayergameObject;
     private CapsuleCollider PlayerCollider;
 
+    public GameObject SubMove;
+
     private Animator moveanimator;
 
     public float speed = 1.0f;
@@ -55,16 +57,18 @@ public class VRPlayerMove : MonoBehaviour
         moveanimator = PlayergameObject.GetComponent<Animator>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         //PlayerCollider.center = new Vector3(PlaterTr.position.x, PlayerCollider.center.y,0);
+        transform.position = new Vector3(SubMove.transform.position.x, 0, SubMove.transform.position.z);
+        SubMove.transform.rotation = Quaternion.Euler(0, PlayergameObject.transform.rotation.eulerAngles.y, 0);
     }
 
     public void playermove(float x, float y)
     {
         moveanimator.SetBool("iswalking", true);
         moveDirection = new Vector3(x, 0, y);
-        PlayerMoveRg.transform.Translate(moveDirection * (speed * Time.deltaTime),Space.World); // AddForce 적용
+        SubMove.transform.Translate(moveDirection * (speed * Time.deltaTime),Space.Self); // AddForce 적용
     }
 
     public void nomove()
