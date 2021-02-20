@@ -25,6 +25,7 @@ public class VRPlayerMove : MonoBehaviour
     //라인
     public GameObject linePerfab;
     public GameObject linePoint;
+    public GameObject linetransform;
 
     GameObject online;
     bool setline;
@@ -48,6 +49,8 @@ public class VRPlayerMove : MonoBehaviour
     void Start()
     {
         online = Instantiate(linePerfab);
+        online.transform.parent = linetransform.transform;
+
         lr = online.GetComponent<LineRenderer>();
         col = online.GetComponent<EdgeCollider2D>();
         points.Add(linePoint.transform.position);
@@ -66,9 +69,12 @@ public class VRPlayerMove : MonoBehaviour
 
     public void playermove(float x, float y)
     {
-        moveanimator.SetBool("iswalking", true);
-        moveDirection = new Vector3(x, 0, y);
-        SubMove.transform.Translate(moveDirection * (speed * Time.deltaTime),Space.Self); // AddForce 적용
+        if (points.Count == 1)
+        {
+            moveanimator.SetBool("iswalking", true);
+            moveDirection = new Vector3(x, 0, y);
+            SubMove.transform.Translate(moveDirection * (speed * Time.deltaTime), Space.Self); // AddForce 적용
+        }
     }
 
     public void nomove()
@@ -90,6 +96,15 @@ public class VRPlayerMove : MonoBehaviour
 
     public void noline()
     {
+        if (points.Count > 1)
+        {
+            for(int i=0;i< points.Count;i++)
+            {
+                print(i + "번째 x : " + points[i].x + " y : " + points[i].y);
+            }
+        }
+        points.Clear();
+        points.Add(linePoint.transform.position);
         points[0] = new Vector3(linePoint.transform.position.x, linePoint.transform.position.y, linePoint.transform.position.z);
         lr.positionCount = 1;
         lr.SetPosition(0, points[0]);

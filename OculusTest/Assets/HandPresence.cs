@@ -32,7 +32,7 @@ public class HandPresence : MonoBehaviour
         targetDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue);
         if (primaryButtonValue)
         {
-            Debug.Log("A버튼눌림");
+           //Debug.Log("A버튼눌림");
         }
 
         //검지 트리거 버튼
@@ -43,7 +43,7 @@ public class HandPresence : MonoBehaviour
             {
                 VRPlayerMove.Instance.goline();
 
-                Debug.Log("검지 트리거 눌림");
+               // Debug.Log("검지 트리거 눌림");
             }
         }
         else if(!(triggerValue > 0.1f) && ControllerCharacteristics == InputDeviceCharacteristics.Right)
@@ -56,7 +56,7 @@ public class HandPresence : MonoBehaviour
         if (primarygripButton)
         {
 
-            Debug.Log("그립");
+            //Debug.Log("그립");
         }
 
         //동그라미 움직이는버튼
@@ -65,8 +65,8 @@ public class HandPresence : MonoBehaviour
         {
             if (ControllerCharacteristics == InputDeviceCharacteristics.Left)
             {
-                VRPlayerMove.Instance.playermove(primary2DAxisValue.x, primary2DAxisValue.y);
-                Debug.Log("조이스틱");
+                     VRPlayerMove.Instance.playermove(primary2DAxisValue.x, primary2DAxisValue.y);
+                    // Debug.Log("조이스틱");
             }
         }
         else
