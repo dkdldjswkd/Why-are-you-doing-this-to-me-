@@ -33,11 +33,15 @@ public class VRPlayerMove : MonoBehaviour
     LineRenderer lr;
     EdgeCollider2D col;
     List<Vector3> points = new List<Vector3>();
+
+    public static List<Vector3> finishedDrawing = new List<Vector3>();  //라인 좌표 넘겨줄 완성된 좌표 리스트
+    public static bool finshed = false;
     //끝
 
     public Rigidbody PlayerMoveRg; //카메라를 기준으로함
     public GameObject PlayergameObject;
     private CapsuleCollider PlayerCollider;
+
 
     public GameObject SubMove;
 
@@ -82,11 +86,24 @@ public class VRPlayerMove : MonoBehaviour
         moveanimator.SetBool("iswalking", false);
     }
 
+    float saveZ;
 
     public void goline()
     {
-        Vector3 pos = linePoint.transform.position;
-        if (Vector3.Distance(points[points.Count - 1], pos) > 0.1f)
+        Vector3 pos;
+        finshed = false;
+
+        if (points.Count > 1)
+        {
+            pos = new Vector3(linePoint.transform.position.x, linePoint.transform.position.y, saveZ);
+        }
+        else
+        {
+            pos = new Vector3(linePoint.transform.position.x, linePoint.transform.position.y, linePoint.transform.position.z);
+            saveZ = linePoint.transform.position.z;
+        }
+
+        if (Vector3.Distance(points[points.Count - 1], pos) > 0.01f)
         {
             points.Add(pos);
             lr.positionCount++;
@@ -96,12 +113,18 @@ public class VRPlayerMove : MonoBehaviour
 
     public void noline()
     {
-        if (points.Count > 1)
+        if (points.Count > 1)   //그림이 다 그려지면
         {
-            for(int i=0;i< points.Count;i++)
+            finishedDrawing.Clear();
+
+            for (int i = 0; i < points.Count; i++)
             {
-                print(i + "번째 x : " + points[i].x + " y : " + points[i].y);
+                finishedDrawing.Add(points[i]);
             }
+
+            finshed = true;
+            //최준영스크립트.마법발동함수();
+            //finishedDrawing준영이 싱글톤 함수로 넘기고 판단 + 마법 나옴
         }
         points.Clear();
         points.Add(linePoint.transform.position);
@@ -109,5 +132,4 @@ public class VRPlayerMove : MonoBehaviour
         lr.positionCount = 1;
         lr.SetPosition(0, points[0]);
     }
-
 }

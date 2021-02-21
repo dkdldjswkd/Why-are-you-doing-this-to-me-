@@ -42,7 +42,6 @@ public class HandPresence : MonoBehaviour
             if (ControllerCharacteristics == InputDeviceCharacteristics.Right)
             {
                 VRPlayerMove.Instance.goline();
-
                // Debug.Log("검지 트리거 눌림");
             }
         }
