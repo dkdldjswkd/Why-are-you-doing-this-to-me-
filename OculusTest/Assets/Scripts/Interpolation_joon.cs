@@ -14,7 +14,7 @@ public class Interpolation_joon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+                
     }
 
     // Update is called once per frame
@@ -39,13 +39,13 @@ public class Interpolation_joon : MonoBehaviour
         List<Vector3> points = new List<Vector3>(); //보간된 직선의 포인트를 담는 리스트
 
         //직선(보간전)의 방향리스트 생성 
-        for (int i = 0; i < lr.positionCount - 1; i++)
+        for (int i = 0; i < VRPlayerMove.finishedDrawing.Count - 1; i++)
         {
-            double p1x = lr.GetPosition(i).x;
-            double p1y = lr.GetPosition(i).y;
+            double p1x = VRPlayerMove.finishedDrawing[i].x;
+            double p1y = VRPlayerMove.finishedDrawing[i].y;
 
-            double p2x = lr.GetPosition(i + 1).x;
-            double p2y = lr.GetPosition(i + 1).y;
+            double p2x = VRPlayerMove.finishedDrawing[i + 1].x;
+            double p2y = VRPlayerMove.finishedDrawing[i + 1].y;
 
             double deltaX = p2x - p1x;
             double deltaY = p2y - p1y;
@@ -82,6 +82,51 @@ public class Interpolation_joon : MonoBehaviour
             //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "의 각도는 : " + angle);
             //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "는 " + direction + " 화살표");
         }
+
+        ////직선(보간전)의 방향리스트 생성 
+        //for (int i = 0; i < lr.positionCount - 1; i++)
+        //{
+        //    double p1x = lr.GetPosition(i).x;
+        //    double p1y = lr.GetPosition(i).y;
+
+        //    double p2x = lr.GetPosition(i + 1).x;
+        //    double p2y = lr.GetPosition(i + 1).y;
+
+        //    double deltaX = p2x - p1x;
+        //    double deltaY = p2y - p1y;
+        //    double inc = deltaY / deltaX; // 기울기 -> y증가량 / x증가량
+
+        //    double radians = Math.Atan(inc);
+        //    double angle = radians * (180 / Math.PI);
+
+        //    if (deltaX > 0 && deltaY > 0) { angle += 0; } // 1사분면
+        //    else if (deltaX < 0 && deltaY > 0) { angle += 180; } // 2사분면
+        //    else if (deltaX < 0 && deltaY < 0) { angle += 180; } // 3사분면
+        //    else if (deltaX > 0 && deltaY < 0) { angle += 360; } // 4사분면
+        //    //1사분면 각 -> angle
+        //    //2사분면 각 -> 180 + angle
+        //    //3사분면 각 -> 180 + angle
+        //    //4사분면 각 -> 360 + angle
+        //    if (angle < 0) angle += 360;
+        //    // 상->하 직선의 경우 -90도가 됨
+        //    else if (angle == 0) { if (deltaX < 0) angle = 180; }
+        //    // 좌->우, 우->좌 두 직선의 경우 0도가됨(좌->우는 상관없지만 우->좌가 문제)
+
+        //    string direction;
+        //    if (angle > 22.5f && 67.5f > angle) direction = "우상";
+        //    else if (angle > 67.5f && 112.5f > angle) direction = "상";
+        //    else if (angle > 112.5f && 157.5f > angle) direction = "좌상";
+        //    else if (angle > 157.5f && 202.5f > angle) direction = "좌";
+        //    else if (angle > 202.5 && 247.5f > angle) direction = "좌하";
+        //    else if (angle > 247.5f && 292.5f > angle) direction = "하";
+        //    else if (angle > 292.5f && 337.5f > angle) direction = "우하";
+        //    else direction = "우";
+
+        //    DirectionList.Add(direction);
+
+        //    //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "의 각도는 : " + angle);
+        //    //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "는 " + direction + " 화살표");
+        //}
 
         //보간될 새로운 라인의 포인트를 담음
         points.Add(lr.GetPosition(0));
@@ -130,7 +175,7 @@ public class Interpolation_joon : MonoBehaviour
 
 
         //최종적으로 보간된 새로운 라인을 생성
-        GameObject Line_Interpolation = Instantiate(Resources.Load("Prefab/Others/Line")) as GameObject;
+        GameObject Line_Interpolation = Instantiate(Resources.Load("Prefab/Others/Line")) as GameObject; // 라인 게임오브젝트 프리팹 경로 설정
         LineRenderer lr_Interpolation = Line_Interpolation.GetComponent<LineRenderer>();
         //보간된 라인의 최대 인덱스 초기화
         lr_Interpolation.positionCount = points.Count;
@@ -145,6 +190,7 @@ public class Interpolation_joon : MonoBehaviour
         for (int i = 0; i < lr_Interpolation.positionCount - 1; i++)
         {
             double p1x = lr_Interpolation.GetPosition(i).x;
+
             double p1y = lr_Interpolation.GetPosition(i).y;
 
             double p2x = lr_Interpolation.GetPosition(i + 1).x;
@@ -193,7 +239,7 @@ public class Interpolation_joon : MonoBehaviour
         //출력 테스트
         print(InputedMagic);
 
-        //MagicText.MagicChecking(InputedMagic);
+        MagicText_joon.MagicChecking(InputedMagic);
 
         points.Clear();
     }

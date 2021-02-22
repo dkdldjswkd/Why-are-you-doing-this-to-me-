@@ -218,6 +218,7 @@
     <Compile Include="Assets\Oculus\Spatializer\scripts\OculusSpatializerUnity.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\helpers\ONSPReflectionZone.cs" />
     <Compile Include="Assets\Scripts\Interpolation_joon.cs" />
+    <Compile Include="Assets\Scripts\MagicText_joon.cs" />
     <Compile Include="Assets\VRFootIK.cs" />
     <Compile Include="Assets\VRPlayerMove.cs" />
     <Compile Include="Assets\VRRig.cs" />
