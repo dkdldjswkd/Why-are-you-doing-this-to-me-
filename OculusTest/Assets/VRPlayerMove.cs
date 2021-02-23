@@ -115,16 +115,7 @@ public class VRPlayerMove : MonoBehaviour
     {
         if (points.Count > 1)   //그림이 다 그려지면
         {
-            finishedDrawing.Clear();
-
-            for (int i = 0; i < points.Count; i++)
-            {
-                finishedDrawing.Add(points[i]);
-            }
-
-            finshed = true;
-            //최준영스크립트.마법발동함수();
-            //finishedDrawing준영이 싱글톤 함수로 넘기고 판단 + 마법 나옴
+            Interpolation_joon.Interpolation(points);
         }
         points.Clear();
         points.Add(linePoint.transform.position);
