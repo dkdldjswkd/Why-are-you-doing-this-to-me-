@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class MagicText_joon : MonoBehaviour
 {
-    public static Dictionary<string, string> Magics = new Dictionary<string, string>();
+    public static Dictionary<string, string> Magics = new Dictionary<string, string>() { 
+        {"좌하 우 좌하 ", "번개"},
+
+        {"우 하 ", "ㄱ"},
+
+        {"하 우 ", "ㄴ"},
+
+        {"좌 하 우 ", "ㄷ" },
+
+        { "우 하 좌 상 ", "ㅁ(시계방향)"}
+    };
 
     private void Start()
     {
-        Magics.Add("좌하 우 좌하 ", "번개");
+        //Magics.Add("좌하 우 좌하 ", "번개");
 
-        Magics.Add("우 하 ", "ㄱ");
+        //Magics.Add("우 하 ", "ㄱ");
 
-        Magics.Add("하 우 ", "ㄴ");
+        //Magics.Add("하 우 ", "ㄴ");
 
-        Magics.Add("좌 하 우 ", "ㄷ");
+        //Magics.Add("좌 하 우 ", "ㄷ");
 
-        Magics.Add("우 하 좌 상 ", "ㅁ(시계방향)");
+        //Magics.Add("우 하 좌 상 ", "ㅁ(시계방향)");
 
         Magics.Add("좌하 하 우 우상 상 좌 ", "반시계 원");
         Magics.Add("좌하 우하 우 우상 좌상 좌 ", "반시계 원");
