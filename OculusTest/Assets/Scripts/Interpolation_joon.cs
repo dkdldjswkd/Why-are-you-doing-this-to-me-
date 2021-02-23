@@ -23,7 +23,7 @@ public class Interpolation_joon : MonoBehaviour
         //보간 전 좌표 리스트 잘 받아졌는지 테스트
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            for(int i=0;i< VRPlayerMove.finishedDrawing.Count; i++)
+            for (int i = 0; i < VRPlayerMove.finishedDrawing.Count; i++)
             {
                 print(i + "번째 인덱스 x : " + VRPlayerMove.finishedDrawing[i].x + " y : " + VRPlayerMove.finishedDrawing[i].y);
             }
@@ -31,21 +31,18 @@ public class Interpolation_joon : MonoBehaviour
     }
 
     //보간
-    public void Interpolation()
+    public void Interpolation(List<Vector3> points)
     {
-        List<string> DirectionList = new List<string>(); // 직선의 방향 리스트, DirectionList + 1 -> 점의 개수
+        List<string> DirectionList = new List<string>(); // 보간전 방향리스트
 
-        List<string> DirectionList_after = new List<string>(); //보간된 직선의 방향 리스트
-        List<Vector3> points = new List<Vector3>(); //보간된 직선의 포인트를 담는 리스트
-
-        //직선(보간전)의 방향리스트 생성 
-        for (int i = 0; i < VRPlayerMove.finishedDrawing.Count - 1; i++)
+        //보간전 방향리스트 생성 
+        for (int i = 0; i < points.Count - 1; i++)
         {
-            double p1x = VRPlayerMove.finishedDrawing[i].x;
-            double p1y = VRPlayerMove.finishedDrawing[i].y;
+            double p1x = points[i].x;
+            double p1y = points[i].y;
 
-            double p2x = VRPlayerMove.finishedDrawing[i + 1].x;
-            double p2y = VRPlayerMove.finishedDrawing[i + 1].y;
+            double p2x = points[i + 1].x;
+            double p2y = points[i + 1].y;
 
             double deltaX = p2x - p1x;
             double deltaY = p2y - p1y;
@@ -78,13 +75,12 @@ public class Interpolation_joon : MonoBehaviour
             else direction = "우";
 
             DirectionList.Add(direction);
-
-            //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "의 각도는 : " + angle);
-            //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "는 " + direction + " 화살표");
         }
 
-        //보간될 새로운 라인의 포인트를 담음
-        points.Add(lr.GetPosition(0));
+        List<string> DirectionList_after = new List<string>(); //보간 후 방향리스트
+        List<Vector3> points_after = new List<Vector3>(); //보간 후 포인트
+
+        points_after.Add(points[0]); // 보간후 포인트의 첫번째 인덱스 추가
 
         int Deviate = 0; // 어긋난 점의 인덱스
         //1차 보간 (어긋나지 않은 직선들을 한 직선으로 통일시킴)
@@ -92,64 +88,62 @@ public class Interpolation_joon : MonoBehaviour
         {
             Deviate++;
 
-            string tmp1 = DirectionList[i]; // ex. p0 -> p1 의 직선방향
-            string tmp2 = DirectionList[i + 1]; // ex. p1 -> p2 의 직선방향
+            string tmp1 = DirectionList[i]; // ex. p0 -> p1 의 직선방향 (ex. 우상)
+            string tmp2 = DirectionList[i + 1]; // ex. p1 -> p2 의 직선방향 (ex. 상)
+
+            //이부분 수정해야함
             if (tmp1 != tmp2 || i == DirectionList.Count - 2) // 직선의 방향이 어긋나면 또는 마지막 인덱스라면
             {
-                points.Add(lr.GetPosition(Deviate)); //기본형 라인의 어긋난 좌표를 추가
+                points_after.Add(points[Deviate]); //기본형 라인의 어긋난 좌표를 추가
             }
         }
 
-        //1차 보간된 라인의 길이 설정
-        float lineLangth = 0;
-        for (int i = 0; i < points.Count - 1; i++)
+
+        float lineLangth = 0; // 1차 보간된 그림의 길이를 담는 변수
+        for (int i = 0; i < points_after.Count - 1; i++) // 1차 보간된 그림의 길이를 변수에 담는 반복문
         {
-            lineLangth += Vector3.Distance(points[i], points[i + 1]);
+            lineLangth += Vector3.Distance(points_after[i], points_after[i + 1]);
         }
-        //print("라인의 총 길이 " + lineLangth);
 
         //제외 기준 길이 설정 (총길이 / 직선의개수 * 2)
-        float deadline = lineLangth / ((points.Count - 1) * 2);
-        //print("제외 조건 " + deadline);
-
+        float deadline = lineLangth / ((points_after.Count - 1) * 2);
 
         //2차 보간 (짧은 직선은 제외시킴)
         for (int i = 0; ; i++)
         {
             //현재 인덱스의 직선이 짧다면 인덱스에서 제외함
-            if (Vector3.Distance(points[i], points[i + 1]) < deadline)
+            if (Vector3.Distance(points_after[i], points_after[i + 1]) < deadline)
             {
-                points.RemoveAt(i + 1);
+                points_after.RemoveAt(i + 1);
                 i = 0;
                 continue;
             }
 
-            if (i == points.Count - 2)
+            if (i == points_after.Count - 2)
                 break;
         }
 
 
-        //최종적으로 보간된 새로운 라인을 생성
-        GameObject Line_Interpolation = Instantiate(Resources.Load("Prefab/Others/Line")) as GameObject; // 라인 게임오브젝트 프리팹 경로 설정
-        LineRenderer lr_Interpolation = Line_Interpolation.GetComponent<LineRenderer>();
-        //보간된 라인의 최대 인덱스 초기화
-        lr_Interpolation.positionCount = points.Count;
+        ////최종적으로 보간된 새로운 라인을 생성
+        //GameObject Line_Interpolation = Instantiate(Resources.Load("Prefab/Others/Line")) as GameObject; // 라인 게임오브젝트 프리팹 경로 설정
+        //LineRenderer lr_Interpolation = Line_Interpolation.GetComponent<LineRenderer>();
+        ////보간된 라인의 최대 인덱스 초기화
+        //lr_Interpolation.positionCount = points_after.Count;
 
-        //보간된 라인 좌표 초기화 -> 새로운(보간된) 직선의 생성
-        for (int i = 0; i < points.Count; i++)
-        {
-            lr_Interpolation.SetPosition(i, points[i]);
-        }
+        ////보간된 라인 좌표 초기화 -> 새로운(보간된) 직선의 생성
+        //for (int i = 0; i < points_after.Count; i++)
+        //{
+        //    lr_Interpolation.SetPosition(i, points_after[i]);
+        //}
 
         //보간된 직선의 방향 리스트 생성
-        for (int i = 0; i < lr_Interpolation.positionCount - 1; i++)
+        for (int i = 0; i < points_after.Count - 1; i++)
         {
-            double p1x = lr_Interpolation.GetPosition(i).x;
+            double p1x = points_after[i].x;
+            double p1y = points_after[i].y;
 
-            double p1y = lr_Interpolation.GetPosition(i).y;
-
-            double p2x = lr_Interpolation.GetPosition(i + 1).x;
-            double p2y = lr_Interpolation.GetPosition(i + 1).y;
+            double p2x = points_after[i + 1].x;
+            double p2y = points_after[i + 1].y;
 
             double deltaX = p2x - p1x;
             double deltaY = p2y - p1y;
@@ -194,9 +188,8 @@ public class Interpolation_joon : MonoBehaviour
         //출력 테스트
         print(InputedMagic);
 
-        MagicText_joon.MagicChecking(InputedMagic);
-
-        points.Clear();
+        // MagicText_joon.MagicChecking(InputedMagic);
+        // points_after.Clear();
     }
 }
 
