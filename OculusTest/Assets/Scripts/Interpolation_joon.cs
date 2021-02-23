@@ -14,7 +14,7 @@ public class Interpolation_joon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-                
+        lr = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -82,51 +82,6 @@ public class Interpolation_joon : MonoBehaviour
             //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "의 각도는 : " + angle);
             //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "는 " + direction + " 화살표");
         }
-
-        ////직선(보간전)의 방향리스트 생성 
-        //for (int i = 0; i < lr.positionCount - 1; i++)
-        //{
-        //    double p1x = lr.GetPosition(i).x;
-        //    double p1y = lr.GetPosition(i).y;
-
-        //    double p2x = lr.GetPosition(i + 1).x;
-        //    double p2y = lr.GetPosition(i + 1).y;
-
-        //    double deltaX = p2x - p1x;
-        //    double deltaY = p2y - p1y;
-        //    double inc = deltaY / deltaX; // 기울기 -> y증가량 / x증가량
-
-        //    double radians = Math.Atan(inc);
-        //    double angle = radians * (180 / Math.PI);
-
-        //    if (deltaX > 0 && deltaY > 0) { angle += 0; } // 1사분면
-        //    else if (deltaX < 0 && deltaY > 0) { angle += 180; } // 2사분면
-        //    else if (deltaX < 0 && deltaY < 0) { angle += 180; } // 3사분면
-        //    else if (deltaX > 0 && deltaY < 0) { angle += 360; } // 4사분면
-        //    //1사분면 각 -> angle
-        //    //2사분면 각 -> 180 + angle
-        //    //3사분면 각 -> 180 + angle
-        //    //4사분면 각 -> 360 + angle
-        //    if (angle < 0) angle += 360;
-        //    // 상->하 직선의 경우 -90도가 됨
-        //    else if (angle == 0) { if (deltaX < 0) angle = 180; }
-        //    // 좌->우, 우->좌 두 직선의 경우 0도가됨(좌->우는 상관없지만 우->좌가 문제)
-
-        //    string direction;
-        //    if (angle > 22.5f && 67.5f > angle) direction = "우상";
-        //    else if (angle > 67.5f && 112.5f > angle) direction = "상";
-        //    else if (angle > 112.5f && 157.5f > angle) direction = "좌상";
-        //    else if (angle > 157.5f && 202.5f > angle) direction = "좌";
-        //    else if (angle > 202.5 && 247.5f > angle) direction = "좌하";
-        //    else if (angle > 247.5f && 292.5f > angle) direction = "하";
-        //    else if (angle > 292.5f && 337.5f > angle) direction = "우하";
-        //    else direction = "우";
-
-        //    DirectionList.Add(direction);
-
-        //    //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "의 각도는 : " + angle);
-        //    //print("p" + i.ToString() + " -> " + "p" + (i + 1).ToString() + "는 " + direction + " 화살표");
-        //}
 
         //보간될 새로운 라인의 포인트를 담음
         points.Add(lr.GetPosition(0));
