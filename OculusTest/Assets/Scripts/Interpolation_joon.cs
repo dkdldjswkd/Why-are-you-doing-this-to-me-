@@ -19,8 +19,23 @@ public class Interpolation_joon : MonoBehaviour
         { "우 하 좌 상 ", "ㅁ(시계방향)"}
     };
 
+    //Dictionary[Key]로 Value를 취득할 수 있다.
+    public static void MagicChecking(string inputed)
+    {
+        string whatMagic;
+        if (Magics.TryGetValue(inputed, out whatMagic))
+            print(whatMagic);
+        else
+            print("일치하는 마법이 없습니다.");
+
+        //if (Magics[inputed] == null)
+        //    print("일치하는 문자 없음");
+        //else
+        //    print(Magics[inputed]);
+    }
+
     //보간
-    public static void Interpolation(List<Vector3> points)
+    public static List<Vector3> Interpolation(List<Vector3> points)
     {
         List<string> DirectionList = new List<string>(); // 보간전 방향리스트
 
@@ -177,7 +192,9 @@ public class Interpolation_joon : MonoBehaviour
         //출력 테스트
         print(InputedMagic);
 
-        // MagicText_joon.MagicChecking(InputedMagic);
+        MagicText_joon.MagicChecking(InputedMagic);
         // points_after.Clear();
+
+        return points_after;
     }
 }
