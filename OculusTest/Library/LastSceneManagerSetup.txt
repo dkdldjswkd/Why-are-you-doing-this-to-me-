@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Select.unity
+- path: Assets/Scenes/Test_joon.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

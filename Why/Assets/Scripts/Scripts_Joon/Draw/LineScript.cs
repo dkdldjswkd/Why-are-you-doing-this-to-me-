@@ -252,7 +252,7 @@ public class LineScript : MonoBehaviour
         //출력 테스트
         print(InputedMagic);
 
-        MagicText.MagicChecking(InputedMagic);
+        MagicText_joon.MagicChecking(InputedMagic);
 
         points.Clear();
     }
