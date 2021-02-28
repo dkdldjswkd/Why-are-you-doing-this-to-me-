@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_18;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_18;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -63,131 +63,131 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Extensions\ArrayExtensions.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Extensions\JsonParserExtensions.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Extensions\StringExtensions.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Extensions\UnityExtensions.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Extensions\glTFExtensions.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\BytesBuffer.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\KHR_draco_mesh_compression.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\KHR_materials_unlit.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\KHR_texture_transform.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFCameraExtensions.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFExtensions.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFMesh.Primitives.extras.targetNames.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFMesh.extras.targetNames.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFNode.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\GLTFJsonFormatter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\JsonSerializableBase.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\MonoBehaviourComparator.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\SerializerTypes.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glEnum.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTF.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFAnimation.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFAssets.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFBuffer.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFCamera.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFMaterial.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFMesh.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFNode.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFSkin.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glTFTexture.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Format\glbTypes.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\AnimationCurveData.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\AnimationExporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\AnimationImporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\AnimationKeyframeData.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\BytesReader.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\FormatterExtensionsGltf.g.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\GltfDeserializer.g.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\IStorage.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\ImporterContext.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\MaterialExporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\MaterialImporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\MeshExporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\MeshImporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\MeshWithMaterials.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\NodeImporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\ShaderStore.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\StaticMeshIntegrator.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\TextureConverter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\TextureExportManager.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\TextureIO.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\TextureItem.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\TextureLoader.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\TextureSamplerUtil.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\TriangleUtil.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\UnityPath.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\ZipArchiveStorage.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\glbImporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\gltfExporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\IO\gltfImporter.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\UniGLTFException.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\UniGLTFVersion.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\UniGLTFVersion_partial.cs" />
-    <Compile Include="Assets\VRM\UniGLTF\Scripts\Util\CacheEnum.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\AOTCall.g.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\BlendShapeAvatar.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\BlendShapeBindingMerger.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\BlendShapeClip.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\BlendShapeClipHandler.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\BlendShapeKey.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\BlendShapeMerger.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\Blinker.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\MaterialValueBindingMerger.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\MeshPreviewItem.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\PreviewSceneManager.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\BlendShape\VRMBlendShapeProxy.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\EnumUtil.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Extensions\EnumExtensions.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\FirstPerson\VRMFirstPerson.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\FirstPerson\VRMFirstPersonCameraManager.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMException.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMExporter.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMExporterConfiguation.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMFormat.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMImporter.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMImporterContext.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMMaterialExporter.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMMaterialImporter.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMSpecVersion.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMVersion.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\VRMVersionPartial.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\glTF_VRMExtensions.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\glTF_VRM_BlendShape.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\glTF_VRM_FirstPerson.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\glTF_VRM_Humanoid.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\glTF_VRM_Material.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\glTF_VRM_Meta.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Format\glTF_VRM_SecondaryAnimation.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Humanoid\VRMHumanoidDescription.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\IVRMComponent.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\CurveMapper.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\LookAtTargetSwitcher.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\LookTarget.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\Matrix4x4Extensions.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\OffsetOnTransform.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\VRMLookAt.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\VRMLookAtBlendShapeApplyer.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\VRMLookAtBoneApplyer.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\LookAt\VRMLookAtHead.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Meta\VRMMeta.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Meta\VRMMetaInformation.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Meta\VRMMetaObject.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\SkinnedMeshUtility\VRMBoneNormalizer.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\SkinnedMeshUtility\VRMMeshIntegratorUtility.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\SpringBone\VRMSpringBone.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\SpringBone\VRMSpringBoneColliderGroup.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\SpringBone\VRMSpringUtility.cs" />
-    <Compile Include="Assets\VRM\UniVRM\Scripts\Validation.cs" />
-    <None Include="Assets\VRM\UniVRM\Resources\Shaders\VRMUnlitTransparentZWrite.shader" />
-    <None Include="Assets\VRM\UniGLTF\Resources\Shaders\NormalMapDecoder.shader" />
-    <None Include="Assets\VRM\VRM.asmdef" />
-    <None Include="Assets\VRM\UniVRM\Resources\Shaders\VRMUnlitTexture.shader" />
-    <None Include="Assets\VRM\UniVRM\Resources\Shaders\VRMUnlitCutout.shader" />
-    <None Include="Assets\VRM\UniGLTF\Resources\Shaders\NormalMapEncoder.shader" />
-    <None Include="Assets\VRM\UniGLTF\Resources\Shaders\StandardVColor.shader" />
-    <None Include="Assets\VRM\UniVRM\Resources\Shaders\VRMUnlitTransparent.shader" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Extensions\ArrayExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Extensions\JsonParserExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Extensions\StringExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Extensions\UnityExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Extensions\glTFExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\BytesBuffer.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\KHR_draco_mesh_compression.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\KHR_materials_unlit.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\KHR_texture_transform.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFCameraExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFMesh.Primitives.extras.targetNames.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFMesh.extras.targetNames.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\ExtensionsAndExtras\glTFNode.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\GLTFJsonFormatter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\JsonSerializableBase.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\MonoBehaviourComparator.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\SerializerTypes.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glEnum.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTF.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFAnimation.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFAssets.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFBuffer.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFCamera.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFMaterial.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFMesh.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFNode.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFSkin.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glTFTexture.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Format\glbTypes.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\AnimationCurveData.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\AnimationExporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\AnimationImporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\AnimationKeyframeData.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\BytesReader.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\FormatterExtensionsGltf.g.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\GltfDeserializer.g.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\IStorage.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\ImporterContext.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\MaterialExporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\MaterialImporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\MeshExporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\MeshImporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\MeshWithMaterials.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\NodeImporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\ShaderStore.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\StaticMeshIntegrator.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\TextureConverter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\TextureExportManager.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\TextureIO.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\TextureItem.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\TextureLoader.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\TextureSamplerUtil.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\TriangleUtil.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\UnityPath.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\ZipArchiveStorage.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\glbImporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\gltfExporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\IO\gltfImporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\UniGLTFException.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\UniGLTFVersion.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\UniGLTFVersion_partial.cs" />
+    <Compile Include="Assets\VR\VRM\UniGLTF\Scripts\Util\CacheEnum.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\AOTCall.g.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\BlendShapeAvatar.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\BlendShapeBindingMerger.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\BlendShapeClip.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\BlendShapeClipHandler.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\BlendShapeKey.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\BlendShapeMerger.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\Blinker.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\MaterialValueBindingMerger.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\MeshPreviewItem.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\PreviewSceneManager.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\BlendShape\VRMBlendShapeProxy.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\EnumUtil.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Extensions\EnumExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\FirstPerson\VRMFirstPerson.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\FirstPerson\VRMFirstPersonCameraManager.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMException.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMExporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMExporterConfiguation.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMFormat.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMImporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMImporterContext.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMMaterialExporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMMaterialImporter.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMSpecVersion.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMVersion.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\VRMVersionPartial.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\glTF_VRMExtensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\glTF_VRM_BlendShape.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\glTF_VRM_FirstPerson.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\glTF_VRM_Humanoid.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\glTF_VRM_Material.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\glTF_VRM_Meta.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Format\glTF_VRM_SecondaryAnimation.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Humanoid\VRMHumanoidDescription.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\IVRMComponent.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\CurveMapper.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\LookAtTargetSwitcher.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\LookTarget.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\Matrix4x4Extensions.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\OffsetOnTransform.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\VRMLookAt.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\VRMLookAtBlendShapeApplyer.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\VRMLookAtBoneApplyer.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\LookAt\VRMLookAtHead.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Meta\VRMMeta.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Meta\VRMMetaInformation.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Meta\VRMMetaObject.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\SkinnedMeshUtility\VRMBoneNormalizer.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\SkinnedMeshUtility\VRMMeshIntegratorUtility.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\SpringBone\VRMSpringBone.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\SpringBone\VRMSpringBoneColliderGroup.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\SpringBone\VRMSpringUtility.cs" />
+    <Compile Include="Assets\VR\VRM\UniVRM\Scripts\Validation.cs" />
+    <None Include="Assets\VR\VRM\UniVRM\Resources\Shaders\VRMUnlitTransparentZWrite.shader" />
+    <None Include="Assets\VR\VRM\UniGLTF\Resources\Shaders\NormalMapDecoder.shader" />
+    <None Include="Assets\VR\VRM\VRM.asmdef" />
+    <None Include="Assets\VR\VRM\UniVRM\Resources\Shaders\VRMUnlitTexture.shader" />
+    <None Include="Assets\VR\VRM\UniVRM\Resources\Shaders\VRMUnlitCutout.shader" />
+    <None Include="Assets\VR\VRM\UniGLTF\Resources\Shaders\NormalMapEncoder.shader" />
+    <None Include="Assets\VR\VRM\UniGLTF\Resources\Shaders\StandardVColor.shader" />
+    <None Include="Assets\VR\VRM\UniVRM\Resources\Shaders\VRMUnlitTransparent.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -394,6 +394,24 @@
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Library/PackageCache/com.unity.burst@1.1.1/Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Assets/VR/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="QuatCompress">
+      <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Assets/VR/Photon/PhotonUtilities/TransformCrusher/plugins/QuatCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="ByteConverter">
+      <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Assets/VR/Photon/PhotonUtilities/Compression/plugins/ByteConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Assets/VR/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="HalFloat">
+      <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Assets/VR/Photon/PhotonUtilities/TransformCrusher/plugins/HalFloat.dll</HintPath>
+    </Reference>
+    <Reference Include="FloatCrusher">
+      <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Assets/VR/Photon/PhotonUtilities/TransformCrusher/plugins/FloatCrusher.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Editor/2019.4.18f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
