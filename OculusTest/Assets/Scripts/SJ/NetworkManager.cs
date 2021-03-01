@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.XR;
 using UnityEngine.SceneManagement;
 using Photon.Realtime;
 using Photon.Pun;
@@ -32,14 +32,29 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public void Onvr()
     {
+        XRSettings.LoadDeviceByName("Oculus");
+        XRSettings.enabled = true;
         vr = true;
+    }
+
+    public void GameStart()
+    {
+        if (vr)
+        {
+            GameManager.Instance.OnVR();
+        }
+        else
+        {
+            GameManager.Instance.OffVR();
+        }
     }
 
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        //StartCoroutine(WaitForIt());
+        StartCoroutine(WaitForIt());
     }
+
     public void OnEvent(EventData photonEvent)
     {
         if (photonEvent.Code == 0)
@@ -53,6 +68,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public override void OnConnectedToMaster()  //위 서버 접속후 콜백함수
     {
+        print("서버접속");
         PhotonNetwork.JoinOrCreateRoom("RoomName", new RoomOptions { MaxPlayers = 2 }, null);
     }
 
@@ -77,6 +93,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     IEnumerator WaitForIt()
     {
+        vr = true;
+        Connect();
         yield return new WaitForSeconds(5.0f);
         SceneManager.LoadScene("Game");
     }
