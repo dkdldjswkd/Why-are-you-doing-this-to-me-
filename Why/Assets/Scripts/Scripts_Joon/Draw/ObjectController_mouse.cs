@@ -10,14 +10,14 @@ public class ObjectController_mouse : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = Vector3.zero;
+        transform.localPosition = new Vector3(0, 0, 3);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
-            transform.position = Vector3.zero;
+            transform.localPosition = new Vector3(0, 0, 3);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
