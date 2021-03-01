@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DrawLine : MonoBehaviour
 {
+    [SerializeField] GameObject ParentObject;
+
     LineRenderer lr;
     List<Vector3> points = new List<Vector3>();
     //int curvePoint = 0;
@@ -59,14 +61,34 @@ public class DrawLine : MonoBehaviour
             //    if (LS.Location_Right < points[i].x)
             //        LS.Location_Right = points[i].x;
             //}
-            
+
             ////라인 오브젝트가 전부 그려졌다는것을 알림
             //LS.complete = true;
             //LS.SetInfomation();
             //LS.Interpolation(); // 문제있음
 
-            Interpolation_joon.CreateLine(Interpolation_joon.Interpolation(points));
+            //Interpolation_joon.CreateLine(Interpolation_joon.Interpolation(points));
+
+            //List<Vector3> Interpolation(List<Vector3> points); //보간되기전 Line List를 매개변수로 받아 보간 후의 Line List를 반환해줌
+            //void CreateLine(List<Vector3> points); // Line List를 매개변수로 받고, 눈으로 보이는 LineObject를 생성해줌
+
+
+            Interpolation_joon.returnDirectionList
+            (
+                Interpolation_joon.CreateLine
+                (
+                    Interpolation_joon.Interpolation
+                    (
+                        LineRotation_joon.BasicLine(points, ParentObject.transform.eulerAngles.y, ParentObject.transform.position)
+                    )
+                )
+            );      
+
             points.Clear();
         }
     }
+
+
+
 }
+

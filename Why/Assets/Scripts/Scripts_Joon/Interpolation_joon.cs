@@ -57,7 +57,7 @@ public class Interpolation_joon : MonoBehaviour
     public static List<Vector3> Interpolation(List<Vector3> points)
     {
         //---------------------------------------------------변수 생성----------------------------------------------------------
-        List<string> DirectionList_after = new List<string>(); //보간 방향리스트
+        //List<string> DirectionList_after = new List<string>(); //보간 방향리스트
         List<Vector3> points_after = new List<Vector3>(); //보간 포인트 리스트
         points_after = points; // 보간을 진행할 포인트 리스트(points_after)에 보간전 포인트 리스트(points)를 담음
 
@@ -115,40 +115,39 @@ public class Interpolation_joon : MonoBehaviour
             }
         }
 
-        //-----------------------------------------------보간된 직선의 방향 리스트 생성------------------------------------------
-        for (int i = 0; i < points_after.Count - 1; i++)
-        {
-            DirectionList_after.Add(WhatDirection(points_after[i], points_after[i + 1]));
-        }
+        ////-----------------------------------------------보간된 직선의 방향 리스트 생성------------------------------------------
+        //for (int i = 0; i < points_after.Count - 1; i++)
+        //{
+        //    DirectionList_after.Add(WhatDirection(points_after[i], points_after[i + 1]));
+        //}
 
 
-        //-----------------------------보간 된 직선의 방향리스트를 하나의 문자열로 만듬(ex. 좌상 하 좌 )------------------------
-        string InputedMagic = "";
-        for (int i = 0; i < DirectionList_after.Count; i++)
-        {
-            InputedMagic += DirectionList_after[i];
-            InputedMagic += " ";
-        }
-        //----------------------------------------------------------------------------------------------------------------------
+        ////-----------------------------보간 된 직선의 방향리스트를 하나의 문자열로 만듬(ex. 좌상 하 좌 )------------------------
+        //string InputedMagic = "";
+        //for (int i = 0; i < DirectionList_after.Count; i++)
+        //{
+        //    InputedMagic += DirectionList_after[i];
+        //    InputedMagic += " ";
+        //}
+        ////----------------------------------------------------------------------------------------------------------------------
 
 
-        //출력 테스트
-        print(InputedMagic);
+        ////출력 테스트
+        //print(InputedMagic);
 
-        MagicChecking(InputedMagic);
-        // points_after.Clear();
+        //MagicChecking(InputedMagic);
 
         return points_after;
     }
 
     //벡터3 리스트를 Line으로 그려주는 함수
-    public static void CreateLine(List<Vector3> points) // 1번째 매개변수 : (Line의 Position들을 갖는) 벡터3 리스트
+    public static List<Vector3> CreateLine(List<Vector3> points) // 1번째 매개변수 : (Line의 Position들을 갖는) 벡터3 리스트
     {
         GameObject Line = new GameObject("new Line");
         Line.AddComponent<LineRenderer>();
         LineRenderer lr = Line.GetComponent<LineRenderer>();
 
-        //보간된 라인의 최대 인덱스 초기화
+        //그려줄 Line의 Index 설정 (매개변수인 points의 index와 같게 설정함)
         lr.positionCount = points.Count;
 
         //보간된 라인 좌표 초기화 -> 새로운(보간된) 직선의 생성
@@ -159,6 +158,8 @@ public class Interpolation_joon : MonoBehaviour
 
         //----------------추가적인것들 ex.굵기, 색 등 비쥬얼적인 부분--------------
         lr.SetWidth(0.1f, 0.1f);
+
+        return points; // 그린 Line의 벡터3 List 반환
     }
 
     //p1 -> p2 의 방향값 (ex. 좌상) 반환 함수
@@ -201,5 +202,27 @@ public class Interpolation_joon : MonoBehaviour
         else direction = "우";
 
         return direction;
+    }
+
+    //방향 리스트 문자열 반환하며, 일치하는 마법문자를 출력해줌
+    public static string returnDirectionList(List<Vector3> Line) //1. 방향 리스트 문자열을 반환받을 Line List
+    {
+        List<string> DirectionList = new List<string>(); //방향리스트
+
+        for (int i = 0; i < Line.Count - 1; i++)
+        {
+            DirectionList.Add(WhatDirection(Line[i], Line[i + 1]));
+        }
+
+        string InputedMagic = "";
+        for (int i = 0; i < DirectionList.Count; i++)
+        {
+            InputedMagic += DirectionList[i];
+            InputedMagic += " ";
+        }
+        MagicChecking(InputedMagic);
+        print(InputedMagic);
+
+        return InputedMagic;
     }
 }

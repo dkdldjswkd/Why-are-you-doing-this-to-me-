@@ -166,3 +166,8 @@ MonoBehaviour:
   Location_Down: 0
   Location_Left: 0
   Location_Right: 0
+  Size_X: 0
+  Size_Y: 0
+  DeltaX: 0
+  DeltaY: 0
+  complete: 0

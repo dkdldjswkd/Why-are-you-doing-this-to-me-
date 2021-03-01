@@ -6,14 +6,18 @@ public class PlayerController_joon : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     Rigidbody myRigid;
-    // Start is called before the first frame update
+
     void Start()
     {
         myRigid = gameObject.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        MoveCharter();
+    }
+
+    void MoveCharter()
     {
         float InputX = Input.GetAxisRaw("Horizontal");
         float InputZ = Input.GetAxisRaw("Vertical");
@@ -24,7 +28,7 @@ public class PlayerController_joon : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q))
         {
-            myRigid.MoveRotation(transform.rotation * Quaternion.Euler(new Vector3(0,-1,0)));
+            myRigid.MoveRotation(transform.rotation * Quaternion.Euler(new Vector3(0, -1, 0)));
         }
         else if (Input.GetKey(KeyCode.E))
         {
