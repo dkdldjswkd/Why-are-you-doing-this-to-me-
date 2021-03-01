@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Realtime;
+using Photon.Pun;
+using ExitGames.Client.Photon;
 
-public class DefanceManager_joon : MonoBehaviour
+public class DefanceManager_joon : MonoBehaviourPun
 {
     static private List<List<GameObject>> Minions = new List<List<GameObject>>();
     //미니언들을 담는 2차원 리스트
@@ -47,8 +50,6 @@ public class DefanceManager_joon : MonoBehaviour
         //  Instantiate(Minions[4][0], Vector3.zero, Quaternion.identity); //테스트
 
         Reroll();
-
-
     }
 
     void Update()
@@ -59,6 +60,7 @@ public class DefanceManager_joon : MonoBehaviour
         PlayerLevelText.text = PlayerLevel.ToString();
 
         //추후 삭제
+
         if (ReadyMinion != null)
             ReadyMinionText.text = ReadyMinion.name;
         else
@@ -133,7 +135,9 @@ public class DefanceManager_joon : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit) && Input.GetMouseButton(0) && hit.transform.tag == "Ground")
             {
-                GameObject SummonedMinion = Instantiate(ReadyMinion, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                print("Prefab/Minions/Level" + ReadyMinonLevel() + "/" + ReadyMinion.name);
+                GameObject SummonedMinion = PhotonNetwork.Instantiate("Prefab/Minions/Level"+ ReadyMinonLevel() +"/"+ ReadyMinion.name, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
+                //PhotonNetwork.Instantiate("Player1", start.transform.position, Quaternion.identity);
                 SummonedMinion.transform.parent = GameObject.Find("Summoned").transform;
 
                 SelectReroll(ActivatedButtonNumber);
@@ -145,7 +149,19 @@ public class DefanceManager_joon : MonoBehaviour
         }
     }
 
-
-
-
+    public int ReadyMinonLevel()
+    {
+        for (int i = 0; i < Minions.Count; i++)
+        {
+            for (int j = 0; j < Minions[i].Count; j++)
+            {
+                if (Minions[i][j].name == ReadyMinion.name)
+                {
+                    print("레벨확인 : " + (i + 1).ToString());
+                    return i+1;
+                }
+            }
+        }
+        return 0;
+    }
 }

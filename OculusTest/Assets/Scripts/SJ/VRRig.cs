@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 [System.Serializable]
 public class VRMap
@@ -32,7 +34,6 @@ public class VRRig : MonoBehaviour
     {
         headBodyOffest = transform.position - headConstraint.position;
     }
-
 
     void LateUpdate()
     {

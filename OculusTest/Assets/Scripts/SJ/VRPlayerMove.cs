@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class VRPlayerMove : MonoBehaviour
+public class VRPlayerMove : MonoBehaviourPun
 {
     private static VRPlayerMove _instance;
 
@@ -22,6 +24,8 @@ public class VRPlayerMove : MonoBehaviour
             return _instance;
         }
     }
+    public PhotonView PV;
+
     //라인
     public GameObject linePerfab;
     public GameObject linePoint;
@@ -93,15 +97,17 @@ public class VRPlayerMove : MonoBehaviour
         Vector3 pos;
         finshed = false;
 
-        if (points.Count > 1)
-        {
-            pos = new Vector3(linePoint.transform.position.x, linePoint.transform.position.y, saveZ);
-        }
-        else
-        {
-            pos = new Vector3(linePoint.transform.position.x, linePoint.transform.position.y, linePoint.transform.position.z);
-            saveZ = linePoint.transform.position.z;
-        }
+        //if (points.Count > 1)
+        //{
+        //    pos = new Vector3(linePoint.transform.position.x, linePoint.transform.position.y, saveZ);
+        //}
+        //else
+        //{
+        //    pos = new Vector3(linePoint.transform.position.x, linePoint.transform.position.y, linePoint.transform.position.z);
+        //    saveZ = linePoint.transform.position.z;
+        //}
+
+        pos = new Vector3(linePoint.transform.position.x, linePoint.transform.position.y, linePoint.transform.position.z);
 
         if (Vector3.Distance(points[points.Count - 1], pos) > 0.01f)
         {
