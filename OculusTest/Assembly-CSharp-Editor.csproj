@@ -772,6 +772,14 @@
       <Project>{E178F720-E002-9828-E98A-68BFC6F0DED2}</Project>
       <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Oculus.Platform.csproj">
+      <Project>{1F16038C-5070-FADD-82F2-377615A6047D}</Project>
+      <Name>Oculus.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.Platform.Editor.csproj">
+      <Project>{CE0610AD-4E15-41AE-296E-A8109697611C}</Project>
+      <Name>Oculus.Platform.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="ShaderProperty.Editor.csproj">
       <Project>{DB4278EA-241C-64FE-47F9-EFE250BF0C0D}</Project>
       <Name>ShaderProperty.Editor</Name>
@@ -840,9 +848,17 @@
       <Project>{F0995072-E01D-E7B2-F5DF-DB7071A64C4F}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
+    <ProjectReference Include="Oculus.VR.Editor.csproj">
+      <Project>{C65BF302-245D-20E1-0A55-C4CC3E82EAB7}</Project>
+      <Name>Oculus.VR.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="VRM.csproj">
       <Project>{DCFE2296-DB9F-35C1-316C-E0DC820B7443}</Project>
       <Name>VRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
+      <Project>{CD35C987-58F3-F4BA-FA35-6ED1E1A57207}</Project>
+      <Name>Oculus.VR.Scripts.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="HalfFloatASMDEF.csproj">
       <Project>{D0D38358-027A-B430-84A4-C9C529B9AF64}</Project>
@@ -851,6 +867,10 @@
     <ProjectReference Include="BitpackersASMDEF.csproj">
       <Project>{D8E42E10-2E2A-7965-1759-13C2AC8D5303}</Project>
       <Name>BitpackersASMDEF</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.csproj">
+      <Project>{227942EE-1B15-1E05-691F-9E0B0EEC91E9}</Project>
+      <Name>Oculus.VR</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
       <Project>{65223B5A-9D64-A675-BAFC-26F2C85E92EC}</Project>
@@ -879,26 +899,6 @@
     <ProjectReference Include="ShaderProperty.Runtime.csproj">
       <Project>{DFDA036A-E5A1-3415-4BDE-4B720E22A0B8}</Project>
       <Name>ShaderProperty.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Platform.csproj">
-      <Project>{1F16038C-5070-FADD-82F2-377615A6047D}</Project>
-      <Name>Oculus.Platform</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.Platform.Editor.csproj">
-      <Project>{CE0610AD-4E15-41AE-296E-A8109697611C}</Project>
-      <Name>Oculus.Platform.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Editor.csproj">
-      <Project>{C65BF302-245D-20E1-0A55-C4CC3E82EAB7}</Project>
-      <Name>Oculus.VR.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
-      <Project>{CD35C987-58F3-F4BA-FA35-6ED1E1A57207}</Project>
-      <Name>Oculus.VR.Scripts.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{227942EE-1B15-1E05-691F-9E0B0EEC91E9}</Project>
-      <Name>Oculus.VR</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

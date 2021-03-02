@@ -100,7 +100,7 @@ public class DefanceManager_joon : MonoBehaviourPun
             int MinionLevel = Random.Range(0, PlayerLevel);
             int n = Random.Range(0, Minions[MinionLevel].Count);
             HandMinions[i] = Minions[MinionLevel][n];
-           // print(i + "번째 핸드 : " + HandMinions[i].name);
+           //print(i + "번째 핸드 : " + HandMinions[i].name);
 
             UnitButtonImage[i].sprite = Resources.Load("Image/Minions/" + HandMinions[i].name, typeof(Sprite)) as Sprite;
         }
@@ -135,10 +135,9 @@ public class DefanceManager_joon : MonoBehaviourPun
 
             if (Physics.Raycast(ray, out hit) && Input.GetMouseButton(0) && hit.transform.tag == "Ground")
             {
-                print("Prefab/Minions/Level" + ReadyMinonLevel() + "/" + ReadyMinion.name);
+                print("레이저 위치 : "+new Vector3(hit.point.x, 1, hit.point.z));
                 GameObject SummonedMinion = PhotonNetwork.Instantiate("Prefab/Minions/Level"+ ReadyMinonLevel() +"/"+ ReadyMinion.name, new Vector3(hit.point.x, 1, hit.point.z), Quaternion.identity);
-                //PhotonNetwork.Instantiate("Player1", start.transform.position, Quaternion.identity);
-                SummonedMinion.transform.parent = GameObject.Find("Summoned").transform;
+                //SummonedMinion.transform.parent = GameObject.Find("Summoned").transform;
 
                 SelectReroll(ActivatedButtonNumber);
 

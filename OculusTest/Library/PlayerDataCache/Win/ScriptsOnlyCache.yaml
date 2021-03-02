@@ -66,6 +66,7 @@ ScriptsOnlyBuild:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
     - Photon.Pun.PhotonTransformView
+    - Photon.Pun.PhotonTransformViewClassic
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
     UniHumanoid.dll:
@@ -414,6 +415,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16488}
     - Class: 114
+      Script: {instanceID: 16494}
+    - Class: 114
       Script: {instanceID: 16728}
     - Class: 114
       Script: {instanceID: 16868}
@@ -432,7 +435,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17476}
     - Class: 114
-      Script: {instanceID: 18060}
+      Script: {instanceID: 18030}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
