@@ -52,7 +52,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks, IOnEventCallback
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        //StartCoroutine(WaitForIt());
+        StartCoroutine(WaitForIt());
     }
 
     public void OnEvent(EventData photonEvent)

@@ -24,7 +24,7 @@ public class VRPlayerMove : MonoBehaviourPun
             return _instance;
         }
     }
-    public PhotonView PV;
+    PhotonView PV;
 
     //라인
     public GameObject linePerfab;
@@ -56,6 +56,8 @@ public class VRPlayerMove : MonoBehaviourPun
 
     void Start()
     {
+        PV = photonView;
+
         online = Instantiate(linePerfab);
         online.transform.parent = linetransform.transform;
 
@@ -121,7 +123,17 @@ public class VRPlayerMove : MonoBehaviourPun
     {
         if (points.Count > 1)   //그림이 다 그려지면
         {
-            Interpolation_joon.Interpolation(points);
+            Interpolation_joon.returnDirectionList
+            (
+                //Interpolation_joon.CreateLine
+                //(
+                    Interpolation_joon.Interpolation
+                    (
+                        LineRotation_joon.BasicLine(points, PlayergameObject.transform.eulerAngles.y, PlayergameObject.transform.position)
+                    )
+                //)
+
+            );
         }
         points.Clear();
         points.Add(linePoint.transform.position);
