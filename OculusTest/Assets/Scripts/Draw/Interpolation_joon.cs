@@ -16,7 +16,30 @@ public class Interpolation_joon : MonoBehaviour
 
         {"좌 하 우 ", "ㄷ" },
 
-        { "우 하 좌 상 ", "ㅁ(시계방향)"}
+        { "우 하 좌 상 ", "ㅁ(시계방향)"},
+
+        { "좌하 하 우 우상 상 좌 ", "반시계 원"},
+        { "좌하 우하 우 우상 좌상 좌 ", "반시계 원"},
+        {"좌하 하 우하 우 우상 상 좌 ", "반시계 원" },
+        {"좌하 하 우하 우 우상 상 좌상 ", "반시계 원" },
+        {"좌하 하 우하 우 우상 좌상 좌 ", "반시계 원" },
+        {"좌하 우하 우 우상 상 좌상 좌 ", "반시계 원" },
+        { "좌하 하 우하 우 우상 상 좌상 좌 ", "반시계 원"},
+        {"좌 좌하 하 우하 우 우상 상 좌상 좌 ", "반시계 원" },
+        { "좌하 하 우하 우 우상 상 좌상 좌 좌상 ", "반시계 원"},
+
+        {"하 우상 좌 우하 좌상 ", "별" },
+        { "좌하 우상 좌 우하 상 ", "별"},
+        { "좌하 우상 좌 우하 좌상 ", "별"},
+        {"하 우상 좌 우하 상 좌상 ", "별" },
+        {"좌하 우상 우 좌 우하 상  ", "별" },
+        {"좌하 우상 좌 우하 좌상 상 ", "별" },
+        {"좌하 하 우상 좌 우하 좌상 ", "별" },
+        {"좌하 우 좌 우하 우하 상 좌상 ", "별" },
+        { "하 우상 우상 우 좌 우하 우하 좌상 ", "별"},
+        {"좌하 우상 우 우상 좌 우하 우 좌상 상 ", "별" },
+        { "좌하 하 좌하 우 우 우상 우 우상 좌 우하 우하 상 좌상 ", "별"},
+
     };
 
     //Dictionary[Key]로 Value를 취득할 수 있다.
@@ -27,82 +50,31 @@ public class Interpolation_joon : MonoBehaviour
             print(whatMagic);
         else
             print("일치하는 마법이 없습니다.");
-
-        //if (Magics[inputed] == null)
-        //    print("일치하는 문자 없음");
-        //else
-        //    print(Magics[inputed]);
     }
+
 
     //보간
     public static List<Vector3> Interpolation(List<Vector3> points)
     {
-        List<string> DirectionList = new List<string>(); // 보간전 방향리스트
+        //---------------------------------------------------변수 생성----------------------------------------------------------
+        //List<string> DirectionList_after = new List<string>(); //보간 방향리스트
+        List<Vector3> points_after = new List<Vector3>(); //보간 포인트 리스트
+        points_after = points; // 보간을 진행할 포인트 리스트(points_after)에 보간전 포인트 리스트(points)를 담음
 
-        //보간전 방향리스트 생성 
-        for (int i = 0; i < points.Count - 1; i++)
+        //--------------------------------------1차 보간(같은방향의 직선들을 하나의 직선으로 만듬)------------------------------
+        for (int i = 1; i < points_after.Count - 1; i++)
         {
-            double p1x = points[i].x;
-            double p1y = points[i].y;
+            string tmp1 = WhatDirection(points_after[i - 1], points_after[i]); // ex. p0 -> p1 의 직선방향 (ex. 우상)
+            string tmp2 = WhatDirection(points_after[i], points_after[i + 1]); // ex. p1 -> p2 의 직선방향 (ex. 상)
 
-            double p2x = points[i + 1].x;
-            double p2y = points[i + 1].y;
-
-            double deltaX = p2x - p1x;
-            double deltaY = p2y - p1y;
-            double inc = deltaY / deltaX; // 기울기 -> y증가량 / x증가량
-
-            double radians = Math.Atan(inc);
-            double angle = radians * (180 / Math.PI);
-
-            if (deltaX > 0 && deltaY > 0) { angle += 0; } // 1사분면
-            else if (deltaX < 0 && deltaY > 0) { angle += 180; } // 2사분면
-            else if (deltaX < 0 && deltaY < 0) { angle += 180; } // 3사분면
-            else if (deltaX > 0 && deltaY < 0) { angle += 360; } // 4사분면
-            //1사분면 각 -> angle
-            //2사분면 각 -> 180 + angle
-            //3사분면 각 -> 180 + angle
-            //4사분면 각 -> 360 + angle
-            if (angle < 0) angle += 360;
-            // 상->하 직선의 경우 -90도가 됨
-            else if (angle == 0) { if (deltaX < 0) angle = 180; }
-            // 좌->우, 우->좌 두 직선의 경우 0도가됨(좌->우는 상관없지만 우->좌가 문제)
-
-            string direction;
-            if (angle > 22.5f && 67.5f > angle) direction = "우상";
-            else if (angle > 67.5f && 112.5f > angle) direction = "상";
-            else if (angle > 112.5f && 157.5f > angle) direction = "좌상";
-            else if (angle > 157.5f && 202.5f > angle) direction = "좌";
-            else if (angle > 202.5 && 247.5f > angle) direction = "좌하";
-            else if (angle > 247.5f && 292.5f > angle) direction = "하";
-            else if (angle > 292.5f && 337.5f > angle) direction = "우하";
-            else direction = "우";
-
-            DirectionList.Add(direction);
-        }
-
-        List<string> DirectionList_after = new List<string>(); //보간 후 방향리스트
-        List<Vector3> points_after = new List<Vector3>(); //보간 후 포인트
-
-        points_after.Add(points[0]); // 보간후 포인트의 첫번째 인덱스 추가
-
-        int Deviate = 0; // 어긋난 점의 인덱스
-        //1차 보간 (어긋나지 않은 직선들을 한 직선으로 통일시킴)
-        for (int i = 0; i < DirectionList.Count - 1; i++)
-        {
-            Deviate++;
-
-            string tmp1 = DirectionList[i]; // ex. p0 -> p1 의 직선방향 (ex. 우상)
-            string tmp2 = DirectionList[i + 1]; // ex. p1 -> p2 의 직선방향 (ex. 상)
-
-            //이부분 수정해야함
-            if (tmp1 != tmp2 || i == DirectionList.Count - 2) // 직선의 방향이 어긋나면 또는 마지막 인덱스라면
+            if (tmp1 == tmp2)
             {
-                points_after.Add(points[Deviate]); //기본형 라인의 어긋난 좌표를 추가
+                points_after.RemoveAt(i);
+                i--;
             }
         }
 
-
+        //---------------------------------------------------2차 보간 세팅-------------------------------------------------------
         float lineLangth = 0; // 1차 보간된 그림의 길이를 담는 변수
         for (int i = 0; i < points_after.Count - 1; i++) // 1차 보간된 그림의 길이를 변수에 담는 반복문
         {
@@ -112,89 +84,145 @@ public class Interpolation_joon : MonoBehaviour
         //제외 기준 길이 설정 (총길이 / 직선의개수 * 2)
         float deadline = lineLangth / ((points_after.Count - 1) * 2);
 
-        //2차 보간 (짧은 직선은 제외시킴)
-        for (int i = 0; ; i++)
+        //---------------------------------------------2차 보간(짧은 직선은 삭제함)---------------------------------------------
+        if (points_after.Count > 1)
         {
-            //현재 인덱스의 직선이 짧다면 인덱스에서 제외함
-            if (Vector3.Distance(points_after[i], points_after[i + 1]) < deadline)
+            for (int i = 0; ; i++)
             {
-                points_after.RemoveAt(i + 1);
-                i = 0;
-                continue;
-            }
+                //현재 인덱스의 직선이 짧다면 인덱스에서 제외함
+                if (Vector3.Distance(points_after[i], points_after[i + 1]) < deadline)
+                {
+                    points_after.RemoveAt(i + 1);
+                    i = 0;
+                    continue;
+                }
 
-            if (i == points_after.Count - 2)
-                break;
+                if (i == points_after.Count - 2)
+                    break;
+            }
         }
 
+        //---------------------------------------------3차 보간(1차 보간과 같은작업)---------------------------------------------
+        for (int i = 1; i < points_after.Count - 1; i++)
+        {
+            string tmp1 = WhatDirection(points_after[i - 1], points_after[i]); // ex. p0 -> p1 의 직선방향 (ex. 우상)
+            string tmp2 = WhatDirection(points_after[i], points_after[i + 1]); // ex. p1 -> p2 의 직선방향 (ex. 상)
 
-        ////최종적으로 보간된 새로운 라인을 생성
-        //GameObject Line_Interpolation = Instantiate(Resources.Load("Prefab/Others/Line")) as GameObject; // 라인 게임오브젝트 프리팹 경로 설정
-        //LineRenderer lr_Interpolation = Line_Interpolation.GetComponent<LineRenderer>();
-        ////보간된 라인의 최대 인덱스 초기화
-        //lr_Interpolation.positionCount = points_after.Count;
+            if (tmp1 == tmp2)
+            {
+                points_after.RemoveAt(i);
+                i--;
+            }
+        }
 
-        ////보간된 라인 좌표 초기화 -> 새로운(보간된) 직선의 생성
-        //for (int i = 0; i < points_after.Count; i++)
+        ////-----------------------------------------------보간된 직선의 방향 리스트 생성------------------------------------------
+        //for (int i = 0; i < points_after.Count - 1; i++)
         //{
-        //    lr_Interpolation.SetPosition(i, points_after[i]);
+        //    DirectionList_after.Add(WhatDirection(points_after[i], points_after[i + 1]));
         //}
 
-        //보간된 직선의 방향 리스트 생성
-        for (int i = 0; i < points_after.Count - 1; i++)
+
+        ////-----------------------------보간 된 직선의 방향리스트를 하나의 문자열로 만듬(ex. 좌상 하 좌 )------------------------
+        //string InputedMagic = "";
+        //for (int i = 0; i < DirectionList_after.Count; i++)
+        //{
+        //    InputedMagic += DirectionList_after[i];
+        //    InputedMagic += " ";
+        //}
+        ////----------------------------------------------------------------------------------------------------------------------
+
+
+        ////출력 테스트
+        //print(InputedMagic);
+
+        //MagicChecking(InputedMagic);
+
+        return points_after;
+    }
+
+    //벡터3 리스트를 Line으로 그려주는 함수
+    public static List<Vector3> CreateLine(List<Vector3> points) // 1번째 매개변수 : (Line의 Position들을 갖는) 벡터3 리스트
+    {
+        GameObject Line = new GameObject("new Line");
+        Line.AddComponent<LineRenderer>();
+        LineRenderer lr = Line.GetComponent<LineRenderer>();
+
+        //그려줄 Line의 Index 설정 (매개변수인 points의 index와 같게 설정함)
+        lr.positionCount = points.Count;
+
+        //보간된 라인 좌표 초기화 -> 새로운(보간된) 직선의 생성
+        for (int i = 0; i < points.Count; i++)
         {
-            double p1x = points_after[i].x;
-            double p1y = points_after[i].y;
+            lr.SetPosition(i, points[i]);
+        }
 
-            double p2x = points_after[i + 1].x;
-            double p2y = points_after[i + 1].y;
+        //----------------추가적인것들 ex.굵기, 색 등 비쥬얼적인 부분--------------
+        lr.SetWidth(0.1f, 0.1f);
 
-            double deltaX = p2x - p1x;
-            double deltaY = p2y - p1y;
-            double inc = deltaY / deltaX; // 기울기 -> y증가량 / x증가량
+        return points; // 그린 Line의 벡터3 List 반환
+    }
 
-            double radians = Math.Atan(inc);
-            double angle = radians * (180 / Math.PI);
+    //p1 -> p2 의 방향값 (ex. 좌상) 반환 함수
+    public static string WhatDirection(Vector3 p1, Vector3 p2)
+    {
+        double p1x = p1.x;
+        double p1y = p1.y;
 
-            if (deltaX > 0 && deltaY > 0) { angle += 0; } // 1사분면
-            else if (deltaX < 0 && deltaY > 0) { angle += 180; } // 2사분면
-            else if (deltaX < 0 && deltaY < 0) { angle += 180; } // 3사분면
-            else if (deltaX > 0 && deltaY < 0) { angle += 360; } // 4사분면
-            //1사분면 각 -> angle
-            //2사분면 각 -> 180 + angle
-            //3사분면 각 -> 180 + angle
-            //4사분면 각 -> 360 + angle
-            if (angle < 0) angle += 360;
-            // 상->하 직선의 경우 -90도가 됨
-            else if (angle == 0) { if (deltaX < 0) angle = 180; }
-            // 좌->우, 우->좌 두 직선의 경우 0도가됨(좌->우는 상관없지만 우->좌가 문제)
+        double p2x = p2.x;
+        double p2y = p2.y;
 
-            string direction;
-            if (angle > 22.5f && 67.5f > angle) direction = "우상";
-            else if (angle > 67.5f && 112.5f > angle) direction = "상";
-            else if (angle > 112.5f && 157.5f > angle) direction = "좌상";
-            else if (angle > 157.5f && 202.5f > angle) direction = "좌";
-            else if (angle > 202.5 && 247.5f > angle) direction = "좌하";
-            else if (angle > 247.5f && 292.5f > angle) direction = "하";
-            else if (angle > 292.5f && 337.5f > angle) direction = "우하";
-            else direction = "우";
+        double deltaX = p2x - p1x;
+        double deltaY = p2y - p1y;
+        double inc = deltaY / deltaX; // 기울기 -> y증가량 / x증가량
 
-            DirectionList_after.Add(direction);
+        double radians = Math.Atan(inc);
+        double angle = radians * (180 / Math.PI);
+
+        if (deltaX > 0 && deltaY > 0) { angle += 0; } // 1사분면
+        else if (deltaX < 0 && deltaY > 0) { angle += 180; } // 2사분면
+        else if (deltaX < 0 && deltaY < 0) { angle += 180; } // 3사분면
+        else if (deltaX > 0 && deltaY < 0) { angle += 360; } // 4사분면
+        //1사분면 각 -> angle
+        //2사분면 각 -> 180 + angle
+        //3사분면 각 -> 180 + angle
+        //4사분면 각 -> 360 + angle
+        if (angle < 0) angle += 360;
+        // 상->하 직선의 경우 -90도가 됨
+        else if (angle == 0) { if (deltaX < 0) angle = 180; }
+        // 좌->우, 우->좌 두 직선의 경우 0도가됨(좌->우는 상관없지만 우->좌가 문제)
+
+        string direction;
+        if (angle > 22.5f && 67.5f > angle) direction = "우상";
+        else if (angle > 67.5f && 112.5f > angle) direction = "상";
+        else if (angle > 112.5f && 157.5f > angle) direction = "좌상";
+        else if (angle > 157.5f && 202.5f > angle) direction = "좌";
+        else if (angle > 202.5 && 247.5f > angle) direction = "좌하";
+        else if (angle > 247.5f && 292.5f > angle) direction = "하";
+        else if (angle > 292.5f && 337.5f > angle) direction = "우하";
+        else direction = "우";
+
+        return direction;
+    }
+
+    //방향 리스트 문자열 반환하며, 일치하는 마법문자를 출력해줌
+    public static string returnDirectionList(List<Vector3> Line) //1. 방향 리스트 문자열을 반환받을 Line List
+    {
+        List<string> DirectionList = new List<string>(); //방향리스트
+
+        for (int i = 0; i < Line.Count - 1; i++)
+        {
+            DirectionList.Add(WhatDirection(Line[i], Line[i + 1]));
         }
 
         string InputedMagic = "";
-        for (int i = 0; i < DirectionList_after.Count; i++)
+        for (int i = 0; i < DirectionList.Count; i++)
         {
-            InputedMagic += DirectionList_after[i];
+            InputedMagic += DirectionList[i];
             InputedMagic += " ";
         }
-
-        //출력 테스트
+        MagicChecking(InputedMagic);
         print(InputedMagic);
 
-        MagicText_joon.MagicChecking(InputedMagic);
-        // points_after.Clear();
-
-        return points_after;
+        return InputedMagic;
     }
 }

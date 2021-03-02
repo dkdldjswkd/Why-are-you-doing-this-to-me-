@@ -6,6 +6,7 @@ public class ObjectController_mouse : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     GameObject tmp;
+    GameObject tmp2;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +23,14 @@ public class ObjectController_mouse : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             tmp = GameObject.Find("Line(Clone)");
+            tmp2 = GameObject.Find("new Line");
             if(tmp != null)
             {
                 Destroy(tmp);
+            }   
+            if(tmp2 != null)
+            {
+                Destroy(tmp2);
             }
 
             LineScript.TemplateClear();
