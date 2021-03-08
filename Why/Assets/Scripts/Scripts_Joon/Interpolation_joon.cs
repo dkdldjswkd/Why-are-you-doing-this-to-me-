@@ -59,20 +59,23 @@ public class Interpolation_joon : MonoBehaviour
         //---------------------------------------------------변수 생성----------------------------------------------------------
         //List<string> DirectionList_after = new List<string>(); //보간 방향리스트
         List<Vector3> points_after = new List<Vector3>(); //보간 포인트 리스트
-        points_after = points; // 보간을 진행할 포인트 리스트(points_after)에 보간전 포인트 리스트(points)를 담음
 
-        //--------------------------------------1차 보간(같은방향의 직선들을 하나의 직선으로 만듬)------------------------------
-        for (int i = 1; i < points_after.Count - 1; i++)
-        {
-            string tmp1 = WhatDirection(points_after[i - 1], points_after[i]); // ex. p0 -> p1 의 직선방향 (ex. 우상)
-            string tmp2 = WhatDirection(points_after[i], points_after[i + 1]); // ex. p1 -> p2 의 직선방향 (ex. 상)
+        //--------------------------------------1차 보간(버전1)(같은방향의 직선들을 하나의 직선으로 만듬)------------------------------
+        //points_after = points; // 보간을 진행할 포인트 리스트(points_after)에 보간전 포인트 리스트(points)를 담음
+        //for (int i = 1; i < points_after.Count - 1; i++)
+        //{
+        //    string tmp1 = WhatDirection(points_after[i - 1], points_after[i]); // ex. p0 -> p1 의 직선방향 (ex. 우상)
+        //    string tmp2 = WhatDirection(points_after[i], points_after[i + 1]); // ex. p1 -> p2 의 직선방향 (ex. 상)
 
-            if (tmp1 == tmp2)
-            {
-                points_after.RemoveAt(i);
-                i--;
-            }
-        }
+        //    if (tmp1 == tmp2)
+        //    {
+        //        points_after.RemoveAt(i);
+        //        i--;
+        //    }
+        //}
+
+        //---------------------------1차 보간(버전2)(곡률이 45도를 넘지 않는다면 하나의 직선으로 만듬)-----------------------------
+        points_after = Interpolation_Inflection(points);
 
         //---------------------------------------------------2차 보간 세팅-------------------------------------------------------
         float lineLangth = 0; // 1차 보간된 그림의 길이를 담는 변수
@@ -129,7 +132,10 @@ public class Interpolation_joon : MonoBehaviour
         //    InputedMagic += DirectionList_after[i];
         //    InputedMagic += " ";
         //}
-        ////----------------------------------------------------------------------------------------------------------------------
+
+
+        //------------------------------------------------------곡률 보정-------------------------------------------------------
+
 
 
         ////출력 테스트
@@ -137,6 +143,60 @@ public class Interpolation_joon : MonoBehaviour
 
         //MagicChecking(InputedMagic);
 
+        return points_after;
+    }
+
+    //변곡률이 45도를 넘지 않는다면 하나의 직선으로 처리함
+    public static List<Vector3> Interpolation_Inflection(List<Vector3> points)
+    {
+        List<Vector3> points_after = new List<Vector3>(); //보간 포인트 리스트
+
+        List<int> newIndex = new List<int>(); //points의 인덱스 중 유의미한 인덱스만 거름
+        newIndex.Add(0);
+
+        int StartPoint = 0;
+        for (int i = 2; i < points.Count; i++)
+        {
+            if (i - StartPoint < 2) continue;
+
+            double TotalCurvAngle = 0;
+            for (int j = StartPoint; j <= i - 2; j++)
+            {
+                //내각 구하기
+                double tmp1 = Slope(points[j + 1], points[j]);
+                double tmp2 = Slope(points[j + 1], points[j+2]);
+                double inAngle = tmp1 - tmp2;
+                if (inAngle < 0) inAngle *= -1;
+                if (inAngle > 180) inAngle = 360 - inAngle;
+                //변곡률 구하기
+                double CurveAngle = 180 - inAngle;
+
+                if (CurveAngle < 0) print("버그터짐");
+
+                TotalCurvAngle += CurveAngle;
+                if (TotalCurvAngle > 45.0)
+                {
+                    newIndex.Add(i - 1);
+                    StartPoint = i - 1;
+                    break;
+                }
+            }
+
+            if(i==points.Count-1)
+                newIndex.Add(i - 1);
+        }
+
+        //기존 points에서 유의미한 인덱스만 추출해서 points_after에 삽입함
+        for (int i = 0; i < newIndex.Count; i++)
+        {
+            points_after.Add( points[ newIndex[i] ] );
+        }
+
+        //디버깅
+        for (int i = 0; i < newIndex.Count; i++)
+        {
+            print(newIndex[i]);
+        }
         return points_after;
     }
 
@@ -157,13 +217,31 @@ public class Interpolation_joon : MonoBehaviour
         }
 
         //----------------추가적인것들 ex.굵기, 색 등 비쥬얼적인 부분--------------
-        lr.SetWidth(0.1f, 0.1f);
+        lr.SetWidth(0.3f, 0.3f);
 
         return points; // 그린 Line의 벡터3 List 반환
     }
 
     //p1 -> p2 의 방향값 (ex. 좌상) 반환 함수
     public static string WhatDirection(Vector3 p1, Vector3 p2)
+    {
+       double angle = Slope(p1, p2);
+
+        string direction;
+        if (angle > 22.5f && 67.5f > angle) direction = "우상";
+        else if (angle > 67.5f && 112.5f > angle) direction = "상";
+        else if (angle > 112.5f && 157.5f > angle) direction = "좌상";
+        else if (angle > 157.5f && 202.5f > angle) direction = "좌";
+        else if (angle > 202.5 && 247.5f > angle) direction = "좌하";
+        else if (angle > 247.5f && 292.5f > angle) direction = "하";
+        else if (angle > 292.5f && 337.5f > angle) direction = "우하";
+        else direction = "우";
+
+        return direction;
+    }
+
+    //p1 -> p2 의 각도 (ex. 45도) 반환 함수
+    public static double Slope(Vector3 p1, Vector3 p2)
     {
         double p1x = p1.x;
         double p1y = p1.y;
@@ -191,17 +269,7 @@ public class Interpolation_joon : MonoBehaviour
         else if (angle == 0) { if (deltaX < 0) angle = 180; }
         // 좌->우, 우->좌 두 직선의 경우 0도가됨(좌->우는 상관없지만 우->좌가 문제)
 
-        string direction;
-        if (angle > 22.5f && 67.5f > angle) direction = "우상";
-        else if (angle > 67.5f && 112.5f > angle) direction = "상";
-        else if (angle > 112.5f && 157.5f > angle) direction = "좌상";
-        else if (angle > 157.5f && 202.5f > angle) direction = "좌";
-        else if (angle > 202.5 && 247.5f > angle) direction = "좌하";
-        else if (angle > 247.5f && 292.5f > angle) direction = "하";
-        else if (angle > 292.5f && 337.5f > angle) direction = "우하";
-        else direction = "우";
-
-        return direction;
+        return angle;
     }
 
     //방향 리스트 문자열 반환하며, 일치하는 마법문자를 출력해줌

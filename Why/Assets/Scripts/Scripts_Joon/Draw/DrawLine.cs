@@ -73,16 +73,28 @@ public class DrawLine : MonoBehaviour
             //void CreateLine(List<Vector3> points); // Line List를 매개변수로 받고, 눈으로 보이는 LineObject를 생성해줌
 
 
-            Interpolation_joon.returnDirectionList
+            Interpolation_joon.returnDirectionList // 문자의 제스처를 판단하고 제스처 리스트에 합당하는 벨류값을 반환함 (제스처 string 반환 (ex. 상 우하 상))
             (
-                Interpolation_joon.CreateLine
+                Interpolation_joon.CreateLine // 벡터3 리스트를 문자 그려줌 (시각화함) (벡터3 리스트 반환)
                 (
-                    Interpolation_joon.Interpolation
+                    Interpolation_joon.Interpolation // 보간을 진행함 (벡터3 리스트 반환)
                     (
-                        LineRotation_joon.BasicLine(points, ParentObject.transform.eulerAngles.y, ParentObject.transform.position)
+                        LineRotation_joon.BasicLine(points, ParentObject.transform.eulerAngles.y, ParentObject.transform.position) // 문자를 판단하기위해 z축방향으로 문자를 회전시킴 (벡터3 리스트 반환)
                     )
                 )
-            );      
+            );
+
+            //Interpolation_joon.returnDirectionList
+            //(
+            //    Interpolation_joon.CreateLine
+            //    (
+
+            //        Interpolation_joon.Interpolation
+            //        (
+            //            LineRotation_joon.BasicLine(points, ParentObject.transform.eulerAngles.y, ParentObject.transform.position)
+            //        )
+            //    )
+            //);
 
             points.Clear();
         }
