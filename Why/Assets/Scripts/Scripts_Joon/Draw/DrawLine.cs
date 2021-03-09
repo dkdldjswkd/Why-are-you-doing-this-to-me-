@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class DrawLine : MonoBehaviour
@@ -12,6 +13,7 @@ public class DrawLine : MonoBehaviour
     //int curvePoint = 0;
     public GameObject Line; // 라인렌더러로 그린 오브젝트
     LineScript LS;
+
 
     void Update()
     {

@@ -92,28 +92,28 @@ public class LineScript : MonoBehaviour
         }
     }
 
-    public static void TemplateClear()
-    {
-        //템플릿 초기화
-        for (int i = 0; i < 10; i++)
-        {
-            for (int j = 0; j < 10; j++)
-            {
-                Template[i, j] = 0;
-            }
-        }
+    //public static void TemplateClear()
+    //{
+    //    //템플릿 초기화
+    //    for (int i = 0; i < 10; i++)
+    //    {
+    //        for (int j = 0; j < 10; j++)
+    //        {
+    //            Template[i, j] = 0;
+    //        }
+    //    }
 
-        GameObject TemplateImage = GameObject.Find("TemplateImage");
-        for (int i = 0; i < 10; i++)
-        {
-            Transform tmp = TemplateImage.transform.GetChild(i);
-            for (int j = 0; j < 10; j++)
-            {
-                tmp.GetChild(j).GetComponent<Image>().color = new Color(1, 1, 1);
-            }
+    //    GameObject TemplateImage = GameObject.Find("TemplateImage");
+    //    for (int i = 0; i < 10; i++)
+    //    {
+    //        Transform tmp = TemplateImage.transform.GetChild(i);
+    //        for (int j = 0; j < 10; j++)
+    //        {
+    //            tmp.GetChild(j).GetComponent<Image>().color = new Color(1, 1, 1);
+    //        }
 
-        }
-    }
+    //    }
+    //}
 
     ////보간
     //public void Interpolation()

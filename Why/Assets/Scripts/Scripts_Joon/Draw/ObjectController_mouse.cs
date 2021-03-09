@@ -33,7 +33,7 @@ public class ObjectController_mouse : MonoBehaviour
                 Destroy(tmp2);
             }
 
-            LineScript.TemplateClear();
+            //LineScript.TemplateClear();
         }
 
         float MouseX = Input.GetAxisRaw("Mouse X") * moveSpeed * Time.deltaTime;

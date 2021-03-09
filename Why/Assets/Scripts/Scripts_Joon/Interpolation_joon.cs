@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Interpolation_joon : MonoBehaviour
 {
+
     //마법 문자 딕셔너리
     public static Dictionary<string, string> Magics = new Dictionary<string, string>() {
         {"좌하 우 좌하 ", "번개"}, // ex. '좌하->우->좌하'의 그림은 '번개'마법을 사용함
@@ -16,40 +17,49 @@ public class Interpolation_joon : MonoBehaviour
 
         {"좌 하 우 ", "ㄷ" },
 
-        { "우 하 좌 상 ", "ㅁ(시계방향)"},
-
-        { "좌하 하 우 우상 상 좌 ", "반시계 원"},
-        { "좌하 우하 우 우상 좌상 좌 ", "반시계 원"},
+        {"좌하 하 우 우상 상 좌 ", "반시계 원"},
+        {"좌하 하 우 우상 상 좌상 ", "반시계 원"},
+        {"좌하 우하 우 우상 좌상 좌 ", "반시계 원"},
         {"좌하 하 우하 우 우상 상 좌 ", "반시계 원" },
         {"좌하 하 우하 우 우상 상 좌상 ", "반시계 원" },
         {"좌하 하 우하 우 우상 좌상 좌 ", "반시계 원" },
         {"좌하 우하 우 우상 상 좌상 좌 ", "반시계 원" },
-        { "좌하 하 우하 우 우상 상 좌상 좌 ", "반시계 원"},
+        {"좌하 하 우하 우 우상 상 좌상 좌 ", "반시계 원"},
         {"좌 좌하 하 우하 우 우상 상 좌상 좌 ", "반시계 원" },
-        { "좌하 하 우하 우 우상 상 좌상 좌 좌상 ", "반시계 원"},
+        {"좌하 하 우하 우 우상 상 좌상 좌 좌상 ", "반시계 원"},
 
-        {"하 우상 좌 우하 좌상 ", "별" },
-        { "좌하 우상 좌 우하 상 ", "별"},
-        { "좌하 우상 좌 우하 좌상 ", "별"},
-        {"하 우상 좌 우하 상 좌상 ", "별" },
-        {"좌하 우상 우 좌 우하 상  ", "별" },
-        {"좌하 우상 좌 우하 좌상 상 ", "별" },
-        {"좌하 하 우상 좌 우하 좌상 ", "별" },
-        {"좌하 우 좌 우하 우하 상 좌상 ", "별" },
-        { "하 우상 우상 우 좌 우하 우하 좌상 ", "별"},
+        {"하 우상 좌 우하 좌상 ", "별"},
+        {"좌하 우 좌 우하 상 ", "별"},
+        {"좌하 우상 좌 하 상 ", "별"},
+        {"하 우상 좌 우하 상 ", "별"},
+        {"좌하 우상 좌 우하 상 ", "별"},
+        {"좌하 우상 좌 우하 좌상 ", "별"},
+        {"하 우상 좌 우하 상 좌상 ", "별"},
+        {"좌하 우상 우 좌 우하 상  ", "별"},
+        {"좌하 우상 좌 우하 좌상 상 ", "별"},
+        {"좌하 하 우상 좌 우하 좌상 ", "별"},
+        {"좌하 우 좌 우하 우하 상 좌상 ", "별"},
+        {"하 우상 우상 우 좌 우하 우하 좌상 ", "별"},
         {"좌하 우상 우 우상 좌 우하 우 좌상 상 ", "별" },
-        { "좌하 하 좌하 우 우 우상 우 우상 좌 우하 우하 상 좌상 ", "별"},
+        {"좌하 하 좌하 우 우 우상 우 우상 좌 우하 우하 상 좌상 ", "별"},
 
     };
 
     //Dictionary[Key]로 Value를 취득할 수 있다.
-    public static void MagicChecking(string inputed)
+    public static string MagicChecking(string inputed)
     {
         string whatMagic;
         if (Magics.TryGetValue(inputed, out whatMagic))
-            print(whatMagic);
+        {
+            //print(whatMagic);
+            return whatMagic;
+        }
         else
-            print("일치하는 마법이 없습니다.");
+        {
+            //print("일치하는 마법이 없습니다.");
+            return "Null";
+        }
+            
     }
 
 
@@ -105,7 +115,7 @@ public class Interpolation_joon : MonoBehaviour
             }
         }
 
-        //---------------------------------------------3차 역보간(1차 역보간과 같은작업)---------------------------------------------
+        //----------------------------------------3차 역보간(같은방향의 직선을 하나의 직선으로 역보간함)------------------------------------------
         for (int i = 1; i < points_after.Count - 1; i++)
         {
             string tmp1 = WhatDirection(points_after[i - 1], points_after[i]); // ex. p0 -> p1 의 직선방향 (ex. 우상)
@@ -193,20 +203,20 @@ public class Interpolation_joon : MonoBehaviour
 
 
                 TotalCurveAngle += CurveAngle;
-                if(i-2 == j) print((StartPoint + 1).ToString() + "번 직선부터 " + (i).ToString() + "번 직선까지의 변곡률 : " + TotalCurveAngle); // 디버그 코드
+                //if(i-2 == j) print((StartPoint + 1).ToString() + "번 직선부터 " + (i).ToString() + "번 직선까지의 변곡률 : " + TotalCurveAngle); // 디버그 코드
                 if (Math.Abs( TotalCurveAngle ) > 45.0) // 곡률의 절댓값이 45도 이상이라면 변곡점으로 판단
                 {
-                    print((i - 1).ToString() + "번 인덱스는 변곡점"); //디버그 코드
+                    //print((i - 1).ToString() + "번 인덱스는 변곡점"); //디버그 코드
                     newIndex.Add(i - 1);
                     StartPoint = i - 1;
                     break;
                 }
             }
 
-            //points의 마지막 인덱스이자 반목문의 마지막 && 
+            //points의 마지막 인덱스이자 반목문의 마지막 && 마지막 좌표가 newIndex에 원소가 아니라면
             if(i == points.Count-1 && newIndex[newIndex.Count-1] != i)
             {
-                print(i.ToString() + "번 인덱스는 마지막점"); //디버그 코드
+                //print(i.ToString() + "번 인덱스는 마지막점"); //디버그 코드
                 newIndex.Add(i);
             }
                 
@@ -225,7 +235,7 @@ public class Interpolation_joon : MonoBehaviour
             newIndex_string += (newIndex[i]).ToString();
             newIndex_string += " ";
         }
-        print("역보간 된 인덱스 넘버 : "+newIndex_string);
+        print("역보간 된 인덱스 넘버 : " + newIndex_string + ", 인덱스 카운트 : " + newIndex.Count);
 
         return points_after;
     }
@@ -319,9 +329,9 @@ public class Interpolation_joon : MonoBehaviour
             InputedMagic += DirectionList[i];
             InputedMagic += " ";
         }
-        MagicChecking(InputedMagic);
-        print("제스처 : "+InputedMagic +", 획수 : " + Stroke);
-
+       
+        string GestureAndStroke = "제스처 : " + InputedMagic + "\n획수 : " + Stroke + "\n해당마법 : "+MagicChecking(InputedMagic);
+        InputedMagic_joon.setMagicText(GestureAndStroke);
         return InputedMagic;
     }
 }

@@ -10,6 +10,7 @@ public class PlayerController_joon : MonoBehaviour
     void Start()
     {
         myRigid = gameObject.GetComponent<Rigidbody>();
+        InputedMagic_joon.setInputMagic();
     }
 
     void Update()
