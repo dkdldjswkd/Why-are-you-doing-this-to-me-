@@ -97,23 +97,32 @@ public class Interpolation_joon : MonoBehaviour
         //제외 기준 길이 설정 (총길이 / 직선의개수 * 2)
         float deadline = lineLangth / ((points_after.Count - 1) * 2);
 
+        //유의미한 인덱스만 담을 int리스트 (이 리스트의 원소들로 문자를 역보간함)
+        List<int> newIndex = new List<int>();
+        newIndex.Add(0);
+
         //---------------------------------------------2차 역보간(짧은 직선은 삭제함)---------------------------------------------
-        if (points_after.Count > 1)
+        if (points_after.Count > 2)
         {
-            for (int i = 0; ; i++)
+            for (int i = 1; i < points_after.Count; i++)
             {
                 //현재 인덱스의 직선이 짧다면 인덱스에서 제외함
-                if (Vector3.Distance(points_after[i], points_after[i + 1]) < deadline)
+                if (Vector3.Distance(points_after[i-1], points_after[i]) > deadline)
                 {
-                    points_after.RemoveAt(i + 1);
-                    i = 0;
-                    continue;
+                    newIndex.Add(i);
                 }
-
-                if (i == points_after.Count - 2)
-                    break;
             }
+
+            List<Vector3> tmpPointsList = new List<Vector3>();
+            for(int i=0; i < newIndex.Count; i++)
+            {
+                tmpPointsList.Add(points_after[newIndex[i]]);
+            }
+            points_after.Clear();
+            points_after = tmpPointsList;
         }
+
+
 
         //----------------------------------------3차 역보간(같은방향의 직선을 하나의 직선으로 역보간함)------------------------------------------
         for (int i = 1; i < points_after.Count - 1; i++)
