@@ -6,11 +6,6 @@ using UnityEngine.UI;
 
 public class LineRotation_joon : MonoBehaviour
 {
-    private void Start()
-    {
-        print("스타트");
-    }
-
     public static List<Vector3> BasicLine(List<Vector3> Line, double Angle, Vector3 PlayerPosition) // 1. 대상으로 삼을 Line List, 2.Player의 Y축 회전값, 3.Player의 Position(Vector3)
     {
         List<Vector3> CloneLine = new List<Vector3>();
