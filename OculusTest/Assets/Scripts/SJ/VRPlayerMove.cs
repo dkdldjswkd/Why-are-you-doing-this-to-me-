@@ -29,7 +29,6 @@ public class VRPlayerMove : MonoBehaviourPun
     //라인
     public GameObject linePerfab;
     public GameObject linePoint;
-    public GameObject linetransform;
 
     GameObject online;
     bool setline;
@@ -59,7 +58,7 @@ public class VRPlayerMove : MonoBehaviourPun
         PV = photonView;
 
         online = Instantiate(linePerfab);
-        online.transform.parent = linetransform.transform;
+        SubMove = GameObject.Find("SUBMOVE");
 
         lr = online.GetComponent<LineRenderer>();
         col = online.GetComponent<EdgeCollider2D>();

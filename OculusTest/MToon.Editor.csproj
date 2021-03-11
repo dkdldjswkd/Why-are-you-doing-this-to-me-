@@ -655,11 +655,11 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Editor/2019.4.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/82105/Desktop/Why-are-you-doing-this-to-me-/OculusTest/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>

@@ -217,6 +217,7 @@
     <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPVersion.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\OculusSpatializerUnity.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\helpers\ONSPReflectionZone.cs" />
+    <Compile Include="Assets\Scenes\TestNetworkManager.cs" />
     <Compile Include="Assets\Scripts\Defence\DefanceManager_joon.cs" />
     <Compile Include="Assets\Scripts\Defence\LevelUpButton_joon.cs" />
     <Compile Include="Assets\Scripts\Defence\RerollButton_joon.cs" />

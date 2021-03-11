@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Select.unity
+- path: Assets/Scenes/TestVR_JIN.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
