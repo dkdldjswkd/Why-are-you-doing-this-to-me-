@@ -223,6 +223,7 @@
     <Compile Include="Assets\Scripts\Defence\RerollButton_joon.cs" />
     <Compile Include="Assets\Scripts\Defence\UnitButton_joon.cs" />
     <Compile Include="Assets\Scripts\Draw\DrawLine_joon.cs" />
+    <Compile Include="Assets\Scripts\Draw\InputedMagic_joon.cs" />
     <Compile Include="Assets\Scripts\Draw\Interpolation_joon.cs" />
     <Compile Include="Assets\Scripts\Draw\LineRotation_joon.cs" />
     <Compile Include="Assets\Scripts\Draw\LineScript_joon.cs" />

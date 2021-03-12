@@ -41,7 +41,13 @@ public class VRRig : MonoBehaviourPunCallbacks
     {
         if (PV.IsMine)
         {
-            PV.RPC("Test", RpcTarget.All);
+            transform.position = headConstraint.position + headBodyOffest;
+            transform.forward = Vector3.ProjectOnPlane(headConstraint.up, Vector3.up).normalized;
+            transform.forward = Vector3.Lerp(transform.forward, Vector3.ProjectOnPlane(headConstraint.up, Vector3.up).normalized, Time.deltaTime * turnSmooth);
+            head.Map();
+            leftHand.Map();
+            rightHand.Map();
+            //PV.RPC("Test", RpcTarget.All);
         }
     }
 

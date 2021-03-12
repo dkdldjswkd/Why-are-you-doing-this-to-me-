@@ -57,6 +57,7 @@ public class VRPlayerMove : MonoBehaviourPun
     {
         PV = photonView;
 
+
         online = Instantiate(linePerfab);
         //SubMove = GameObject.Find("SUBMOVE");
 
@@ -67,6 +68,8 @@ public class VRPlayerMove : MonoBehaviourPun
         PlayerMoveRg.GetComponent<Rigidbody>();
         PlayerCollider = GetComponent<CapsuleCollider>();
         moveanimator = PlayergameObject.GetComponent<Animator>();
+
+        InputedMagic_joon.setInputMagic();
     }
 
     void LateUpdate()
