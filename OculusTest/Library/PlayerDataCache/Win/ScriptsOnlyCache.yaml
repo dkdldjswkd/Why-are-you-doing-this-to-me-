@@ -3501,7 +3501,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomMasterClientIdProperty
   - hash:
       serializedVersion: 2
-      Hash: 4f69371f6fc91998ffbda3d3e82baddb
+      Hash: 580e5d45bcaa1e07527e2f08ae37d8c6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: VRPlayerMove

@@ -46,7 +46,7 @@ public class VRPlayerMove : MonoBehaviourPun
     private CapsuleCollider PlayerCollider;
 
 
-    public GameObject SubMove;
+    //public GameObject SubMove;
 
     private Animator moveanimator;
 
@@ -58,7 +58,7 @@ public class VRPlayerMove : MonoBehaviourPun
         PV = photonView;
 
         online = Instantiate(linePerfab);
-        SubMove = GameObject.Find("SUBMOVE");
+        //SubMove = GameObject.Find("SUBMOVE");
 
         lr = online.GetComponent<LineRenderer>();
         col = online.GetComponent<EdgeCollider2D>();
@@ -72,8 +72,8 @@ public class VRPlayerMove : MonoBehaviourPun
     void LateUpdate()
     {
         //PlayerCollider.center = new Vector3(PlaterTr.position.x, PlayerCollider.center.y,0);
-        transform.position = new Vector3(SubMove.transform.position.x, 0, SubMove.transform.position.z);
-        SubMove.transform.rotation = Quaternion.Euler(0, PlayergameObject.transform.rotation.eulerAngles.y, 0);
+        //transform.position = new Vector3(SubMove.transform.position.x, 0, SubMove.transform.position.z);
+        //SubMove.transform.rotation = Quaternion.Euler(0, PlayergameObject.transform.rotation.eulerAngles.y, 0);
     }
 
     public void playermove(float x, float y)
@@ -82,7 +82,7 @@ public class VRPlayerMove : MonoBehaviourPun
         {
             moveanimator.SetBool("iswalking", true);
             moveDirection = new Vector3(x, 0, y);
-            SubMove.transform.Translate(moveDirection * (speed * Time.deltaTime), Space.Self); // AddForce 적용
+            //SubMove.transform.Translate(moveDirection * (speed * Time.deltaTime), Space.Self); // AddForce 적용
         }
     }
 
@@ -122,15 +122,16 @@ public class VRPlayerMove : MonoBehaviourPun
     {
         if (points.Count > 1)   //그림이 다 그려지면
         {
-            Interpolation_joon.returnDirectionList // 문자의 제스처를 판단하고 제스처 리스트에 합당하는 벨류값을 반환함 (제스처 string 반환 (ex. 상 우하 상))
+            Interpolation_joon.returnDirectionList
             (
-                Interpolation_joon.CreateLine // 벡터3 리스트를 문자 그려줌 (시각화함) (벡터3 리스트 반환)
-                (
-                    Interpolation_joon.Interpolation // 보간을 진행함 (벡터3 리스트 반환)
+                //Interpolation_joon.CreateLine
+                //(
+                    Interpolation_joon.Interpolation
                     (
-                        LineRotation_joon.BasicLine(points, PlayergameObject.transform.eulerAngles.y, PlayergameObject.transform.position) // 문자를 판단하기위해 z축방향으로 문자를 회전시킴 (벡터3 리스트 반환)
+                        LineRotation_joon.BasicLine(points, PlayergameObject.transform.eulerAngles.y, PlayergameObject.transform.position)
                     )
-                )
+                //)
+
             );
         }
         points.Clear();

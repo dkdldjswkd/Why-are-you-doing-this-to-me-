@@ -39,7 +39,10 @@ public class VRRig : MonoBehaviourPunCallbacks
 
     void LateUpdate()
     {
-        PV.RPC("Test",RpcTarget.All);
+        if (PV.IsMine)
+        {
+            PV.RPC("Test", RpcTarget.All);
+        }
     }
 
     [PunRPC]
