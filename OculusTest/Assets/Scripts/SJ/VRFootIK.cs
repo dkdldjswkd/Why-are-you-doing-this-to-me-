@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class VRFootIK : MonoBehaviour
+public class VRFootIK : MonoBehaviourPunCallbacks
 {
     private Animator animator;
     public Vector3 footOffset;

@@ -19,9 +19,10 @@ public class VRMap
     }
 }
 
-public class VRRig : MonoBehaviour
+public class VRRig : MonoBehaviourPunCallbacks
 {
     public float turnSmooth;
+    private PhotonView PV;
 
     public VRMap head;
     public VRMap leftHand;
@@ -32,13 +33,20 @@ public class VRRig : MonoBehaviour
 
     void Start()
     {
+        PV = photonView;
         headBodyOffest = transform.position - headConstraint.position;
     }
 
     void LateUpdate()
     {
+        PV.RPC("Test",RpcTarget.All);
+    }
+
+    [PunRPC]
+    void Test()
+    {
         transform.position = headConstraint.position + headBodyOffest;
-        transform.forward =  Vector3.ProjectOnPlane(headConstraint.up,Vector3.up).normalized;
+        transform.forward = Vector3.ProjectOnPlane(headConstraint.up, Vector3.up).normalized;
         transform.forward = Vector3.Lerp(transform.forward, Vector3.ProjectOnPlane(headConstraint.up, Vector3.up).normalized, Time.deltaTime * turnSmooth);
         head.Map();
         leftHand.Map();
