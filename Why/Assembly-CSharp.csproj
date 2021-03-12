@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Scripts_Joon\Controller\PlayerController_joon.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\Draw\DrawLine.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\Draw\LineScript.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\Draw\ObjectController_mouse.cs" />
@@ -70,7 +71,6 @@
     <Compile Include="Assets\Scripts\Scripts_Joon\InputedMagic_joon.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\Interpolation_joon.cs" />
     <Compile Include="Assets\Scripts\Scripts_Joon\LineRotation_joon.cs" />
-    <Compile Include="Assets\Scripts\Scripts_Joon\PlayerController_joon.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
