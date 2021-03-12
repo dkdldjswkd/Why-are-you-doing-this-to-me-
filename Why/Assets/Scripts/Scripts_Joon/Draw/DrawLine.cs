@@ -14,6 +14,10 @@ public class DrawLine : MonoBehaviour
     public GameObject Line; // 라인렌더러로 그린 오브젝트
     LineScript LS;
 
+    private void Start()
+    {
+        InputedMagic_joon.setInputMagic();
+    }
 
     void Update()
     {

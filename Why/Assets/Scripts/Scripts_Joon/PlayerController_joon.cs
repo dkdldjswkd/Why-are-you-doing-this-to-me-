@@ -10,7 +10,6 @@ public class PlayerController_joon : MonoBehaviour
     void Start()
     {
         myRigid = gameObject.GetComponent<Rigidbody>();
-        InputedMagic_joon.setInputMagic();
     }
 
     void Update()
@@ -25,7 +24,7 @@ public class PlayerController_joon : MonoBehaviour
 
         Vector3 Velocity = new Vector3(InputX, 0, InputZ).normalized * moveSpeed;
 
-        myRigid.MovePosition(transform.position + Velocity * Time.deltaTime);
+        myRigid.MovePosition(transform.position + transform.localRotation * Velocity * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.Q))
         {
